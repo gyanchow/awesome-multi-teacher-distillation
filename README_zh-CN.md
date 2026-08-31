@@ -251,6 +251,6 @@ flowchart LR
 
 欢迎贡献。请先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)，使用“添加论文”Issue 表单，并提供一手来源和足够的方法细节，以便判断该工作属于严格 MOPD、系统应用、相邻范式还是离线 MTKD。
 
-本仓库的初始结构受到 [Awesome LLM On-Policy Distillation](https://github.com/nick7nlp/Awesome-LLM-On-Policy-Distillation) 启发。与其相比，本仓库聚焦多教师能力整合，并增加明确的边界标签、机器可读溯源、重复项检查和中英文入口。
+本仓库围绕经独立核验的一手来源组织内容，并提供明确的边界标签、机器可读溯源、重复项检查和中英文入口。
 
 若要将本列表提交至 Awesome 官方索引，维护者应先对每个条目进行独立人工复核，并遵循最新的 [Awesome 列表要求](https://github.com/sindresorhus/awesome/blob/main/pull_request_template.md)。仓库内容按 [CC0-1.0](LICENSE) 发布。

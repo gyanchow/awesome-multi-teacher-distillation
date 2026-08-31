@@ -251,6 +251,6 @@ The [full multi-teacher KD catalog](papers/general-multi-teacher-distillation.md
 
 Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md), use the paper-addition issue form, and include a primary source plus enough method detail to decide whether the work is strict MOPD, a system application, adjacent, or offline MTKD.
 
-The initial structure was inspired by [Awesome LLM On-Policy Distillation](https://github.com/nick7nlp/Awesome-LLM-On-Policy-Distillation). This repository narrows the scope to multi-teacher capability integration and adds explicit boundary labels, machine-readable provenance, duplicate checks, and a bilingual entry point.
+The repository is organized around independently verified primary sources, explicit boundary labels, machine-readable provenance, duplicate checks, and a bilingual entry point.
 
 To submit this list to the official Awesome index, maintainers should first perform an independent human review of every entry and follow the current [Awesome list requirements](https://github.com/sindresorhus/awesome/blob/main/pull_request_template.md). The repository content is released under [CC0-1.0](LICENSE).

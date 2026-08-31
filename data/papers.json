@@ -1152,7 +1152,7 @@
       "domain": "OPD survey",
       "paper": "https://arxiv.org/abs/2604.00626",
       "code": null,
-      "project": "https://github.com/nick7nlp/Awesome-LLM-On-Policy-Distillation",
+      "project": null,
       "summary": "A comprehensive OPD taxonomy and survey covering objectives, signal sources, stabilization, systems, and applications."
     }
   ]
