@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If this curated list supports your work, cite the repository and the original papers you use."
+title: "Awesome Multi-Teacher Distillation"
+type: dataset
+authors:
+  - name: "Awesome Multi-Teacher Distillation contributors"
+version: 0.1.0
+date-released: 2026-08-31
+license: CC0-1.0
+keywords:
+  - multi-teacher on-policy distillation
+  - on-policy distillation
+  - knowledge distillation
+  - capability integration
+  - large language models

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Awesome Multi-Teacher Distillation catalog",
+  "type": "object",
+  "required": ["last_verified", "categories", "scope_labels", "papers"],
+  "additionalProperties": false,
+  "properties": {
+    "last_verified": { "type": "string", "format": "date" },
+    "categories": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": ["core_mopd", "mopd_systems", "adjacent", "multi_teacher_kd", "foundations_surveys"]
+      }
+    },
+    "scope_labels": {
+      "type": "object",
+      "required": ["strict", "system", "adjacent", "background", "foundation"],
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    },
+    "papers": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/paper" }
+    }
+  },
+  "$defs": {
+    "nullableUrl": {
+      "oneOf": [
+        { "type": "null" },
+        { "type": "string", "format": "uri", "pattern": "^https://" }
+      ]
+    },
+    "paper": {
+      "type": "object",
+      "required": ["id", "title", "date", "category", "scope", "domain", "paper", "code", "project", "summary"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 5 },
+        "title": { "type": "string", "minLength": 5 },
+        "date": { "type": "string", "format": "date" },
+        "category": {
+          "enum": ["core_mopd", "mopd_systems", "adjacent", "multi_teacher_kd", "foundations_surveys"]
+        },
+        "scope": {
+          "enum": ["strict", "system", "adjacent", "background", "foundation"]
+        },
+        "domain": { "type": "string", "minLength": 2 },
+        "paper": { "type": "string", "format": "uri", "pattern": "^https://" },
+        "code": { "$ref": "#/$defs/nullableUrl" },
+        "project": { "$ref": "#/$defs/nullableUrl" },
+        "summary": { "type": "string", "minLength": 20 }
+      }
+    }
+  }
+}

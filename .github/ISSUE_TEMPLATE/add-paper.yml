@@ -1,0 +1,74 @@
+name: Add a paper
+description: Propose a verified paper, technical report, tutorial, or survey.
+title: "[Paper] "
+labels: [paper]
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Please check the paper and its current title against a primary source before submitting.
+  - type: input
+    id: title
+    attributes:
+      label: Paper title
+      placeholder: Current full title
+    validations:
+      required: true
+  - type: input
+    id: primary
+    attributes:
+      label: Primary paper URL
+      description: arXiv, DOI, or official proceedings page; not a search result or secondary list.
+      placeholder: https://...
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: First public date
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Proposed primary category
+      options:
+        - Core MOPD
+        - MOPD system or application
+        - Adjacent online paradigm
+        - Offline multi-teacher KD
+        - Foundation, survey, or tutorial
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Classification evidence
+      description: Identify the rollout/state source, teacher topology, and direct student-training signal. Point to a section of the paper.
+    validations:
+      required: true
+  - type: textarea
+    id: contribution
+    attributes:
+      label: One-sentence contribution
+      description: Neutral mechanism summary; avoid marketing or isolated benchmark claims.
+    validations:
+      required: true
+  - type: input
+    id: code
+    attributes:
+      label: Official code or project URL
+      description: Leave blank unless the author/project connection is explicit.
+      placeholder: https://github.com/...
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched the title, identifier, and URL for duplicates.
+          required: true
+        - label: I checked the paper itself, not only a snippet or secondary list.
+          required: true
+        - label: I did not infer peer-review status from an arXiv page.
+          required: true
