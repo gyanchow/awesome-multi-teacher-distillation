@@ -31,5 +31,7 @@ jobs:
             --verbose
             --no-progress
             --accept 200,206,403,429
+            --exclude "^https://ojs\\.aaai\\.org/"
+            --exclude "^https://anonymous\\.4open\\.science/r/PerSyn-8D85"
             "**/*.md"
           fail: true
