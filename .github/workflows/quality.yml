@@ -31,6 +31,5 @@ jobs:
             --verbose
             --no-progress
             --accept 200,206,403,429
-            --exclude-mail
             "**/*.md"
           fail: true
