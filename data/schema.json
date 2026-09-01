@@ -2,53 +2,206 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Awesome Multi-Teacher Distillation catalog",
   "type": "object",
-  "required": ["last_verified", "categories", "scope_labels", "papers"],
+  "required": ["schema_version", "last_verified", "papers"],
   "additionalProperties": false,
   "properties": {
+    "schema_version": { "const": "2.0" },
     "last_verified": { "type": "string", "format": "date" },
-    "categories": {
-      "type": "array",
-      "uniqueItems": true,
-      "items": {
-        "enum": ["core_mopd", "mopd_systems", "adjacent", "multi_teacher_kd", "foundations_surveys"]
-      }
-    },
-    "scope_labels": {
-      "type": "object",
-      "required": ["strict", "system", "adjacent", "background", "foundation"],
-      "additionalProperties": { "type": "string", "minLength": 1 }
-    },
     "papers": {
       "type": "array",
+      "minItems": 1,
       "items": { "$ref": "#/$defs/paper" }
     }
   },
   "$defs": {
-    "nullableUrl": {
-      "oneOf": [
-        { "type": "null" },
-        { "type": "string", "format": "uri", "pattern": "^https://" }
-      ]
+    "httpsUrl": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "artifact": {
+      "type": "object",
+      "required": ["type", "url"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "enum": ["code", "project", "model", "data"] },
+        "url": { "$ref": "#/$defs/httpsUrl" }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "student_generated_states",
+        "multiple_independent_supervisors",
+        "direct_distillation_objective",
+        "classification_note"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "student_generated_states": { "$ref": "#/$defs/evidenceValue" },
+        "multiple_independent_supervisors": { "$ref": "#/$defs/evidenceValue" },
+        "direct_distillation_objective": { "$ref": "#/$defs/evidenceValue" },
+        "classification_note": { "type": "string", "minLength": 12 }
+      }
+    },
+    "evidenceValue": {
+      "enum": ["yes", "no", "partial", "unclear", "not_applicable"]
     },
     "paper": {
       "type": "object",
-      "required": ["id", "title", "date", "category", "scope", "domain", "paper", "code", "project", "summary"],
+      "required": [
+        "id",
+        "title",
+        "date",
+        "collection",
+        "record_type",
+        "training_regime",
+        "state_source",
+        "teacher_topology",
+        "primary_mechanism",
+        "mechanism_tags",
+        "signals",
+        "domains",
+        "paper",
+        "artifacts",
+        "summary",
+        "evidence"
+      ],
       "additionalProperties": false,
       "properties": {
         "id": { "type": "string", "minLength": 5 },
         "title": { "type": "string", "minLength": 5 },
         "date": { "type": "string", "format": "date" },
-        "category": {
-          "enum": ["core_mopd", "mopd_systems", "adjacent", "multi_teacher_kd", "foundations_surveys"]
+        "collection": {
+          "enum": [
+            "multi_teacher_on_policy",
+            "offline_multi_teacher",
+            "adjacent_alternative",
+            "single_teacher_foundation",
+            "review_tutorial"
+          ]
         },
-        "scope": {
-          "enum": ["strict", "system", "adjacent", "background", "foundation"]
+        "record_type": {
+          "enum": ["method", "analysis", "system_report", "survey", "tutorial"]
         },
-        "domain": { "type": "string", "minLength": 2 },
-        "paper": { "type": "string", "format": "uri", "pattern": "^https://" },
-        "code": { "$ref": "#/$defs/nullableUrl" },
-        "project": { "$ref": "#/$defs/nullableUrl" },
-        "summary": { "type": "string", "minLength": 20 }
+        "training_regime": {
+          "enum": [
+            "on_policy",
+            "offline",
+            "hybrid",
+            "online_peer",
+            "self_distillation",
+            "not_applicable"
+          ]
+        },
+        "state_source": {
+          "enum": [
+            "current_student",
+            "near_current_student",
+            "static_corpus",
+            "teacher_generated",
+            "replay_buffer",
+            "mixed",
+            "not_applicable"
+          ]
+        },
+        "teacher_topology": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "ensemble_to_one",
+              "independent_multi_teacher",
+              "specialist_pool",
+              "checkpoint_pool",
+              "heterogeneous_pool",
+              "debate_collective",
+              "peer_mutual",
+              "self_ema",
+              "privileged_views",
+              "sequential_chain",
+              "single_teacher"
+            ]
+          }
+        },
+        "primary_mechanism": {
+          "enum": [
+            "direct_matching",
+            "routing_selection",
+            "adaptive_weighting",
+            "conflict_resolution",
+            "dynamic_scheduling",
+            "heterogeneous_alignment",
+            "progressive_sequential",
+            "collective_deliberation",
+            "not_applicable"
+          ]
+        },
+        "mechanism_tags": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "direct_matching",
+              "routing_selection",
+              "adaptive_weighting",
+              "conflict_resolution",
+              "dynamic_scheduling",
+              "heterogeneous_alignment",
+              "progressive_sequential",
+              "collective_deliberation"
+            ]
+          }
+        },
+        "signals": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "logits_distribution",
+              "sampled_token_advantage",
+              "features",
+              "relations",
+              "responses_rationales",
+              "feedback_reward",
+              "action_distribution",
+              "latent_velocity",
+              "gradients",
+              "teacher_generated_data"
+            ]
+          }
+        },
+        "domains": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "llm_general",
+              "llm_reasoning",
+              "llm_agents",
+              "llm_alignment",
+              "nlp",
+              "speech",
+              "vision",
+              "multimodal",
+              "generative_models",
+              "recommendation_search",
+              "knowledge_graphs",
+              "robotics_embodied",
+              "scientific_healthcare",
+              "general_machine_learning"
+            ]
+          }
+        },
+        "paper": { "$ref": "#/$defs/httpsUrl" },
+        "artifacts": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/artifact" }
+        },
+        "summary": { "type": "string", "minLength": 20 },
+        "evidence": { "$ref": "#/$defs/evidence" }
       }
     }
   }

@@ -1,74 +1,99 @@
 # Taxonomy
 
-This taxonomy separates **where training states come from** from **how multiple knowledge sources are combined**. Those two questions are often conflated.
+The catalog uses one **mutually exclusive primary collection** plus several **orthogonal facets**. This avoids forcing papers into a single tree in which system reports, training regimes, teacher structures, and algorithms compete at the same level.
 
-## Regime
+## Primary collections
 
-| Regime | Training-state source | Supervision | Repository label |
-|---|---|---|---|
-| Strict multi-teacher OPD | Current or near-current student / mixture policy | Two or more independent teachers, expert checkpoints, teacher views, or peers | `MOPD` |
-| MOPD system | Same as above, reported as one stage of a larger system | Material capability-consolidation stage | `System` |
-| Offline multi-teacher KD | Static corpus, teacher generations, or cached activations | Multiple teacher logits, features, relations, responses, or rationales | `MTKD` |
-| Ensemble distillation | Static data | A teacher ensemble distribution or prediction | `E→1` boundary of MTKD |
-| Co-/self-distillation | One or more changing peers or copies of the student | Bidirectional, EMA, multi-view, or sibling-rollout signals | `Adjacent` |
+| Collection | Inclusion rule | Current count |
+|---|---|---:|
+| `multi_teacher_on_policy` | Current or near-current student states receive direct distillation supervision from multiple independently identifiable teachers. | 41 |
+| `offline_multi_teacher` | Multiple teachers or an ensemble supervise the student through static data, teacher generations, cached targets, or replay. | 41 |
+| `adjacent_alternative` | Closely related online, peer, self/EMA, privileged-view, sibling-rollout, or replay method that fails at least one strict-MOPD test. | 6 |
+| `single_teacher_foundation` | A foundational generative or on-policy distillation method with one teacher. | 3 |
+| `review_tutorial` | A field-level survey or tutorial rather than a method record. | 4 |
+
+The primary collection answers **where a reader should find the paper**. It does not encode every property of the work.
+
+## Strict-MOPD evidence tests
+
+Each record stores three separate evidence fields:
+
+1. `student_generated_states`: whether the trained-on state or trajectory comes from the current or near-current student;
+2. `multiple_independent_supervisors`: whether at least two independently identifiable teachers, expert checkpoints, or teacher policies supervise the student; and
+3. `direct_distillation_objective`: whether those signals directly update the student through a divergence, sampled-token advantage, feature or field target, or an equivalent objective.
+
+The allowed answers are `yes`, `no`, `partial`, `unclear`, and `not_applicable`. These values describe the three facts independently; they are not a single confidence score. A free-text `classification_note` records the paper-level rationale.
+
+Strict MOPD requires `yes` or a clearly explained `partial` for all three tests. Static teacher data is offline multi-teacher distillation. A single teacher with several samples, views, or rollouts does not satisfy the independent-supervisor test. Pure parameter merging, inference-time ensembling, reward-only reinforcement learning, and debate without student training do not satisfy the direct-distillation test.
+
+## Record type
+
+`record_type` is independent of the primary collection:
+
+- `method`: proposes or materially extends a training method;
+- `analysis`: primarily diagnoses, compares, or explains a phenomenon;
+- `system_report`: reports a larger model or system in which distillation is a material stage;
+- `survey`: reviews a body of literature; and
+- `tutorial`: teaches or synthesizes a field for practitioners.
+
+This is why a frontier-model technical report remains in `multi_teacher_on_policy` while carrying `system_report` as a facet.
+
+## Training regime and state source
+
+`training_regime` records the overall recipe: `on_policy`, `offline`, `hybrid`, `online_peer`, `self_distillation`, or `not_applicable`.
+
+`state_source` records the provenance of the states that receive supervision: `current_student`, `near_current_student`, `static_corpus`, `teacher_generated`, `replay_buffer`, `mixed`, or `not_applicable`.
+
+Keeping these fields separate matters. A hybrid recipe can still contain a qualifying MOPD stage, while a current-student state source can belong to a single-teacher or peer method rather than multi-teacher MOPD.
 
 ## Teacher topology
 
-- **Parallel specialists:** independently trained domain, reward, platform, modality, or budget experts.
-- **Checkpoint teachers:** different stages, seeds, reasoning budgets, or retained specialist checkpoints.
-- **Heterogeneous teachers:** different architectures, tokenizers, modalities, latent spaces, or action spaces.
-- **Collective/debate:** several teachers exchange critiques before producing supervision.
-- **Peer policies:** trainable models tutor or distill one another; not a fixed external teacher pool.
-- **Multi-view/self teachers:** several privileged views or EMA/sibling policies derived from one lineage.
+A record can carry more than one topology facet:
 
-## Selection granularity
-
-| Granularity | Typical question |
+| Facet | Meaning |
 |---|---|
-| Domain / task | Which specialist owns this dataset or environment? |
-| Prompt / example | Which teacher is most reliable and teachable for this sample? |
-| Trajectory | Which teacher evaluates the complete student rollout? |
-| Step / span | Which teacher should supervise this reasoning or action segment? |
-| Token | Which distribution or teacher is trustworthy at this position? |
-| Vocabulary coordinate | Which teacher-support coordinates must be retained? |
-| Latent field / pixel | Which visual capability field matches the student-induced state? |
+| `ensemble_to_one` | Predictions from an ensemble are compressed into one student. |
+| `independent_multi_teacher` | At least two separately identifiable supervision sources are present. |
+| `specialist_pool` | Teachers specialize by domain, task, reward, platform, or capability. |
+| `checkpoint_pool` | Teachers are retained checkpoints, stages, seeds, or reasoning budgets. |
+| `heterogeneous_pool` | Teachers differ in architecture, tokenizer, modality, latent space, or action space. |
+| `debate_collective` | Teachers deliberate, critique, or review before supervision is formed. |
+| `peer_mutual` | Trainable peers supervise one another bidirectionally. |
+| `self_ema` | Teachers are copies, EMA variants, or descendants of the student lineage. |
+| `privileged_views` | Supervision comes from different information views rather than independent experts. |
+| `sequential_chain` | Teachers or assistants transfer knowledge in stages. |
+| `single_teacher` | One teacher provides the distillation target. |
 
-## Aggregation and routing
+## Combination mechanism
 
-- **Hard routing:** choose one teacher using metadata, a router, confidence, or outcome.
-- **Soft weighting:** combine teacher losses or distributions with fixed or adaptive weights.
-- **Consensus:** retain signals on which teachers agree; optionally model disagreement separately.
-- **Union / residual:** represent a shared consensus plus teacher-specific residual capabilities.
-- **Debate / review:** aggregate after inter-teacher critique or verification.
-- **Dynamic scheduling:** adapt how often each domain or teacher receives rollout and update budget.
-- **Sequential / progressive (`SEQ`):** teachers act in stages; this borders on teacher-assistant chains.
+Every method has one `primary_mechanism`; optional `mechanism_tags` capture secondary mechanisms without repeating the primary label.
 
-## Signal type and objective
+- `direct_matching`: directly matches distributions, representations, actions, or fields;
+- `routing_selection`: selects a teacher by domain, prompt, trajectory, step, token, or coordinate;
+- `adaptive_weighting`: combines teacher targets or losses with learned or dynamic weights;
+- `conflict_resolution`: detects, filters, decomposes, or reconciles incompatible supervision;
+- `dynamic_scheduling`: reallocates domains, teachers, or optimization budgets over time;
+- `heterogeneous_alignment`: bridges incompatible tokenizers, architectures, modalities, or latent spaces;
+- `progressive_sequential`: transfers knowledge through ordered teachers or training stages;
+- `collective_deliberation`: forms supervision through debate, critique, or peer review; and
+- `not_applicable`: reserved for surveys and tutorials.
 
-- Full-vocabulary or top-$K$ logits; forward, reverse, symmetric, skewed, or generalized KL.
-- Sampled-token log-probability gaps or advantages.
-- Hidden-state, relation, attention, or feature matching.
-- Natural-language feedback, answers, rationales, demonstrations, or synthetic data.
-- Flow/velocity fields, representations, action distributions, and other domain-specific targets.
+The primary mechanism is the paper's central combination contribution, not every operation in its training loss.
 
-## Common failure modes
+## Supervision signal
 
-- **Teacher conflict:** useful gradients cancel or one expert overwrites another.
-- **Capability imbalance:** long outputs, high initial KL, or slow domains consume disproportionate token budget.
-- **Stale supervision:** asynchronous rollouts, rewards, or teacher checkpoints no longer match the current student.
-- **Support truncation:** top-$K$ mass looks adequate but drops decision-critical coordinates.
-- **Router collapse:** one teacher dominates, or out-of-domain prompts are sent to the wrong specialist.
-- **Negative transfer / seesaw:** gains in one domain reduce general or neighboring capabilities.
-- **Heterogeneous mismatch:** tokenizer, architecture, modality, latent, or action-space differences invalidate direct matching.
-- **Teacher ceiling:** aggregation cannot create a reliable solution outside the union of teacher-supported behavior without exploration or external feedback.
+Signals are multi-valued: `logits_distribution`, `sampled_token_advantage`, `features`, `relations`, `responses_rationales`, `feedback_reward`, `action_distribution`, `latent_velocity`, `gradients`, and `teacher_generated_data`.
 
-## Boundary tests
+This axis separates methods that look similar at the topology level but expose very different information and cost profiles. For example, full-distribution reverse KL, sampled-token advantages, natural-language rationales, and latent flow matching all provide direct supervision in different spaces.
 
-A work is not strict MOPD merely because it contains multiple experts. Ask:
+## Domain
 
-1. Who generated the state or trajectory being trained on?
-2. Are there at least two independently identifiable supervision sources?
-3. Do those sources directly affect the student's training objective?
-4. Is the mechanism training-time distillation rather than inference-time ensembling or parameter merging alone?
+The controlled domain labels are `llm_general`, `llm_reasoning`, `llm_agents`, `llm_alignment`, `nlp`, `speech`, `vision`, `multimodal`, `generative_models`, `recommendation_search`, `knowledge_graphs`, `robotics_embodied`, `scientific_healthcare`, and `general_machine_learning`.
 
-If the first answer is “a static teacher dataset,” classify it as MTKD. If the second is “one teacher with several samples,” classify it as multi-view or multi-rollout adjacent work. If the third or fourth is “no,” keep it outside the catalog or in an explicitly related section.
+Domains are intentionally multi-valued. A multimodal agent paper, for example, need not be forced into only one application bucket.
+
+## How to browse
+
+The five files in `papers/` are canonical, mutually exclusive catalogs. Files in `views/` are generated cross-sections of the same JSON source by mechanism, topology, signal, domain, record type, artifact availability, or time. A paper may appear in several derived views without becoming a duplicate catalog record.
+
+When a classification is uncertain, keep the candidate in `papers/pending.md`, mark the unresolved evidence as `unclear`, and cite the exact method or training section needed to resolve it before acceptance.

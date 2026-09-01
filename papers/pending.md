@@ -10,8 +10,15 @@ There are no pending items as of **2026-08-31**.
 - **Title:**
   - Discovered: YYYY-MM-DD
   - Paper / primary source:
-  - Claimed teacher topology:
-  - Claimed rollout source:
-  - Proposed category:
+  - Stable ID:
+  - Proposed primary collection:
+  - Record type:
+  - State source and training regime:
+  - Teacher topology:
+  - Primary / secondary mechanisms:
+  - Supervision signals and domains:
+  - Student-generated states evidence:
+  - Multiple independent supervisors evidence:
+  - Direct distillation objective evidence:
   - Verification still needed:
 ```

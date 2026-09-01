@@ -1,1159 +1,3313 @@
 {
+  "schema_version": "2.0",
   "last_verified": "2026-08-31",
-  "categories": [
-    "core_mopd",
-    "mopd_systems",
-    "adjacent",
-    "multi_teacher_kd",
-    "foundations_surveys"
-  ],
-  "scope_labels": {
-    "strict": "Student- or near-student-policy rollouts receive training supervision from at least two teachers, expert checkpoints, or teacher views.",
-    "system": "A model or system report that uses MOPD as a material training stage.",
-    "adjacent": "Closely related online co-distillation, multi-view distillation, or an explicit alternative to MOPD.",
-    "background": "Multi-teacher distillation that is not on-policy.",
-    "foundation": "Foundational OPD, policy-distillation, tutorial, or survey material."
-  },
   "papers": [
     {
       "id": "arxiv:2608.27409",
       "title": "Consolidating RLVR Capabilities Across Domains: A Deep Dive into Fusion Paradigms",
       "date": "2026-08-27",
-      "category": "core_mopd",
-      "scope": "strict",
-      "domain": "LLM capability integration",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "analysis",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "llm_general",
+        "llm_reasoning"
+      ],
       "paper": "https://arxiv.org/abs/2608.27409",
-      "code": "https://github.com/Di-viner/LLM-Fusion",
-      "project": null,
-      "summary": "Controlled comparison of parameter merging, mixed-domain RL, and MOPD using shared experts and data; identifies when each fusion paradigm is preferable."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/Di-viner/LLM-Fusion"
+        }
+      ],
+      "summary": "Controlled comparison of parameter merging, mixed-domain RL, and MOPD using shared experts and data; identifies when each fusion paradigm is preferable.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "The controlled MOPD arm routes current-student rollouts to domain RLVR teachers; the paper's main contribution is comparative analysis of fusion paradigms."
+      }
     },
     {
       "id": "arxiv:2608.26735",
       "title": "Preserving General Capabilities during Domain Specialization with Uncertainty-Calibrated MOPD",
       "date": "2026-08-27",
-      "category": "core_mopd",
-      "scope": "strict",
-      "domain": "LLM domain specialization",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "method",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "adaptive_weighting",
+      "mechanism_tags": [
+        "routing_selection",
+        "conflict_resolution"
+      ],
+      "signals": [
+        "logits_distribution",
+        "sampled_token_advantage"
+      ],
+      "domains": [
+        "llm_general"
+      ],
       "paper": "https://arxiv.org/abs/2608.26735",
-      "code": null,
-      "project": null,
-      "summary": "Uses dual-temperature sampling, positive-advantage-density filtering, and entropy-calibrated token filtering to preserve general capabilities during specialization."
+      "artifacts": [],
+      "summary": "Uses dual-temperature sampling, positive-advantage-density filtering, and entropy-calibrated token filtering to preserve general capabilities during specialization.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Domain and general teachers supervise student samples through uncertainty-calibrated trajectory and token filtering."
+      }
     },
     {
       "id": "arxiv:2608.24987",
       "title": "D$^3$-MOPD: Adaptive Dynamic Domain ScheDuling for Efficient Multi-Teacher Distillation",
       "date": "2026-08-25",
-      "category": "core_mopd",
-      "scope": "strict",
-      "domain": "LLM capability integration",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "method",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "dynamic_scheduling",
+      "mechanism_tags": [
+        "routing_selection",
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "llm_general"
+      ],
       "paper": "https://arxiv.org/abs/2608.24987",
-      "code": null,
-      "project": null,
-      "summary": "Adapts domain sampling ratios from the already-computed reverse-KL trajectories to reduce wasted rollout steps across differently converging domains."
+      "artifacts": [],
+      "summary": "Adapts domain sampling ratios from the already-computed reverse-KL trajectories to reduce wasted rollout steps across differently converging domains.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Four domain teachers provide routed reverse-KL supervision while an adaptive scheduler reallocates rollout and update budget."
+      }
     },
     {
       "id": "arxiv:2608.19098",
       "title": "Open-MOPD: Diagnosing and Fixing Capability Imbalance in Multi-Teacher On-Policy Distillation",
       "date": "2026-08-19",
-      "category": "core_mopd",
-      "scope": "strict",
-      "domain": "LLM capability integration",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "method",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "dynamic_scheduling",
+      "mechanism_tags": [
+        "routing_selection",
+        "adaptive_weighting"
+      ],
+      "signals": [
+        "sampled_token_advantage",
+        "feedback_reward"
+      ],
+      "domains": [
+        "llm_general"
+      ],
       "paper": "https://arxiv.org/abs/2608.19098",
-      "code": "https://github.com/BytedTsinghua-SIA/Open-MOPD",
-      "project": "https://bytedtsinghua-sia.github.io/Open-MOPD/",
-      "summary": "An end-to-end open recipe that diagnoses token-budget imbalance and introduces token-share balancing, gap-aware allocation, and student-reward refresh."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/BytedTsinghua-SIA/Open-MOPD"
+        },
+        {
+          "type": "project",
+          "url": "https://bytedtsinghua-sia.github.io/Open-MOPD/"
+        }
+      ],
+      "summary": "An end-to-end open recipe that diagnoses token-budget imbalance and introduces token-share balancing, gap-aware allocation, and student-reward refresh.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Math, code, and instruction teachers supervise current SmolLM3 tokens; token-share and gap-aware allocation address capability imbalance."
+      }
     },
     {
       "id": "arxiv:2608.16647",
       "title": "Every Coin Has Two Sides: On the Dual Nature of Generalization in On-Policy Distillation of Large Language Models",
       "date": "2026-08-17",
-      "category": "core_mopd",
-      "scope": "strict",
-      "domain": "LLM analysis",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "analysis",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "sampled_token_advantage"
+      ],
+      "domains": [
+        "llm_general",
+        "llm_reasoning"
+      ],
       "paper": "https://arxiv.org/abs/2608.16647",
-      "code": null,
-      "project": null,
-      "summary": "Studies OPD generalization across distribution, language, horizon, domain, and multi-teacher settings, revealing origin dependence and mixture-driven capability seesaws."
+      "artifacts": [],
+      "summary": "Studies OPD generalization across distribution, language, horizon, domain, and multi-teacher settings, revealing origin dependence and mixture-driven capability seesaws.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "A qualifying two-teacher routed MOPD setup is used chiefly to analyze transfer and mixture-induced capability seesaws."
+      }
     },
     {
       "id": "arxiv:2608.04349",
       "title": "Poly-OPD: Heterogeneous Multi-Teacher On-Policy Distillation for Capability-Selectable Flow Models",
       "date": "2026-08-05",
-      "category": "core_mopd",
-      "scope": "strict",
-      "domain": "Text-to-image generation",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "method",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "heterogeneous_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "heterogeneous_alignment",
+      "mechanism_tags": [
+        "routing_selection",
+        "dynamic_scheduling"
+      ],
+      "signals": [
+        "latent_velocity"
+      ],
+      "domains": [
+        "vision",
+        "generative_models"
+      ],
       "paper": "https://arxiv.org/abs/2608.04349",
-      "code": null,
-      "project": null,
-      "summary": "Bridges incompatible latent spaces through pixels and combines heterogeneous flow-model teachers with compatibility-aware adapters and gap-aware scheduling."
+      "artifacts": [],
+      "summary": "Bridges incompatible latent spaces through pixels and combines heterogeneous flow-model teachers with compatibility-aware adapters and gap-aware scheduling.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Incompatible flow teachers are bridged through pixels and matched on student-induced states with compatibility-aware adapters."
+      }
     },
     {
       "id": "arxiv:2608.03610",
       "title": "Language-Specialized Multi-Teacher On-Policy Distillation for Multilingual LLM-Based ASR",
       "date": "2026-08-04",
-      "category": "core_mopd",
-      "scope": "strict",
-      "domain": "Multilingual ASR",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "method",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "adaptive_weighting"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "speech",
+        "nlp"
+      ],
       "paper": "https://arxiv.org/abs/2608.03610",
-      "code": null,
-      "project": null,
-      "summary": "Routes multilingual student rollouts to ranked language-specialized RL teachers and studies static versus dynamic acoustic-prefix consistency."
+      "artifacts": [],
+      "summary": "Routes multilingual student rollouts to ranked language-specialized RL teachers and studies static versus dynamic acoustic-prefix consistency.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Multilingual student rollouts are sent to ranked language-specialized teachers and optimized with reliability-weighted top-K reverse KL."
+      }
     },
     {
       "id": "arxiv:2608.03092",
       "title": "SMOPD: Multi-Reward Reinforcement Learning via Specialize-and-Merge Online Policy Distillation",
       "date": "2026-08-04",
-      "category": "core_mopd",
-      "scope": "strict",
-      "domain": "Multi-reward LLM alignment",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "method",
+      "training_regime": "hybrid",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher",
+        "ensemble_to_one"
+      ],
+      "primary_mechanism": "adaptive_weighting",
+      "mechanism_tags": [
+        "routing_selection",
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution",
+        "feedback_reward"
+      ],
+      "domains": [
+        "llm_alignment"
+      ],
       "paper": "https://arxiv.org/abs/2608.03092",
-      "code": null,
-      "project": null,
-      "summary": "Trains reward-specialized teachers first, then merges their capabilities with online policy distillation to balance sparse and dense objectives."
+      "artifacts": [],
+      "summary": "Trains reward-specialized teachers first, then merges their capabilities with online policy distillation to balance sparse and dense objectives.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Reward-specialized policies are combined during online student sampling with a top-K mixture FKL objective plus a GDPO anchor."
+      }
     },
     {
       "id": "arxiv:2607.27770",
       "title": "Beyond the Best Teacher: Expanding and Compressing the Reasoning Solution Manifold",
       "date": "2026-07-30",
-      "category": "core_mopd",
-      "scope": "strict",
-      "domain": "LLM reasoning",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "method",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher",
+        "ensemble_to_one"
+      ],
+      "primary_mechanism": "conflict_resolution",
+      "mechanism_tags": [
+        "adaptive_weighting",
+        "routing_selection"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "llm_reasoning"
+      ],
       "paper": "https://arxiv.org/abs/2607.27770",
-      "code": null,
-      "project": null,
-      "summary": "Constructs complementary RL teachers with residual GRPO and compresses their reliable union through quality-gated Teacher-Union OPD."
+      "artifacts": [],
+      "summary": "Constructs complementary RL teachers with residual GRPO and compresses their reliable union through quality-gated Teacher-Union OPD.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Complementary residual-GRPO teachers are compressed through reliability gating and a consensus-plus-residual teacher-union objective."
+      }
     },
     {
       "id": "arxiv:2607.24720",
       "title": "The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation",
       "date": "2026-07-27",
-      "category": "core_mopd",
-      "scope": "strict",
-      "domain": "Long-horizon agents",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "analysis",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher",
+        "sequential_chain"
+      ],
+      "primary_mechanism": "progressive_sequential",
+      "mechanism_tags": [
+        "routing_selection",
+        "conflict_resolution"
+      ],
+      "signals": [
+        "action_distribution",
+        "sampled_token_advantage"
+      ],
+      "domains": [
+        "llm_agents"
+      ],
       "paper": "https://arxiv.org/abs/2607.24720",
-      "code": "https://github.com/Quester-one/PlanPhysCode",
-      "project": "https://quester-one.github.io/PlanPhysWebsite/",
-      "summary": "A controlled study of planning acquisition, OPD shaping, and MOPD integration under shared, partially shared, and conflicting planning patterns."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/Quester-one/PlanPhysCode"
+        },
+        {
+          "type": "project",
+          "url": "https://quester-one.github.io/PlanPhysWebsite/"
+        }
+      ],
+      "summary": "A controlled study of planning acquisition, OPD shaping, and MOPD integration under shared, partially shared, and conflicting planning patterns.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Single- then multi-teacher agentic OPD on student trajectories is used to study shared, partially shared, and conflicting planning patterns."
+      }
     },
     {
       "id": "arxiv:2607.07050",
       "title": "When Top-K Misses the Decision: Tool-Call Drift in Multi-Teacher On-Policy Distillation",
       "date": "2026-07-08",
-      "category": "core_mopd",
-      "scope": "strict",
-      "domain": "Tool-using LLM agents",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "analysis",
+      "training_regime": "hybrid",
+      "state_source": "mixed",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "conflict_resolution",
+      "mechanism_tags": [
+        "routing_selection",
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "llm_agents"
+      ],
       "paper": "https://arxiv.org/abs/2607.07050",
-      "code": "https://github.com/shen-jiabin/decision-support-opd",
-      "project": null,
-      "summary": "Shows that high retained top-k teacher mass can omit decision-critical coordinates and causally links support restoration to tool-call behavior."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/shen-jiabin/decision-support-opd"
+        }
+      ],
+      "summary": "Shows that high retained top-k teacher mass can omit decision-critical coordinates and causally links support restoration to tool-call behavior.",
+      "evidence": {
+        "student_generated_states": "partial",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "The two-teacher support-restoration study uses 80% current-student continuation and 20% dataset continuation with an SFT anchor."
+      }
     },
     {
       "id": "arxiv:2607.04425",
       "title": "UI-MOPD: Multi-Platform On-Policy Distillation for Unified GUI Agents",
       "date": "2026-07-05",
-      "category": "core_mopd",
-      "scope": "strict",
-      "domain": "GUI agents",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "method",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "action_distribution"
+      ],
+      "domains": [
+        "llm_agents",
+        "multimodal"
+      ],
       "paper": "https://arxiv.org/abs/2607.04425",
-      "code": "https://github.com/EliSpectre/UI-MOPD",
-      "project": "https://elispectre.github.io/UI-MOPD/",
-      "summary": "Dynamically routes each student rollout to its desktop- or mobile-specialized teacher to integrate platform expertise without behavior averaging."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/EliSpectre/UI-MOPD"
+        },
+        {
+          "type": "project",
+          "url": "https://elispectre.github.io/UI-MOPD/"
+        }
+      ],
+      "summary": "Dynamically routes each student rollout to its desktop- or mobile-specialized teacher to integrate platform expertise without behavior averaging.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Every student GUI rollout is routed by platform to a desktop or mobile teacher and trained with action-policy reverse KL."
+      }
     },
     {
       "id": "arxiv:2607.02592",
       "title": "H-OPD: Confidence Aware Heterogeneous Multi-Teacher Multimodal On-policy Distillation",
       "date": "2026-07-01",
-      "category": "core_mopd",
-      "scope": "strict",
-      "domain": "Multimodal reasoning",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "method",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "heterogeneous_pool",
+        "independent_multi_teacher",
+        "ensemble_to_one"
+      ],
+      "primary_mechanism": "adaptive_weighting",
+      "mechanism_tags": [
+        "routing_selection",
+        "heterogeneous_alignment",
+        "conflict_resolution"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "multimodal",
+        "llm_reasoning"
+      ],
       "paper": "https://arxiv.org/abs/2607.02592",
-      "code": "https://github.com/buptyqx/H-OPD",
-      "project": null,
-      "summary": "Replaces static sample-level routing with token-level confidence arbitration between vision-language and text-only teachers."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/buptyqx/H-OPD"
+        }
+      ],
+      "summary": "Replaces static sample-level routing with token-level confidence arbitration between vision-language and text-only teachers.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "A vision-language and a text-only teacher are arbitrated tokenwise by confidence over merged top-K support on student responses."
+      }
     },
     {
       "id": "arxiv:2606.30616",
       "title": "Scaling the Horizon, Not the Parameters: Reaching Trillion-Parameter Performance with a 35B Agent",
       "date": "2026-06-29",
-      "category": "core_mopd",
-      "scope": "strict",
-      "domain": "Long-horizon agents",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "method",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "llm_agents"
+      ],
       "paper": "https://arxiv.org/abs/2606.30616",
-      "code": null,
-      "project": null,
-      "summary": "Introduces domain-routed MOPD with salient-vocabulary alignment to consolidate six heterogeneous agent domains into Agents-A1."
+      "artifacts": [],
+      "summary": "Introduces domain-routed MOPD with salient-vocabulary alignment to consolidate six heterogeneous agent domains into Agents-A1.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Six agent-domain teachers provide domain-routed salient-vocabulary reverse-KL supervision on Agents-A1 rollouts."
+      }
     },
     {
       "id": "arxiv:2606.30406",
       "title": "MOPD: Multi-Teacher On-Policy Distillation for Capability Integration in LLM Post-Training",
       "date": "2026-06-29",
-      "category": "core_mopd",
-      "scope": "strict",
-      "domain": "LLM capability integration",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "method",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution",
+        "sampled_token_advantage"
+      ],
+      "domains": [
+        "llm_general"
+      ],
       "paper": "https://arxiv.org/abs/2606.30406",
-      "code": null,
-      "project": null,
-      "summary": "Canonical general formulation: train domain RL teachers independently, then distill each teacher on student-generated trajectories with dense supervision."
+      "artifacts": [],
+      "summary": "Canonical general formulation: train domain RL teachers independently, then distill each teacher on student-generated trajectories with dense supervision.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "The canonical formulation routes each current-student trajectory to its independently RL-trained domain teacher for reverse-KL supervision."
+      }
     },
     {
       "id": "arxiv:2606.27377",
       "title": "DanceOPD: On-Policy Generative Field Distillation",
       "date": "2026-06-25",
-      "category": "core_mopd",
-      "scope": "strict",
-      "domain": "Image generation",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "method",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "latent_velocity"
+      ],
+      "domains": [
+        "vision",
+        "generative_models"
+      ],
       "paper": "https://arxiv.org/abs/2606.27377",
-      "code": null,
-      "project": null,
-      "summary": "Routes student-induced flow states to capability fields and distills text-to-image and editing experts with a velocity objective."
+      "artifacts": [],
+      "summary": "Routes student-induced flow states to capability fields and distills text-to-image and editing experts with a velocity objective.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Text-to-image and editing fields are routed on states induced by the current student flow and matched through a velocity objective."
+      }
     },
     {
       "id": "arxiv:2605.27115",
       "title": "Counteraction-Aware Multi-Teacher On-Policy Distillation for General Capability Recovery with Domain Preservation",
       "date": "2026-05-26",
-      "category": "core_mopd",
-      "scope": "strict",
-      "domain": "LLM domain specialization",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "method",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "conflict_resolution",
+      "mechanism_tags": [
+        "routing_selection",
+        "dynamic_scheduling"
+      ],
+      "signals": [
+        "logits_distribution",
+        "gradients"
+      ],
+      "domains": [
+        "llm_general"
+      ],
       "paper": "https://arxiv.org/abs/2605.27115",
-      "code": null,
-      "project": null,
-      "summary": "Addresses recovery-preservation gradient counteraction with alternating updates and gap-based selection under incomplete prompt coverage."
+      "artifacts": [],
+      "summary": "Addresses recovery-preservation gradient counteraction with alternating updates and gap-based selection under incomplete prompt coverage.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Domain and general teachers directly supervise student rollouts while alternating updates prevent recovery and preservation gradients from canceling."
+      }
     },
     {
       "id": "arxiv:2605.25378",
       "title": "CollectionLoRA: Collecting 50 Effects in 1 LoRA via Multi-Teacher On-Policy Distillation",
       "date": "2026-05-25",
-      "category": "core_mopd",
-      "scope": "strict",
-      "domain": "Image editing",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "method",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "dynamic_scheduling",
+        "direct_matching"
+      ],
+      "signals": [
+        "latent_velocity"
+      ],
+      "domains": [
+        "vision",
+        "generative_models"
+      ],
       "paper": "https://arxiv.org/abs/2605.25378",
-      "code": "https://github.com/Qwen-Applications/CollectionLoRA",
-      "project": "https://collectionlora.github.io/",
-      "summary": "Consolidates dozens of effect LoRAs and few-step generation into one LoRA using dual-stream routing, prompt isolation, and coarse-to-fine distillation."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/Qwen-Applications/CollectionLoRA"
+        },
+        {
+          "type": "project",
+          "url": "https://collectionlora.github.io/"
+        }
+      ],
+      "summary": "Consolidates dozens of effect LoRAs and few-step generation into one LoRA using dual-stream routing, prompt isolation, and coarse-to-fine distillation.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Dozens of effect LoRA teachers are consolidated on student-induced generative states through dual-stream routing and coarse-to-fine scheduling."
+      }
     },
     {
       "id": "arxiv:2605.10189",
       "title": "ProteinOPD: Towards Effective and Efficient Preference Alignment for Protein Design",
       "date": "2026-05-11",
-      "category": "core_mopd",
-      "scope": "strict",
-      "domain": "Protein design",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "method",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher",
+        "ensemble_to_one"
+      ],
+      "primary_mechanism": "adaptive_weighting",
+      "mechanism_tags": [
+        "conflict_resolution",
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "scientific_healthcare"
+      ],
       "paper": "https://arxiv.org/abs/2605.10189",
-      "code": "https://github.com/THU-AI4S/ProteinOPD",
-      "project": null,
-      "summary": "Distills preference-specific protein teachers into the geometric consensus of a shared student while bounding conflict and retaining designability."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/THU-AI4S/ProteinOPD"
+        }
+      ],
+      "summary": "Distills preference-specific protein teachers into the geometric consensus of a shared student while bounding conflict and retaining designability.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Preference-specific protein teachers form an adaptively weighted geometric consensus that directly supervises the shared student policy."
+      }
     },
     {
       "id": "arxiv:2605.03677",
       "title": "Uni-OPD: Unifying On-Policy Distillation with a Dual-Perspective Recipe",
       "date": "2026-05-05",
-      "category": "core_mopd",
-      "scope": "strict",
-      "domain": "LLM and multimodal reasoning",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "method",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "adaptive_weighting",
+      "mechanism_tags": [
+        "routing_selection",
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution",
+        "feedback_reward"
+      ],
+      "domains": [
+        "llm_general",
+        "llm_reasoning",
+        "multimodal"
+      ],
       "paper": "https://arxiv.org/abs/2605.03677",
-      "code": "https://github.com/WenjinHou/Uni-OPD",
-      "project": null,
-      "summary": "Balances informative student exploration and outcome-consistent teacher reliability across single- and multi-teacher LLM/MLLM settings."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/WenjinHou/Uni-OPD"
+        }
+      ],
+      "summary": "Balances informative student exploration and outcome-consistent teacher reliability across single- and multi-teacher LLM/MLLM settings.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "The qualifying multi-teacher setting routes student responses by task and calibrates teacher reliability with outcome consistency and margins."
+      }
     },
     {
       "id": "arxiv:2605.01347",
       "title": "MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate",
       "date": "2026-05-02",
-      "category": "core_mopd",
-      "scope": "strict",
-      "domain": "LLM agents and code",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "method",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "debate_collective",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "collective_deliberation",
+      "mechanism_tags": [
+        "adaptive_weighting",
+        "conflict_resolution"
+      ],
+      "signals": [
+        "responses_rationales",
+        "logits_distribution",
+        "sampled_token_advantage"
+      ],
+      "domains": [
+        "llm_agents",
+        "llm_reasoning"
+      ],
       "paper": "https://arxiv.org/abs/2605.01347",
-      "code": "https://github.com/chiefovoavicii/MAD-OPD",
-      "project": null,
-      "summary": "Turns the teacher into a confidence-weighted debating collective and adds step-level OPAD for long agent trajectories."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/chiefovoavicii/MAD-OPD"
+        }
+      ],
+      "summary": "Turns the teacher into a confidence-weighted debating collective and adds step-level OPAD for long agent trajectories.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Multiple teachers debate and are confidence-weighted before JSD, reverse-KL, or step-level OPAD supervision is applied to student trajectories."
+      }
     },
     {
       "id": "arxiv:2608.20334",
       "title": "Exploring the Performance Frontier of Compact Unified Image Generation Models",
       "date": "2026-08-20",
-      "category": "mopd_systems",
-      "scope": "system",
-      "domain": "Unified image generation",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "system_report",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "latent_velocity"
+      ],
+      "domains": [
+        "vision",
+        "generative_models"
+      ],
       "paper": "https://arxiv.org/abs/2608.20334",
-      "code": null,
-      "project": null,
-      "summary": "Swift-Image applies parallel expert RL followed by MOPD to unify text-to-image, single-image editing, and multi-image editing."
+      "artifacts": [],
+      "summary": "Swift-Image applies parallel expert RL followed by MOPD to unify text-to-image, single-image editing, and multi-image editing.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Swift-Image uses a material on-policy generative-field distillation stage after parallel RL of three image-generation and editing experts."
+      }
     },
     {
       "id": "arxiv:2608.16386",
       "title": "Mint-Agent: Introducing Finance-Native Agentic Foundation Models",
       "date": "2026-08-17",
-      "category": "mopd_systems",
-      "scope": "system",
-      "domain": "Financial agents",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "system_report",
+      "training_regime": "hybrid",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "progressive_sequential",
+      "mechanism_tags": [
+        "routing_selection",
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "llm_agents"
+      ],
       "paper": "https://arxiv.org/abs/2608.16386",
-      "code": null,
-      "project": null,
-      "summary": "Unifies finance reasoning and agent-execution experts through model merging plus MOPD in compact finance-native agents."
+      "artifacts": [],
+      "summary": "Unifies finance reasoning and agent-execution experts through model merging plus MOPD in compact finance-native agents.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Finance reasoning and agent-execution experts are first parameter-merged and then consolidated through a task-routed on-policy distillation stage."
+      }
     },
     {
       "id": "arxiv:2608.13787",
       "title": "From Passive Delegates to Strategic Negotiators: Reinforcing Social Reasoning in Small Language Models with SocialRL",
       "date": "2026-08-13",
-      "category": "mopd_systems",
-      "scope": "system",
-      "domain": "Social and negotiation agents",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "system_report",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "llm_agents",
+        "llm_reasoning"
+      ],
       "paper": "https://arxiv.org/abs/2608.13787",
-      "code": null,
-      "project": null,
-      "summary": "Uses MOPD as one consolidation strategy for six domain-specialized social-reasoning policies in a unified 4B model."
+      "artifacts": [],
+      "summary": "Uses MOPD as one consolidation strategy for six domain-specialized social-reasoning policies in a unified 4B model.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Six social and negotiation policies provide domain-conditioned OPD targets for a unified 4B model."
+      }
     },
     {
       "id": "arxiv:2608.09119",
       "title": "Motif 3: Technical Report",
       "date": "2026-08-10",
-      "category": "mopd_systems",
-      "scope": "system",
-      "domain": "Frontier LLM",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "system_report",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "heterogeneous_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "llm_general",
+        "llm_agents"
+      ],
       "paper": "https://arxiv.org/abs/2608.09119",
-      "code": null,
-      "project": null,
-      "summary": "Consolidates six RL specialists and one supervised software-engineering teacher with MOPD in a 314B MoE model."
+      "artifacts": [],
+      "summary": "Consolidates six RL specialists and one supervised software-engineering teacher with MOPD in a 314B MoE model.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Six RL specialists and one supervised software-engineering teacher are hard-routed for dense token-level alignment on current-model rollouts."
+      }
     },
     {
       "id": "arxiv:2608.06756",
       "title": "Capek 0.5: An Execution-Centric Vision-Language Model for Embodied Intelligence",
       "date": "2026-08-07",
-      "category": "mopd_systems",
-      "scope": "system",
-      "domain": "Embodied vision-language agents",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "system_report",
+      "training_regime": "hybrid",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "progressive_sequential",
+      "mechanism_tags": [
+        "routing_selection",
+        "direct_matching"
+      ],
+      "signals": [
+        "action_distribution",
+        "logits_distribution"
+      ],
+      "domains": [
+        "multimodal",
+        "robotics_embodied",
+        "llm_agents"
+      ],
       "paper": "https://arxiv.org/abs/2608.06756",
-      "code": null,
-      "project": null,
-      "summary": "Combines four embodied capability specialists using parameter merging followed by routed policy-space MOPD."
+      "artifacts": [],
+      "summary": "Combines four embodied capability specialists using parameter merging followed by routed policy-space MOPD.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Four embodied specialists are parameter-merged before a routed policy-space MOPD stage on student trajectories."
+      }
     },
     {
       "id": "arxiv:2608.02101",
       "title": "Cross-Domain Hybrid OPD for Generalizable Search Agents",
       "date": "2026-08-03",
-      "category": "mopd_systems",
-      "scope": "system",
-      "domain": "Search agents",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "system_report",
+      "training_regime": "hybrid",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution",
+        "feedback_reward"
+      ],
+      "domains": [
+        "llm_agents",
+        "recommendation_search"
+      ],
       "paper": "https://arxiv.org/abs/2608.02101",
-      "code": null,
-      "project": null,
-      "summary": "Combines search-agent RL with cross-domain expert OPD to recover general capabilities without surrendering search specialization."
+      "artifacts": [],
+      "summary": "Combines search-agent RL with cross-domain expert OPD to recover general capabilities without surrendering search specialization.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "General-domain student prompts receive routed expert reverse-KL supervision while search prompts remain on a GRPO branch."
+      }
     },
     {
       "id": "arxiv:2607.24653",
       "title": "Kimi K3: Open Frontier Intelligence",
       "date": "2026-07-27",
-      "category": "mopd_systems",
-      "scope": "system",
-      "domain": "Frontier LLM",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "system_report",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "direct_matching",
+        "adaptive_weighting"
+      ],
+      "signals": [
+        "sampled_token_advantage"
+      ],
+      "domains": [
+        "llm_general",
+        "llm_reasoning",
+        "llm_agents"
+      ],
       "paper": "https://arxiv.org/abs/2607.24653",
-      "code": null,
-      "project": "https://huggingface.co/moonshotai/Kimi-K3",
-      "summary": "Uses nine domain-by-reasoning-effort expert policies and a clipped sampled-token OPD reward for final consolidation."
+      "artifacts": [
+        {
+          "type": "project",
+          "url": "https://huggingface.co/moonshotai/Kimi-K3"
+        }
+      ],
+      "summary": "Uses nine domain-by-reasoning-effort expert policies and a clipped sampled-token OPD reward for final consolidation.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Nine domain-by-reasoning-effort expert policies supply clipped sampled-token OPD rewards to the final student."
+      }
     },
     {
       "id": "arxiv:2607.20062",
       "title": "Solar Open 2 Technical Report",
       "date": "2026-07-22",
-      "category": "mopd_systems",
-      "scope": "system",
-      "domain": "Frontier LLM",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "system_report",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "llm_general",
+        "llm_agents"
+      ],
       "paper": "https://arxiv.org/abs/2607.20062",
-      "code": null,
-      "project": null,
-      "summary": "Trains twelve domain specialists and consolidates them with MOPD into a 250B-A15B long-context agentic model."
+      "artifacts": [],
+      "summary": "Trains twelve domain specialists and consolidates them with MOPD into a 250B-A15B long-context agentic model.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Twelve independently trained domain specialists are routed to provide dense token-level OPD targets for Solar Open 2."
+      }
     },
     {
       "id": "arxiv:2607.09375",
       "title": "Mach-Mind-4-Flash Technical Report",
       "date": "2026-07-10",
-      "category": "mopd_systems",
-      "scope": "system",
-      "domain": "Agentic LLM",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "system_report",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "dynamic_scheduling",
+      "mechanism_tags": [
+        "routing_selection",
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "llm_general",
+        "llm_reasoning",
+        "llm_agents"
+      ],
       "paper": "https://arxiv.org/abs/2607.09375",
-      "code": null,
-      "project": null,
-      "summary": "Fuses reasoning, general, and agent RL experts using dynamically scheduled routed reverse-KL MOPD."
+      "artifacts": [],
+      "summary": "Fuses reasoning, general, and agent RL experts using dynamically scheduled routed reverse-KL MOPD.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Reasoning, general, and agent teachers are routed under a dynamically adjusted three-track reverse-KL MOPD schedule."
+      }
     },
     {
       "id": "arxiv:2607.05471",
       "title": "KAT-Coder-V2.5 Technical Report",
       "date": "2026-07-06",
-      "category": "mopd_systems",
-      "scope": "system",
-      "domain": "Software-engineering agents",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "system_report",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "llm_agents"
+      ],
       "paper": "https://arxiv.org/abs/2607.05471",
-      "code": null,
-      "project": null,
-      "summary": "Unifies SWE, Agent-Claw, and WebCoding experts through MOPD in an executable-repository coding agent."
+      "artifacts": [],
+      "summary": "Unifies SWE, Agent-Claw, and WebCoding experts through MOPD in an executable-repository coding agent.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "SWE, Agent-Claw, and WebCoding teachers are selected by task for token-level OPD on executable student trajectories."
+      }
     },
     {
       "id": "arxiv:2606.19348",
       "title": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence",
       "date": "2026-04-26",
-      "category": "mopd_systems",
-      "scope": "system",
-      "domain": "Frontier LLM",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "system_report",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "adaptive_weighting",
+      "mechanism_tags": [
+        "routing_selection",
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "llm_general",
+        "llm_reasoning",
+        "llm_agents"
+      ],
       "paper": "https://arxiv.org/abs/2606.19348",
-      "code": null,
-      "project": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
-      "summary": "Scales full-vocabulary multi-teacher OPD across independently trained domain experts as a principal capability-consolidation stage."
+      "artifacts": [
+        {
+          "type": "project",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro"
+        }
+      ],
+      "summary": "Scales full-vocabulary multi-teacher OPD across independently trained domain experts as a principal capability-consolidation stage.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Context relevance selects or weights independently trained domain experts for full-vocabulary reverse KL on current-policy trajectories."
+      }
     },
     {
       "id": "arxiv:2606.15007",
       "title": "Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning",
       "date": "2026-06-12",
-      "category": "mopd_systems",
-      "scope": "system",
-      "domain": "Frontier LLM",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "system_report",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "llm_general",
+        "llm_reasoning",
+        "llm_agents"
+      ],
       "paper": "https://arxiv.org/abs/2606.15007",
-      "code": "https://github.com/NVIDIA-NeMo/Nemotron",
-      "project": null,
-      "summary": "Uses more than ten domain-specialized teachers and dense token-level MOPD during post-training of a 550B-A55B hybrid model."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/NVIDIA-NeMo/Nemotron"
+        }
+      ],
+      "summary": "Uses more than ten domain-specialized teachers and dense token-level MOPD during post-training of a 550B-A55B hybrid model.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "More than ten domain-specialized teachers provide dense token-level MOPD during post-training of Nemotron 3 Ultra."
+      }
     },
     {
       "id": "arxiv:2606.10651",
       "title": "Kwai Keye-VL-2.0 Technical Report",
       "date": "2026-06-09",
-      "category": "mopd_systems",
-      "scope": "system",
-      "domain": "Multimodal agents",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "system_report",
+      "training_regime": "hybrid",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "heterogeneous_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "heterogeneous_alignment",
+      "mechanism_tags": [
+        "routing_selection",
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution",
+        "features"
+      ],
+      "domains": [
+        "multimodal",
+        "llm_agents"
+      ],
       "paper": "https://arxiv.org/abs/2606.10651",
-      "code": null,
-      "project": null,
-      "summary": "Pairs cross-modal MOPD with context and video RL to integrate code, tool, search, and long-video capabilities."
+      "artifacts": [],
+      "summary": "Pairs cross-modal MOPD with context and video RL to integrate code, tool, search, and long-video capabilities.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Cross-modal code, tool, search, and long-video experts directly supervise student states, alongside separate context and video RL objectives."
+      }
     },
     {
       "id": "arxiv:2606.06260",
       "title": "OneReason Technical Report",
       "date": "2026-06-04",
-      "category": "mopd_systems",
-      "scope": "system",
-      "domain": "Generative recommendation",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "system_report",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "recommendation_search",
+        "llm_reasoning"
+      ],
       "paper": "https://arxiv.org/abs/2606.06260",
-      "code": null,
-      "project": null,
-      "summary": "Uses a specialize-then-unify RL recipe with MOPD to integrate four recommendation domains into one reasoning model."
+      "artifacts": [],
+      "summary": "Uses a specialize-then-unify RL recipe with MOPD to integrate four recommendation domains into one reasoning model.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Four recommendation-domain RL specialists are selected by domain to train one unified reasoning model with OPD."
+      }
     },
     {
       "id": "arxiv:2603.27703",
       "title": "KAT-Coder-V2 Technical Report",
       "date": "2026-03-29",
-      "category": "mopd_systems",
-      "scope": "system",
-      "domain": "Software-engineering agents",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "system_report",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "llm_agents"
+      ],
       "paper": "https://arxiv.org/abs/2603.27703",
-      "code": null,
-      "project": null,
-      "summary": "A specialize-then-unify coding-agent pipeline that consolidates five domain experts with OPD on student trajectories."
+      "artifacts": [],
+      "summary": "A specialize-then-unify coding-agent pipeline that consolidates five domain experts with OPD on student trajectories.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Five coding and agent experts are task-routed for OPD on student-generated repository trajectories."
+      }
     },
     {
       "id": "arxiv:2603.19220",
       "title": "Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation",
       "date": "2026-03-19",
-      "category": "mopd_systems",
-      "scope": "system",
-      "domain": "Reasoning and agentic LLM",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "system_report",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "checkpoint_pool",
+        "specialist_pool",
+        "sequential_chain"
+      ],
+      "primary_mechanism": "progressive_sequential",
+      "mechanism_tags": [
+        "routing_selection",
+        "direct_matching"
+      ],
+      "signals": [
+        "sampled_token_advantage"
+      ],
+      "domains": [
+        "llm_reasoning",
+        "llm_agents"
+      ],
       "paper": "https://arxiv.org/abs/2603.19220",
-      "code": "https://github.com/NVIDIA-NeMo/RL",
-      "project": "https://research.nvidia.com/labs/nemotron/nemotron-cascade-2/",
-      "summary": "Interleaves Cascade RL with multi-domain OPD from the strongest intermediate checkpoint for each domain."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/NVIDIA-NeMo/RL"
+        },
+        {
+          "type": "project",
+          "url": "https://research.nvidia.com/labs/nemotron/nemotron-cascade-2/"
+        }
+      ],
+      "summary": "Interleaves Cascade RL with multi-domain OPD from the strongest intermediate checkpoint for each domain.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Cascade RL is interleaved with OPD from the strongest retained checkpoint per domain, using sampled teacher-student log-probability advantage."
+      }
     },
     {
       "id": "arxiv:2602.15763",
       "title": "GLM-5: from Vibe Coding to Agentic Engineering",
       "date": "2026-02-17",
-      "category": "mopd_systems",
-      "scope": "system",
-      "domain": "Agentic LLM",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "system_report",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "checkpoint_pool",
+        "sequential_chain"
+      ],
+      "primary_mechanism": "progressive_sequential",
+      "mechanism_tags": [
+        "routing_selection",
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "llm_general",
+        "llm_agents"
+      ],
       "paper": "https://arxiv.org/abs/2602.15763",
-      "code": null,
-      "project": null,
-      "summary": "Uses checkpoints from preceding SFT and RL stages as teachers in final on-policy cross-stage distillation to recover capabilities."
+      "artifacts": [],
+      "summary": "Uses checkpoints from preceding SFT and RL stages as teachers in final on-policy cross-stage distillation to recover capabilities.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Earlier SFT and domain-RL checkpoints become task-routed teachers for final on-policy cross-stage KL distillation."
+      }
     },
     {
       "id": "arxiv:2602.06570",
       "title": "Baichuan-M3: Modeling Clinical Inquiry for Reliable Medical Decision-Making",
       "date": "2026-02-06",
-      "category": "mopd_systems",
-      "scope": "system",
-      "domain": "Medical LLM",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "system_report",
+      "training_regime": "hybrid",
+      "state_source": "mixed",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher",
+        "sequential_chain"
+      ],
+      "primary_mechanism": "progressive_sequential",
+      "mechanism_tags": [
+        "routing_selection",
+        "adaptive_weighting",
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution",
+        "feedback_reward"
+      ],
+      "domains": [
+        "scientific_healthcare"
+      ],
       "paper": "https://arxiv.org/abs/2602.06570",
-      "code": "https://github.com/baichuan-inc/Baichuan-M3-235B",
-      "project": "https://huggingface.co/collections/baichuan-inc/baichuan-m3",
-      "summary": "Combines task RL, offline forward-KL policy distillation, and final reverse-KL MOPD under task rewards and multiple teacher priors."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/baichuan-inc/Baichuan-M3-235B"
+        },
+        {
+          "type": "project",
+          "url": "https://huggingface.co/collections/baichuan-inc/baichuan-m3"
+        }
+      ],
+      "summary": "Combines task RL, offline forward-KL policy distillation, and final reverse-KL MOPD under task rewards and multiple teacher priors.",
+      "evidence": {
+        "student_generated_states": "partial",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "The medical recipe combines fixed-data clipped forward KL with a later mixed-domain on-policy reverse-KL stage under teacher priors and task rewards."
+      }
     },
     {
       "id": "arxiv:2601.08310",
       "title": "ORBIT: On-policy Exploration-Exploitation for Controllable Multi-Budget Reasoning",
       "date": "2026-01-13",
-      "category": "mopd_systems",
-      "scope": "system",
-      "domain": "Controllable reasoning",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "system_report",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "adaptive_weighting",
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "llm_reasoning"
+      ],
       "paper": "https://arxiv.org/abs/2601.08310",
-      "code": null,
-      "project": null,
-      "summary": "Fuses reasoning policies specialized for different compute budgets through on-policy distillation into a controllable unified model."
+      "artifacts": [],
+      "summary": "Fuses reasoning policies specialized for different compute budgets through on-policy distillation into a controllable unified model.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Policies specialized for different reasoning budgets are selected by requested budget and distilled on-policy into one controllable model."
+      }
     },
     {
       "id": "arxiv:2601.02780",
       "title": "MiMo-V2-Flash Technical Report",
       "date": "2026-01-06",
-      "category": "mopd_systems",
-      "scope": "system",
-      "domain": "Frontier LLM",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "system_report",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "direct_matching",
+        "adaptive_weighting"
+      ],
+      "signals": [
+        "sampled_token_advantage",
+        "feedback_reward"
+      ],
+      "domains": [
+        "llm_general",
+        "llm_reasoning"
+      ],
       "paper": "https://arxiv.org/abs/2601.02780",
-      "code": "https://github.com/XiaomiMiMo/MiMo-V2-Flash",
-      "project": "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash",
-      "summary": "An early frontier-model report to explicitly formulate MOPD: domain RL teachers provide dense token-level rewards on student rollouts."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/XiaomiMiMo/MiMo-V2-Flash"
+        },
+        {
+          "type": "project",
+          "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash"
+        }
+      ],
+      "summary": "An early frontier-model report to explicitly formulate MOPD: domain RL teachers provide dense token-level rewards on student rollouts.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "The student samples responses and the matching domain RL teacher supplies token-level log-probability rewards alongside outcome-model reward."
+      }
     },
     {
       "id": "arxiv:2607.19450",
       "title": "REGEN: Replay-recycling for Expert-to-Generalist distillation with Offline Reinforcement Learning",
       "date": "2026-07-21",
-      "category": "adjacent",
-      "scope": "adjacent",
-      "domain": "LLM capability integration",
+      "collection": "adjacent_alternative",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "replay_buffer",
+      "teacher_topology": [
+        "specialist_pool",
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "direct_matching",
+      "mechanism_tags": [
+        "routing_selection"
+      ],
+      "signals": [
+        "teacher_generated_data",
+        "action_distribution",
+        "feedback_reward"
+      ],
+      "domains": [
+        "llm_general"
+      ],
       "paper": "https://arxiv.org/abs/2607.19450",
-      "code": "https://github.com/yunjie-sysu/REGEN",
-      "project": null,
-      "summary": "An explicit offline alternative to MOPD that recycles specialist RL replay memory and matches MOPD at lower coupled rollout-training cost."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/yunjie-sysu/REGEN"
+        }
+      ],
+      "summary": "An explicit offline alternative to MOPD that recycles specialist RL replay memory and matches MOPD at lower coupled rollout-training cost.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "REGEN recycles specialist replay memories through offline RL, making it an explicit lower-coupling alternative rather than on-policy MOPD."
+      }
     },
     {
       "id": "arxiv:2606.30626",
       "title": "DOPD: Dual On-policy Distillation",
       "date": "2026-06-29",
-      "category": "adjacent",
-      "scope": "adjacent",
-      "domain": "LLM and multimodal reasoning",
+      "collection": "adjacent_alternative",
+      "record_type": "method",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "privileged_views",
+        "single_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "direct_matching",
+        "adaptive_weighting"
+      ],
+      "signals": [
+        "logits_distribution",
+        "sampled_token_advantage"
+      ],
+      "domains": [
+        "llm_reasoning",
+        "multimodal"
+      ],
       "paper": "https://arxiv.org/abs/2606.30626",
-      "code": null,
-      "project": null,
-      "summary": "Routes token supervision between privileged teacher and privileged student policies; dual-source rather than a standard pool of independent teachers."
+      "artifacts": [],
+      "summary": "Routes token supervision between privileged teacher and privileged student policies; dual-source rather than a standard pool of independent teachers.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "no",
+        "direct_distillation_objective": "yes",
+        "classification_note": "DOPD routes token supervision between one privileged external teacher and a privileged student view, not a pool of independent teachers."
+      }
     },
     {
       "id": "arxiv:2606.14368",
       "title": "Be My Tutor: On-Policy Co-Distillation for Mutual LLM Improvement via Peer Feedback",
       "date": "2026-06-12",
-      "category": "adjacent",
-      "scope": "adjacent",
-      "domain": "Multi-domain LLMs",
+      "collection": "adjacent_alternative",
+      "record_type": "method",
+      "training_regime": "online_peer",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "peer_mutual"
+      ],
+      "primary_mechanism": "collective_deliberation",
+      "mechanism_tags": [
+        "direct_matching",
+        "adaptive_weighting"
+      ],
+      "signals": [
+        "responses_rationales",
+        "feedback_reward"
+      ],
+      "domains": [
+        "llm_general"
+      ],
       "paper": "https://arxiv.org/abs/2606.14368",
-      "code": null,
-      "project": null,
-      "summary": "Two domain-specialized peers tutor each other through feedback-conditioned self-distillation loops to achieve mutual Pareto improvement."
+      "artifacts": [],
+      "summary": "Two domain-specialized peers tutor each other through feedback-conditioned self-distillation loops to achieve mutual Pareto improvement.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "no",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Two trainable domain peers tutor each other bidirectionally; each learner lacks a fixed multi-teacher-to-one-student supervisor pool."
+      }
     },
     {
       "id": "arxiv:2605.12652",
       "title": "Multi-Rollout On-Policy Distillation via Peer Successes and Failures",
       "date": "2026-05-12",
-      "category": "adjacent",
-      "scope": "adjacent",
-      "domain": "LLM reasoning",
+      "collection": "adjacent_alternative",
+      "record_type": "method",
+      "training_regime": "self_distillation",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "privileged_views"
+      ],
+      "primary_mechanism": "conflict_resolution",
+      "mechanism_tags": [
+        "adaptive_weighting",
+        "direct_matching"
+      ],
+      "signals": [
+        "sampled_token_advantage",
+        "responses_rationales",
+        "feedback_reward"
+      ],
+      "domains": [
+        "llm_reasoning"
+      ],
       "paper": "https://arxiv.org/abs/2605.12652",
-      "code": null,
-      "project": null,
-      "summary": "Constructs peer-conditioned teacher signals from successful and failed sibling rollouts; multiple rollouts, not multiple independent teachers."
+      "artifacts": [],
+      "summary": "Constructs peer-conditioned teacher signals from successful and failed sibling rollouts; multiple rollouts, not multiple independent teachers.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "no",
+        "direct_distillation_objective": "yes",
+        "classification_note": "The supervision contrasts successful and failed sibling rollouts from one policy; multi denotes rollouts rather than independent teachers."
+      }
     },
     {
       "id": "arxiv:2605.08873",
       "title": "CoDistill-GRPO: A Co-Distillation Recipe for Efficient Group Relative Policy Optimization",
       "date": "2026-05-09",
-      "category": "adjacent",
-      "scope": "adjacent",
-      "domain": "LLM reasoning",
+      "collection": "adjacent_alternative",
+      "record_type": "method",
+      "training_regime": "online_peer",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "peer_mutual"
+      ],
+      "primary_mechanism": "direct_matching",
+      "mechanism_tags": [
+        "adaptive_weighting"
+      ],
+      "signals": [
+        "logits_distribution",
+        "feedback_reward"
+      ],
+      "domains": [
+        "llm_reasoning",
+        "llm_alignment"
+      ],
       "paper": "https://arxiv.org/abs/2605.08873",
-      "code": null,
-      "project": null,
-      "summary": "Bidirectionally co-distills two trainable policies inside GRPO rather than consolidating a frozen multi-teacher pool."
+      "artifacts": [],
+      "summary": "Bidirectionally co-distills two trainable policies inside GRPO rather than consolidating a frozen multi-teacher pool.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "no",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Two trainable policies co-distill bidirectionally inside GRPO instead of consolidating several independent teachers into one student."
+      }
     },
     {
       "id": "arxiv:2605.06597",
       "title": "UniSD: Towards a Unified Self-Distillation Framework for Large Language Models",
       "date": "2026-05-07",
-      "category": "adjacent",
-      "scope": "adjacent",
-      "domain": "LLM self-distillation",
+      "collection": "adjacent_alternative",
+      "record_type": "method",
+      "training_regime": "self_distillation",
+      "state_source": "near_current_student",
+      "teacher_topology": [
+        "self_ema",
+        "privileged_views"
+      ],
+      "primary_mechanism": "conflict_resolution",
+      "mechanism_tags": [
+        "adaptive_weighting",
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution",
+        "features"
+      ],
+      "domains": [
+        "llm_general"
+      ],
       "paper": "https://arxiv.org/abs/2605.06597",
-      "code": "https://github.com/Ahren09/UniSD",
-      "project": null,
-      "summary": "Combines EMA teachers, multi-teacher agreement, contrastive alignment, and clipping in a self-distillation framework."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/Ahren09/UniSD"
+        }
+      ],
+      "summary": "Combines EMA teachers, multi-teacher agreement, contrastive alignment, and clipping in a self-distillation framework.",
+      "evidence": {
+        "student_generated_states": "partial",
+        "multiple_independent_supervisors": "no",
+        "direct_distillation_objective": "yes",
+        "classification_note": "EMA/self teachers and agreement views come from one student lineage, so the framework is self-distillation rather than independent multi-teacher OPD."
+      }
     },
     {
       "id": "doi:10.1145/3097983.3098135",
       "title": "Learning from Multiple Teacher Networks",
       "date": "2017-08-13",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Computer vision",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "direct_matching",
+      "mechanism_tags": [],
+      "signals": [
+        "logits_distribution",
+        "relations"
+      ],
+      "domains": [
+        "vision"
+      ],
       "paper": "https://dl.acm.org/doi/10.1145/3097983.3098135",
-      "code": null,
-      "project": null,
-      "summary": "Seminal explicit multi-teacher KD method that averages dark knowledge and transfers intermediate inter-example relations."
+      "artifacts": [],
+      "summary": "Seminal explicit multi-teacher KD method that averages dark knowledge and transfers intermediate inter-example relations.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Multiple teacher networks supervise a student on fixed examples through averaged soft targets and inter-example relations."
+      }
     },
     {
       "id": "arxiv:1910.08381",
       "title": "Model Compression with Two-stage Multi-teacher Knowledge Distillation for Web Question Answering System",
       "date": "2019-10-18",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "NLP and web QA",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "specialist_pool"
+      ],
+      "primary_mechanism": "progressive_sequential",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "nlp",
+        "recommendation_search"
+      ],
       "paper": "https://arxiv.org/abs/1910.08381",
-      "code": null,
-      "project": null,
-      "summary": "Pretrains a compact model on a general QA distillation task and then fine-tunes it from multiple downstream task teachers."
+      "artifacts": [],
+      "summary": "Pretrains a compact model on a general QA distillation task and then fine-tunes it from multiple downstream task teachers.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "A fixed-data two-stage recipe transfers general QA knowledge and then multiple downstream teacher targets into one student."
+      }
     },
     {
       "id": "neurips:2020-ae-kd",
       "title": "Agree to Disagree: Adaptive Ensemble Knowledge Distillation in Gradient Space",
       "date": "2020-12-06",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "General deep learning",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "conflict_resolution",
+      "mechanism_tags": [
+        "adaptive_weighting"
+      ],
+      "signals": [
+        "gradients"
+      ],
+      "domains": [
+        "general_machine_learning"
+      ],
       "paper": "https://proceedings.neurips.cc/paper/2020/hash/91c77393975889bd08f301c9e13a44b7-Abstract.html",
-      "code": "https://github.com/AnTuo1998/AE-KD",
-      "project": null,
-      "summary": "Treats teachers as multiple gradient objectives and finds a Pareto-compatible student update instead of naively averaging conflicting teachers."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/AnTuo1998/AE-KD"
+        }
+      ],
+      "summary": "Treats teachers as multiple gradient objectives and finds a Pareto-compatible student update instead of naively averaging conflicting teachers.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Independent teacher losses directly determine a Pareto-compatible student update on fixed training data."
+      }
     },
     {
       "id": "doi:10.1016/j.neucom.2020.07.048",
       "title": "Adaptive Multi-Teacher Multi-Level Knowledge Distillation",
       "date": "2020-11-20",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Computer vision",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "adaptive_weighting",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution",
+        "features"
+      ],
+      "domains": [
+        "vision"
+      ],
       "paper": "https://doi.org/10.1016/j.neucom.2020.07.048",
-      "code": null,
-      "project": null,
-      "summary": "Learns instance-specific teacher weights for soft targets and combines multi-level intermediate hints from different teachers."
+      "artifacts": [],
+      "summary": "Learns instance-specific teacher weights for soft targets and combines multi-level intermediate hints from different teachers.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Multiple teachers provide instance-weighted output targets and intermediate hints over a static corpus."
+      }
     },
     {
       "id": "arxiv:2106.01023",
       "title": "One Teacher is Enough? Pre-trained Language Model Distillation from Multiple Teachers",
       "date": "2021-06-02",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Pretrained language models",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "heterogeneous_pool"
+      ],
+      "primary_mechanism": "heterogeneous_alignment",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution",
+        "features"
+      ],
+      "domains": [
+        "nlp"
+      ],
       "paper": "https://arxiv.org/abs/2106.01023",
-      "code": "https://github.com/wuch15/MT-BERT",
-      "project": null,
-      "summary": "MT-BERT co-finetunes multiple PLM teachers and distills both their aligned hidden states and soft labels into one student."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/wuch15/MT-BERT"
+        }
+      ],
+      "summary": "MT-BERT co-finetunes multiple PLM teachers and distills both their aligned hidden states and soft labels into one student.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "BERT, RoBERTa, and UniLM teachers are aligned through co-finetuning before their hidden states and labels supervise one student."
+      }
     },
     {
       "id": "acl:2021.ranlp-1.68",
       "title": "Multiple Teacher Distillation for Robust and Greener Models",
       "date": "2021-09-01",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "NLP",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "checkpoint_pool"
+      ],
+      "primary_mechanism": "direct_matching",
+      "mechanism_tags": [],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "nlp"
+      ],
       "paper": "https://aclanthology.org/2021.ranlp-1.68/",
-      "code": null,
-      "project": null,
-      "summary": "Studies multiple-teacher compression as a path to more robust NLP models with lower inference cost."
+      "artifacts": [],
+      "summary": "Studies multiple-teacher compression as a path to more robust NLP models with lower inference cost.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Multiple independently trained teacher runs supervise compact NLP students on fixed task data."
+      }
     },
     {
       "id": "acl:2022.emnlp-industry.60",
       "title": "PILE: Pairwise Iterative Logits Ensemble for Multi-Teacher Labeled Distillation",
       "date": "2022-12-01",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Search ranking",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "ensemble_to_one"
+      ],
+      "primary_mechanism": "progressive_sequential",
+      "mechanism_tags": [
+        "conflict_resolution"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "recommendation_search"
+      ],
       "paper": "https://aclanthology.org/2022.emnlp-industry.60/",
-      "code": null,
-      "project": null,
-      "summary": "Iteratively ensembles teacher logits under label supervision for compressed ranking models deployed in commercial search."
+      "artifacts": [],
+      "summary": "Iteratively ensembles teacher logits under label supervision for compressed ranking models deployed in commercial search.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Several teacher logits are combined by a label-guided pairwise iterative ensemble before supervising the ranking student."
+      }
     },
     {
       "id": "cvf:wacv2023-cmt-kd",
       "title": "Collaborative Multi-Teacher Knowledge Distillation for Learning Low Bit-Width Deep Neural Networks",
       "date": "2023-01-01",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Quantized computer vision",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "adaptive_weighting",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "features"
+      ],
+      "domains": [
+        "vision"
+      ],
       "paper": "https://openaccess.thecvf.com/content/WACV2023/html/Pham_Collaborative_Multi-Teacher_Knowledge_Distillation_for_Learning_Low_Bit-Width_Deep_Neural_WACV_2023_paper.html",
-      "code": null,
-      "project": null,
-      "summary": "Jointly trains quantized teachers and student while forming importance-aware shared intermediate knowledge."
+      "artifacts": [],
+      "summary": "Jointly trains quantized teachers and student while forming importance-aware shared intermediate knowledge.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "partial",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Multiple quantized teacher branches directly supervise the student, but the teachers and student are collaboratively optimized rather than a fixed independent pool."
+      }
     },
     {
       "id": "acl:2023.emnlp-industry.15",
       "title": "Multi-teacher Distillation for Multilingual Spelling Correction",
       "date": "2023-12-01",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Multilingual NLP",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "specialist_pool"
+      ],
+      "primary_mechanism": "heterogeneous_alignment",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "nlp"
+      ],
       "paper": "https://aclanthology.org/2023.emnlp-industry.15/",
-      "code": null,
-      "project": null,
-      "summary": "Distills one monolingual teacher per locale into a latency-constrained multilingual spelling-correction student."
+      "artifacts": [],
+      "summary": "Distills one monolingual teacher per locale into a latency-constrained multilingual spelling-correction student.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Locale-specialized monolingual teachers provide fixed-data targets for one multilingual spelling-correction student."
+      }
     },
     {
       "id": "arxiv:2401.10491",
       "title": "Knowledge Fusion of Large Language Models",
       "date": "2024-01-19",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Large language models",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "heterogeneous_pool"
+      ],
+      "primary_mechanism": "heterogeneous_alignment",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "llm_general"
+      ],
       "paper": "https://arxiv.org/abs/2401.10491",
-      "code": "https://github.com/fanqiwan/FuseLLM",
-      "project": null,
-      "summary": "FuseLLM aligns and fuses the token distributions of heterogeneous source LLMs into one target model through continual training."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/fanqiwan/FuseLLM"
+        }
+      ],
+      "summary": "FuseLLM aligns and fuses the token distributions of heterogeneous source LLMs into one target model through continual training.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Heterogeneous source LLM distributions are aligned and fused into a target model through offline continual training."
+      }
     },
     {
       "id": "acl:2024.emnlp-industry.120",
       "title": "GOVERN: Gradient Orientation Vote Ensemble for Multi-Teacher Reinforced Distillation",
       "date": "2024-11-01",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Question answering and ranking",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "conflict_resolution",
+      "mechanism_tags": [
+        "adaptive_weighting"
+      ],
+      "signals": [
+        "gradients"
+      ],
+      "domains": [
+        "nlp",
+        "recommendation_search"
+      ],
       "paper": "https://aclanthology.org/2024.emnlp-industry.120/",
-      "code": null,
-      "project": null,
-      "summary": "Uses gradient-orientation voting to combine multiple teachers during unsupervised distillation without label guidance."
+      "artifacts": [],
+      "summary": "Uses gradient-orientation voting to combine multiple teachers during unsupervised distillation without label guidance.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Multiple teacher objectives vote through gradient orientation and directly determine the label-free student update."
+      }
     },
     {
       "id": "arxiv:2408.07990",
       "title": "FuseChat: Knowledge Fusion of Chat Models",
       "date": "2024-08-15",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Chat language models",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "heterogeneous_pool"
+      ],
+      "primary_mechanism": "heterogeneous_alignment",
+      "mechanism_tags": [
+        "direct_matching",
+        "progressive_sequential"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "llm_general"
+      ],
       "paper": "https://arxiv.org/abs/2408.07990",
-      "code": "https://github.com/fanqiwan/FuseAI",
-      "project": null,
-      "summary": "Transfers heterogeneous chat models into common target models through token alignment, then merges those targets in parameter space."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/fanqiwan/FuseAI"
+        }
+      ],
+      "summary": "Transfers heterogeneous chat models into common target models through token alignment, then merges those targets in parameter space.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Heterogeneous chat-model token spaces are aligned for pairwise distillation before the resulting target models are merged."
+      }
     },
     {
       "id": "cvf:cvpr2024-mtd",
       "title": "Class Incremental Learning with Multi-Teacher Distillation",
       "date": "2024-06-01",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Continual computer vision",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "privileged_views"
+      ],
+      "primary_mechanism": "direct_matching",
+      "mechanism_tags": [
+        "conflict_resolution"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "vision"
+      ],
       "paper": "https://openaccess.thecvf.com/content/CVPR2024/html/Wen_Class_Incremental_Learning_with_Multi-Teacher_Distillation_CVPR_2024_paper.html",
-      "code": "https://github.com/HaitaoWen/CLearning",
-      "project": null,
-      "summary": "Constructs diverse lightweight teacher branches to improve compatibility between retained and newly learned classes."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/HaitaoWen/CLearning"
+        }
+      ],
+      "summary": "Constructs diverse lightweight teacher branches to improve compatibility between retained and newly learned classes.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "partial",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Several lightweight teacher branches directly supervise class-incremental learning, but they are synthesized through related-weight and feature perturbations rather than independently trained sources."
+      }
     },
     {
       "id": "acl:2024.findings-naacl.96",
       "title": "MCAD: Multi-teacher Cross-modal Alignment Distillation for Efficient Image-Text Retrieval",
       "date": "2024-06-01",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Vision-language retrieval",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "heterogeneous_pool"
+      ],
+      "primary_mechanism": "heterogeneous_alignment",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution",
+        "features"
+      ],
+      "domains": [
+        "multimodal",
+        "recommendation_search"
+      ],
       "paper": "https://aclanthology.org/2024.findings-naacl.96/",
-      "code": null,
-      "project": null,
-      "summary": "Combines single-stream and dual-stream teacher advantages to train an efficient dual-stream image-text retrieval student."
+      "artifacts": [],
+      "summary": "Combines single-stream and dual-stream teacher advantages to train an efficient dual-stream image-text retrieval student.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Single-stream and dual-stream retrieval teachers provide complementary distribution and feature targets on fixed image-text data."
+      }
     },
     {
       "id": "arxiv:2602.01064",
       "title": "Exploring Knowledge Purification in Multi-Teacher Knowledge Distillation for LLMs",
       "date": "2026-02-01",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Large language models",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "teacher_generated",
+      "teacher_topology": [
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "conflict_resolution",
+      "mechanism_tags": [
+        "routing_selection"
+      ],
+      "signals": [
+        "responses_rationales",
+        "teacher_generated_data"
+      ],
+      "domains": [
+        "llm_reasoning"
+      ],
       "paper": "https://arxiv.org/abs/2602.01064",
-      "code": "https://github.com/M1nasGera1s/KnowledgePurification",
-      "project": null,
-      "summary": "Purifies conflicting rationales from multiple teacher LLMs into a single training rationale and compares several routing strategies."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/M1nasGera1s/KnowledgePurification"
+        }
+      ],
+      "summary": "Purifies conflicting rationales from multiple teacher LLMs into a single training rationale and compares several routing strategies.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Multiple teacher rationales are consolidated or selected into static purified supervision before student training."
+      }
     },
     {
       "id": "acl:2026.acl-long.666",
       "title": "Find Your Optimal Teacher: Personalized Data Synthesis via Router-Guided Multi-Teacher Distillation",
       "date": "2026-07-01",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Large language models",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "teacher_generated",
+      "teacher_topology": [
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [],
+      "signals": [
+        "responses_rationales",
+        "teacher_generated_data"
+      ],
+      "domains": [
+        "llm_general"
+      ],
       "paper": "https://aclanthology.org/2026.acl-long.666/",
-      "code": "https://anonymous.4open.science/r/PerSyn-8D85",
-      "project": null,
-      "summary": "Routes each prompt to the teacher that jointly maximizes response quality and student learnability for personalized synthetic data."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://anonymous.4open.science/r/PerSyn-8D85"
+        }
+      ],
+      "summary": "Routes each prompt to the teacher that jointly maximizes response quality and student learnability for personalized synthetic data.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "A router chooses one of several teachers per prompt, and the selected teacher response becomes fixed synthetic student supervision."
+      }
     },
     {
       "id": "cvf:wacv2026-histomilkd",
       "title": "HistoMILKD: A Multiple Instance Learning based Multi-Teacher Knowledge Distillation Framework for Whole Slide Image Classification",
       "date": "2026-03-01",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Digital pathology",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "heterogeneous_pool"
+      ],
+      "primary_mechanism": "heterogeneous_alignment",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "features"
+      ],
+      "domains": [
+        "vision",
+        "scientific_healthcare"
+      ],
       "paper": "https://openaccess.thecvf.com/content/WACV2026/html/Mallya_HistoMILKD_A_Multiple_Instance_Learning_based_Multi-Teacher_Knowledge_Distillation_Framework_WACV_2026_paper.html",
-      "code": "https://github.com/AIMLab-UBC/HistoMILKD",
-      "project": null,
-      "summary": "Distills complementary pathology foundation models into a single multiple-instance-learning adapter for whole-slide classification."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/AIMLab-UBC/HistoMILKD"
+        }
+      ],
+      "summary": "Distills complementary pathology foundation models into a single multiple-instance-learning adapter for whole-slide classification.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Complementary pathology foundation models provide representation targets to one whole-slide multiple-instance student adapter."
+      }
     },
     {
       "id": "doi:10.1145/1150402.1150464",
       "title": "Model Compression",
       "date": "2006-08-20",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Ensemble compression",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "ensemble_to_one"
+      ],
+      "primary_mechanism": "direct_matching",
+      "mechanism_tags": [],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "general_machine_learning"
+      ],
       "paper": "https://doi.org/10.1145/1150402.1150464",
-      "code": null,
-      "project": null,
-      "summary": "Compresses a cumbersome ensemble into a compact neural network using ensemble soft predictions and synthetic unlabeled examples."
+      "artifacts": [],
+      "summary": "Compresses a cumbersome ensemble into a compact neural network using ensemble soft predictions and synthetic unlabeled examples.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "A cumbersome ensemble produces soft predictions on fixed or synthetic unlabeled examples for one compact model."
+      }
     },
     {
       "id": "neurips:2014-depth",
       "title": "Do Deep Nets Really Need to be Deep?",
       "date": "2014-12-08",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Ensemble compression",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "ensemble_to_one"
+      ],
+      "primary_mechanism": "direct_matching",
+      "mechanism_tags": [],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "vision"
+      ],
       "paper": "https://proceedings.neurips.cc/paper_files/paper/2014/hash/b0c355a9dedccb50e5537e8f2e3f0810-Abstract.html",
-      "code": null,
-      "project": null,
-      "summary": "Shows that shallow networks can mimic deep models and multi-CNN ensembles, providing an empirical precursor to modern knowledge distillation."
+      "artifacts": [],
+      "summary": "Shows that shallow networks can mimic deep models and multi-CNN ensembles, providing an empirical precursor to modern knowledge distillation.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "A shallow model mimics predictions from deep models and multi-CNN ensembles on a fixed corpus."
+      }
     },
     {
       "id": "isca:interspeech2016-chebotar",
       "title": "Distilling Knowledge from Ensembles of Neural Networks for Speech Recognition",
       "date": "2016-09-08",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Speech recognition",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "ensemble_to_one",
+        "heterogeneous_pool"
+      ],
+      "primary_mechanism": "direct_matching",
+      "mechanism_tags": [
+        "heterogeneous_alignment"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "speech"
+      ],
       "paper": "https://www.isca-archive.org/interspeech_2016/chebotar16_interspeech.html",
-      "code": null,
-      "project": null,
-      "summary": "Distills a late-fusion ensemble of recurrent acoustic models with different architectures and objectives into one deployable recognizer."
+      "artifacts": [],
+      "summary": "Distills a late-fusion ensemble of recurrent acoustic models with different architectures and objectives into one deployable recognizer.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "A late-fusion ensemble of recurrent acoustic teachers with different architectures and objectives defines the student target."
+      }
     },
     {
       "id": "arxiv:1702.01802",
       "title": "Ensemble Distillation for Neural Machine Translation",
       "date": "2017-02-06",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Neural machine translation",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "ensemble_to_one"
+      ],
+      "primary_mechanism": "direct_matching",
+      "mechanism_tags": [
+        "routing_selection"
+      ],
+      "signals": [
+        "logits_distribution",
+        "teacher_generated_data"
+      ],
+      "domains": [
+        "nlp"
+      ],
       "paper": "https://arxiv.org/abs/1702.01802",
-      "code": null,
-      "project": null,
-      "summary": "Transfers an NMT ensemble or oracle-BLEU teacher into one model and uses teacher knowledge to filter the training data."
+      "artifacts": [],
+      "summary": "Transfers an NMT ensemble or oracle-BLEU teacher into one model and uses teacher knowledge to filter the training data.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "An NMT ensemble or oracle-selected teacher supplies offline distribution and sequence supervision to a single translation model."
+      }
     },
     {
       "id": "isca:interspeech2017-fukuda",
       "title": "Efficient Knowledge Distillation from an Ensemble of Teachers",
       "date": "2017-08-20",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Speech recognition",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "speech"
+      ],
       "paper": "https://www.isca-archive.org/interspeech_2017/fukuda17_interspeech.html",
-      "code": null,
-      "project": null,
-      "summary": "Uses minibatch-level teacher switching and multi-stream teacher-distribution augmentation for efficient acoustic-model distillation."
+      "artifacts": [],
+      "summary": "Uses minibatch-level teacher switching and multi-stream teacher-distribution augmentation for efficient acoustic-model distillation.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Several acoustic teachers supervise fixed-data minibatches through teacher switching and distribution augmentation."
+      }
     },
     {
       "id": "aaai:2019-meal",
       "title": "MEAL: Multi-Model Ensemble via Adversarial Learning",
       "date": "2019-07-17",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Computer vision",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "heterogeneous_pool"
+      ],
+      "primary_mechanism": "heterogeneous_alignment",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "features"
+      ],
+      "domains": [
+        "vision"
+      ],
       "paper": "https://ojs.aaai.org/index.php/AAAI/article/view/4417",
-      "code": "https://github.com/AaronHeee/MEAL",
-      "project": null,
-      "summary": "Uses block-wise adversarial discriminators to transfer representations from teachers with diverse architectures into one student."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/AaronHeee/MEAL"
+        }
+      ],
+      "summary": "Uses block-wise adversarial discriminators to transfer representations from teachers with diverse architectures into one student.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Block-wise adversarial feature alignment transfers representations from diverse teacher architectures into one student."
+      }
     },
     {
       "id": "arxiv:1909.10754",
       "title": "FEED: Feature-level Ensemble for Knowledge Distillation",
       "date": "2019-09-24",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Computer vision",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "heterogeneous_pool"
+      ],
+      "primary_mechanism": "heterogeneous_alignment",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "features"
+      ],
+      "domains": [
+        "vision"
+      ],
       "paper": "https://arxiv.org/abs/1909.10754",
-      "code": null,
-      "project": null,
-      "summary": "Transfers multi-teacher feature maps through parallel or sequential nonlinear transformations without adding inference-time parameters."
+      "artifacts": [],
+      "summary": "Transfers multi-teacher feature maps through parallel or sequential nonlinear transformations without adding inference-time parameters.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Parallel or sequential transformations align several teacher feature spaces with a single student's representation."
+      }
     },
     {
       "id": "cvf:cvpr2019-unifying-classifiers",
       "title": "Unifying Heterogeneous Classifiers With Distillation",
       "date": "2019-06-16",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Knowledge amalgamation",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "heterogeneous_pool",
+        "specialist_pool"
+      ],
+      "primary_mechanism": "heterogeneous_alignment",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "vision"
+      ],
       "paper": "https://openaccess.thecvf.com/content_CVPR_2019/html/Vongkulbhisal_Unifying_Heterogeneous_Classifiers_With_Distillation_CVPR_2019_paper.html",
-      "code": null,
-      "project": null,
-      "summary": "Uses generic unlabeled data to unify classifiers with different architectures and class sets into one model over the union label space."
+      "artifacts": [],
+      "summary": "Uses generic unlabeled data to unify classifiers with different architectures and class sets into one model over the union label space.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Classifiers with different architectures and label spaces directly supervise a union-label student on generic unlabeled data."
+      }
     },
     {
       "id": "cvf:cvpr2019-distilled-reid",
       "title": "Distilled Person Re-Identification: Towards a More Scalable System",
       "date": "2019-06-16",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Person re-identification",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "specialist_pool"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "adaptive_weighting"
+      ],
+      "signals": [
+        "relations"
+      ],
+      "domains": [
+        "vision"
+      ],
       "paper": "https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_Distilled_Person_Re-Identification_Towards_a_More_Scalable_System_CVPR_2019_paper.html",
-      "code": null,
-      "project": null,
-      "summary": "Transfers pairwise similarity knowledge from multiple scene teachers and adaptively selects useful teachers without accessing source data."
+      "artifacts": [],
+      "summary": "Transfers pairwise similarity knowledge from multiple scene teachers and adaptively selects useful teachers without accessing source data.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Scene-specific teachers contribute adaptively selected pairwise-similarity targets without requiring their source data."
+      }
     },
     {
       "id": "cvf:iccv2019-adaptive-amalgamation",
       "title": "Customizing Student Networks From Heterogeneous Teachers via Adaptive Knowledge Amalgamation",
       "date": "2019-10-27",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Knowledge amalgamation",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "heterogeneous_pool",
+        "specialist_pool"
+      ],
+      "primary_mechanism": "heterogeneous_alignment",
+      "mechanism_tags": [
+        "adaptive_weighting"
+      ],
+      "signals": [
+        "features"
+      ],
+      "domains": [
+        "vision"
+      ],
       "paper": "https://openaccess.thecvf.com/content_ICCV_2019/html/Shen_Customizing_Student_Networks_From_Heterogeneous_Teachers_via_Adaptive_Knowledge_Amalgamation_ICCV_2019_paper.html",
-      "code": null,
-      "project": null,
-      "summary": "Adaptively extracts and combines heterogeneous single- or multi-task teacher knowledge into a user-specified multitask student."
+      "artifacts": [],
+      "summary": "Adaptively extracts and combines heterogeneous single- or multi-task teacher knowledge into a user-specified multitask student.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Heterogeneous single- and multi-task teachers provide adaptively combined knowledge for a customized multitask student."
+      }
     },
     {
       "id": "arxiv:2201.00007",
       "title": "Confidence-Aware Multi-Teacher Knowledge Distillation",
       "date": "2021-12-31",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Computer vision",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "adaptive_weighting",
+      "mechanism_tags": [
+        "conflict_resolution"
+      ],
+      "signals": [
+        "logits_distribution",
+        "features"
+      ],
+      "domains": [
+        "vision"
+      ],
       "paper": "https://arxiv.org/abs/2201.00007",
-      "code": "https://github.com/Rorozhl/CA-MKD",
-      "project": null,
-      "summary": "Uses label-aware sample-wise reliability to suppress poor teacher predictions and combines them with intermediate-feature transfer."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/Rorozhl/CA-MKD"
+        }
+      ],
+      "summary": "Uses label-aware sample-wise reliability to suppress poor teacher predictions and combines them with intermediate-feature transfer.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Sample-wise reliability weights suppress poor teacher predictions while output and feature targets train the student."
+      }
     },
     {
       "id": "arxiv:2306.06634",
       "title": "Adaptive Multi-Teacher Knowledge Distillation with Meta-Learning",
       "date": "2023-06-10",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Computer vision",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "adaptive_weighting",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "logits_distribution",
+        "features"
+      ],
+      "domains": [
+        "vision"
+      ],
       "paper": "https://arxiv.org/abs/2306.06634",
-      "code": "https://github.com/Rorozhl/MMKD",
-      "project": null,
-      "summary": "Trains a meta-weight network to tailor output- and feature-level teacher fusion to the student's learning capacity."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/Rorozhl/MMKD"
+        }
+      ],
+      "summary": "Trains a meta-weight network to tailor output- and feature-level teacher fusion to the student's learning capacity.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "A meta-weight network adapts multiple output- and feature-level teacher targets to the student's capacity."
+      }
     },
     {
       "id": "pmlr:v202-cao23c",
       "title": "Learning Lightweight Object Detectors via Multi-Teacher Progressive Distillation",
       "date": "2023-07-23",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Object detection",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "heterogeneous_pool",
+        "sequential_chain"
+      ],
+      "primary_mechanism": "progressive_sequential",
+      "mechanism_tags": [
+        "heterogeneous_alignment"
+      ],
+      "signals": [
+        "logits_distribution",
+        "features"
+      ],
+      "domains": [
+        "vision"
+      ],
       "paper": "https://proceedings.mlr.press/v202/cao23c.html",
-      "code": "https://github.com/Shengcao-Cao/MTPD",
-      "project": null,
-      "summary": "Uses a sequence of detector teachers to bridge progressively from strong heterogeneous detectors to a lightweight student."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/Shengcao-Cao/MTPD"
+        }
+      ],
+      "summary": "Uses a sequence of detector teachers to bridge progressively from strong heterogeneous detectors to a lightweight student.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Independent heterogeneous detector teachers supervise the lightweight student progressively over fixed detection data."
+      }
     },
     {
       "id": "aaai:2021-reinforced-teacher-selection",
       "title": "Reinforced Multi-Teacher Selection for Knowledge Distillation",
       "date": "2021-05-18",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Natural language processing",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "adaptive_weighting"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "nlp"
+      ],
       "paper": "https://ojs.aaai.org/index.php/AAAI/article/view/17680",
-      "code": null,
-      "project": null,
-      "summary": "Uses reinforcement learning to assign teacher weights dynamically for each training instance and the current student capability."
+      "artifacts": [],
+      "summary": "Uses reinforcement learning to assign teacher weights dynamically for each training instance and the current student capability.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "A reinforcement-learned selector assigns instance-specific weights to multiple teacher targets on a fixed NLP dataset."
+      }
     },
     {
       "id": "arxiv:2010.07152",
       "title": "MulDE: Multi-teacher Knowledge Distillation for Low-dimensional Knowledge Graph Embeddings",
       "date": "2020-10-14",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Knowledge graphs",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "heterogeneous_pool"
+      ],
+      "primary_mechanism": "adaptive_weighting",
+      "mechanism_tags": [
+        "routing_selection"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "knowledge_graphs"
+      ],
       "paper": "https://arxiv.org/abs/2010.07152",
-      "code": null,
-      "project": null,
-      "summary": "Lets a compact KGE student query several hyperbolic teachers and combines their scores with relation-specific scaling and contrast attention."
+      "artifacts": [],
+      "summary": "Lets a compact KGE student query several hyperbolic teachers and combines their scores with relation-specific scaling and contrast attention.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Several hyperbolic KGE teachers provide scores that are combined with relation-specific scaling and contrast attention."
+      }
     },
     {
       "id": "arxiv:2402.04616",
       "title": "Beyond Answers: Transferring Reasoning Capabilities to Smaller LLMs Using Multi-Teacher Knowledge Distillation",
       "date": "2024-02-07",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Large language models",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "teacher_generated",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "heterogeneous_pool"
+      ],
+      "primary_mechanism": "direct_matching",
+      "mechanism_tags": [],
+      "signals": [
+        "responses_rationales",
+        "teacher_generated_data"
+      ],
+      "domains": [
+        "llm_reasoning"
+      ],
       "paper": "https://arxiv.org/abs/2402.04616",
-      "code": "https://github.com/YikunHan42/TinyLLM",
-      "project": null,
-      "summary": "Distills answers and rationales from several teacher LLMs with an in-context generator and teacher-forced chain-of-thought."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/YikunHan42/TinyLLM"
+        }
+      ],
+      "summary": "Distills answers and rationales from several teacher LLMs with an in-context generator and teacher-forced chain-of-thought.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Several teacher LLMs generate answers and rationales that become a fixed chain-of-thought training corpus for the student."
+      }
     },
     {
       "id": "acl:2025.findings-acl.217",
       "title": "Learning from Committee: Reasoning Distillation from a Mixture of Teachers with Peer-Review",
       "date": "2025-07-27",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Large language models",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "teacher_generated",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "debate_collective"
+      ],
+      "primary_mechanism": "collective_deliberation",
+      "mechanism_tags": [
+        "routing_selection",
+        "conflict_resolution"
+      ],
+      "signals": [
+        "responses_rationales",
+        "feedback_reward",
+        "teacher_generated_data"
+      ],
+      "domains": [
+        "llm_reasoning"
+      ],
       "paper": "https://aclanthology.org/2025.findings-acl.217/",
-      "code": "https://github.com/zhuochunli/Learn-from-Committee",
-      "project": null,
-      "summary": "Has teacher LLMs diagnose student errors and uses simulated peer review to retain high-quality instructional rationales."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/zhuochunli/Learn-from-Committee"
+        }
+      ],
+      "summary": "Has teacher LLMs diagnose student errors and uses simulated peer review to retain high-quality instructional rationales.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "A teacher committee diagnoses errors and peer-reviews candidate instructional rationales before they train the student offline."
+      }
     },
     {
       "id": "arxiv:2312.06709",
       "title": "AM-RADIO: Agglomerative Vision Foundation Model — Reduce All Domains Into One",
       "date": "2023-12-11",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Vision foundation models",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "heterogeneous_pool",
+        "specialist_pool"
+      ],
+      "primary_mechanism": "heterogeneous_alignment",
+      "mechanism_tags": [],
+      "signals": [
+        "features"
+      ],
+      "domains": [
+        "vision"
+      ],
       "paper": "https://arxiv.org/abs/2312.06709",
-      "code": "https://github.com/NVlabs/RADIO",
-      "project": null,
-      "summary": "Agglomerates complementary vision foundation-model capabilities into a single efficient general-purpose visual encoder."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/NVlabs/RADIO"
+        }
+      ],
+      "summary": "Agglomerates complementary vision foundation-model capabilities into a single efficient general-purpose visual encoder.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Complementary vision foundation models directly provide heterogeneous representation targets to one universal visual encoder."
+      }
     },
     {
       "id": "arxiv:2408.05088",
       "title": "UNIC: Universal Classification Models via Multi-teacher Distillation",
       "date": "2024-08-09",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Vision foundation models",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "heterogeneous_pool"
+      ],
+      "primary_mechanism": "adaptive_weighting",
+      "mechanism_tags": [
+        "heterogeneous_alignment"
+      ],
+      "signals": [
+        "features"
+      ],
+      "domains": [
+        "vision"
+      ],
       "paper": "https://arxiv.org/abs/2408.05088",
-      "code": "https://github.com/naver/unic",
-      "project": null,
-      "summary": "Uses expendable ladder projectors and teacher dropping to balance complementary pretrained vision teachers in one universal encoder."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/naver/unic"
+        }
+      ],
+      "summary": "Uses expendable ladder projectors and teacher dropping to balance complementary pretrained vision teachers in one universal encoder.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Teacher dropping and ladder projectors balance complementary pretrained vision-teacher features in one encoder."
+      }
     },
     {
       "id": "arxiv:2407.20179",
       "title": "Theia: Distilling Diverse Vision Foundation Models for Robot Learning",
       "date": "2024-07-29",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Robot learning",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "heterogeneous_pool"
+      ],
+      "primary_mechanism": "heterogeneous_alignment",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "features"
+      ],
+      "domains": [
+        "vision",
+        "robotics_embodied"
+      ],
       "paper": "https://arxiv.org/abs/2407.20179",
-      "code": "https://github.com/rai-opensource/theia",
-      "project": null,
-      "summary": "Distills diverse off-the-shelf vision foundation models into a compact encoder tailored to downstream robot policy learning."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/rai-opensource/theia"
+        }
+      ],
+      "summary": "Distills diverse off-the-shelf vision foundation models into a compact encoder tailored to downstream robot policy learning.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Diverse pretrained vision foundation models directly supervise a compact encoder later used by robot policies."
+      }
     },
     {
       "id": "arxiv:2503.14405",
       "title": "DUNE: Distilling a Universal Encoder from Heterogeneous 2D and 3D Teachers",
       "date": "2025-03-18",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "2D and 3D vision",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "heterogeneous_pool"
+      ],
+      "primary_mechanism": "heterogeneous_alignment",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "features"
+      ],
+      "domains": [
+        "vision"
+      ],
       "paper": "https://arxiv.org/abs/2503.14405",
-      "code": "https://github.com/naver/dune",
-      "project": null,
-      "summary": "Co-distills heterogeneous 2D, 3D, and human-perception teachers into one universal visual encoder."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/naver/dune"
+        }
+      ],
+      "summary": "Co-distills heterogeneous 2D, 3D, and human-perception teachers into one universal visual encoder.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Heterogeneous 2D, 3D, and human-perception teachers supply fixed-data feature targets to a universal encoder."
+      }
     },
     {
       "id": "arxiv:2501.01709",
       "title": "MoVE-KD: Knowledge Distillation for VLMs with Mixture of Visual Encoders",
       "date": "2025-01-03",
-      "category": "multi_teacher_kd",
-      "scope": "background",
-      "domain": "Vision-language models",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "heterogeneous_pool"
+      ],
+      "primary_mechanism": "routing_selection",
+      "mechanism_tags": [
+        "adaptive_weighting",
+        "heterogeneous_alignment"
+      ],
+      "signals": [
+        "features"
+      ],
+      "domains": [
+        "vision",
+        "multimodal"
+      ],
       "paper": "https://arxiv.org/abs/2501.01709",
-      "code": "https://github.com/hey-cjj/MoVE-KD",
-      "project": null,
-      "summary": "Distills multiple visual encoders into one VLM encoder using teacher-token attention and a mixture-of-LoRA-experts router."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/hey-cjj/MoVE-KD"
+        }
+      ],
+      "summary": "Distills multiple visual encoders into one VLM encoder using teacher-token attention and a mixture-of-LoRA-experts router.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Multiple visual encoders provide feature targets selected by teacher-token attention and a mixture-of-LoRA-experts router."
+      }
     },
     {
       "id": "arxiv:1503.02531",
       "title": "Distilling the Knowledge in a Neural Network",
       "date": "2015-03-09",
-      "category": "foundations_surveys",
-      "scope": "foundation",
-      "domain": "Knowledge distillation",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "ensemble_to_one"
+      ],
+      "primary_mechanism": "direct_matching",
+      "mechanism_tags": [],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "general_machine_learning"
+      ],
       "paper": "https://arxiv.org/abs/1503.02531",
-      "code": null,
-      "project": null,
-      "summary": "Foundational temperature-scaled knowledge-distillation formulation and ensemble-to-student motivation."
+      "artifacts": [],
+      "summary": "Foundational temperature-scaled knowledge-distillation formulation and ensemble-to-student motivation.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "A teacher ensemble or cumbersome model supplies temperature-softened targets on non-student-generated training examples."
+      }
     },
     {
       "id": "arxiv:1511.06295",
       "title": "Policy Distillation",
       "date": "2015-11-19",
-      "category": "foundations_surveys",
-      "scope": "foundation",
-      "domain": "Reinforcement learning",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "teacher_generated",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "specialist_pool"
+      ],
+      "primary_mechanism": "direct_matching",
+      "mechanism_tags": [],
+      "signals": [
+        "action_distribution",
+        "teacher_generated_data"
+      ],
+      "domains": [
+        "general_machine_learning"
+      ],
       "paper": "https://arxiv.org/abs/1511.06295",
-      "code": null,
-      "project": null,
-      "summary": "Early policy-compression and multi-task policy-distillation work that transfers multiple expert policies into one student."
+      "artifacts": [],
+      "summary": "Early policy-compression and multi-task policy-distillation work that transfers multiple expert policies into one student.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Multiple expert policies generate trajectories and action-distribution targets that are compressed into one multitask student policy."
+      }
     },
     {
       "id": "arxiv:2306.08543",
       "title": "MiniLLM: Knowledge Distillation of Large Language Models",
       "date": "2023-06-14",
-      "category": "foundations_surveys",
-      "scope": "foundation",
-      "domain": "Large language models",
+      "collection": "single_teacher_foundation",
+      "record_type": "method",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "single_teacher"
+      ],
+      "primary_mechanism": "direct_matching",
+      "mechanism_tags": [],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "llm_general"
+      ],
       "paper": "https://arxiv.org/abs/2306.08543",
-      "code": "https://github.com/microsoft/LMOps/tree/main/minillm",
-      "project": null,
-      "summary": "Develops reverse-KL-based generative LLM distillation with student-sampled behavior and practical stabilization methods."
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/microsoft/LMOps/tree/main/minillm"
+        }
+      ],
+      "summary": "Develops reverse-KL-based generative LLM distillation with student-sampled behavior and practical stabilization methods.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "no",
+        "direct_distillation_objective": "yes",
+        "classification_note": "The student samples behavior for reverse-KL distillation, but supervision comes from one teacher model."
+      }
     },
     {
       "id": "arxiv:2306.13649",
       "title": "On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes",
       "date": "2023-06-23",
-      "category": "foundations_surveys",
-      "scope": "foundation",
-      "domain": "Large language models",
+      "collection": "single_teacher_foundation",
+      "record_type": "method",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "single_teacher"
+      ],
+      "primary_mechanism": "direct_matching",
+      "mechanism_tags": [],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "llm_general"
+      ],
       "paper": "https://arxiv.org/abs/2306.13649",
-      "code": null,
-      "project": null,
-      "summary": "GKD formalizes language-model distillation on student-generated sequences and unifies several divergence objectives."
+      "artifacts": [],
+      "summary": "GKD formalizes language-model distillation on student-generated sequences and unifies several divergence objectives.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "no",
+        "direct_distillation_objective": "yes",
+        "classification_note": "GKD directly matches one teacher on sequences generated by the current student and therefore supplies the single-teacher OPD foundation."
+      }
     },
     {
       "id": "arxiv:2402.03898",
       "title": "DistiLLM: Towards Streamlined Distillation for Large Language Models",
       "date": "2024-02-06",
-      "category": "foundations_surveys",
-      "scope": "foundation",
-      "domain": "Large language models",
+      "collection": "single_teacher_foundation",
+      "record_type": "method",
+      "training_regime": "hybrid",
+      "state_source": "mixed",
+      "teacher_topology": [
+        "single_teacher"
+      ],
+      "primary_mechanism": "direct_matching",
+      "mechanism_tags": [
+        "dynamic_scheduling"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "llm_general"
+      ],
       "paper": "https://arxiv.org/abs/2402.03898",
-      "code": null,
-      "project": null,
-      "summary": "Introduces skew-KL objectives and an efficient online distillation pipeline for large language models."
+      "artifacts": [],
+      "summary": "Introduces skew-KL objectives and an efficient online distillation pipeline for large language models.",
+      "evidence": {
+        "student_generated_states": "partial",
+        "multiple_independent_supervisors": "no",
+        "direct_distillation_objective": "yes",
+        "classification_note": "DistiLLM adaptively mixes fixed samples with reused student-generated outputs under one teacher, so only part of its state distribution is current-student induced."
+      }
     },
     {
       "id": "arxiv:2006.05525",
       "title": "Knowledge Distillation: A Survey",
       "date": "2020-06-09",
-      "category": "foundations_surveys",
-      "scope": "foundation",
-      "domain": "Knowledge distillation survey",
+      "collection": "review_tutorial",
+      "record_type": "survey",
+      "training_regime": "not_applicable",
+      "state_source": "not_applicable",
+      "teacher_topology": [],
+      "primary_mechanism": "not_applicable",
+      "mechanism_tags": [],
+      "signals": [],
+      "domains": [
+        "general_machine_learning"
+      ],
       "paper": "https://arxiv.org/abs/2006.05525",
-      "code": null,
-      "project": null,
-      "summary": "Broad survey of response-, feature-, and relation-based knowledge, training schemes, architectures, and applications."
+      "artifacts": [],
+      "summary": "Broad survey of response-, feature-, and relation-based knowledge, training schemes, architectures, and applications.",
+      "evidence": {
+        "student_generated_states": "not_applicable",
+        "multiple_independent_supervisors": "not_applicable",
+        "direct_distillation_objective": "not_applicable",
+        "classification_note": "Survey record; method-level MOPD evidence criteria are not applicable."
+      }
     },
     {
       "id": "arxiv:2402.13116",
       "title": "A Survey on Knowledge Distillation of Large Language Models",
       "date": "2024-02-20",
-      "category": "foundations_surveys",
-      "scope": "foundation",
-      "domain": "LLM distillation survey",
+      "collection": "review_tutorial",
+      "record_type": "survey",
+      "training_regime": "not_applicable",
+      "state_source": "not_applicable",
+      "teacher_topology": [],
+      "primary_mechanism": "not_applicable",
+      "mechanism_tags": [],
+      "signals": [],
+      "domains": [
+        "llm_general"
+      ],
       "paper": "https://arxiv.org/abs/2402.13116",
-      "code": null,
-      "project": null,
-      "summary": "Systematic survey of LLM knowledge elicitation and distillation algorithms, including white-box and black-box settings."
+      "artifacts": [],
+      "summary": "Systematic survey of LLM knowledge elicitation and distillation algorithms, including white-box and black-box settings.",
+      "evidence": {
+        "student_generated_states": "not_applicable",
+        "multiple_independent_supervisors": "not_applicable",
+        "direct_distillation_objective": "not_applicable",
+        "classification_note": "LLM distillation survey record; method-level MOPD evidence criteria are not applicable."
+      }
     },
     {
       "id": "acl:2025.naacl-tutorial.4",
       "title": "Knowledge Distillation for Language Models",
       "date": "2025-05-01",
-      "category": "foundations_surveys",
-      "scope": "foundation",
-      "domain": "Language-model tutorial",
+      "collection": "review_tutorial",
+      "record_type": "tutorial",
+      "training_regime": "not_applicable",
+      "state_source": "not_applicable",
+      "teacher_topology": [],
+      "primary_mechanism": "not_applicable",
+      "mechanism_tags": [],
+      "signals": [],
+      "domains": [
+        "llm_general"
+      ],
       "paper": "https://aclanthology.org/2025.naacl-tutorial.4/",
-      "code": null,
-      "project": null,
-      "summary": "NAACL tutorial covering intermediate and prediction matching, RL-based KD, multi-teacher distillation, and LLM self-distillation."
+      "artifacts": [],
+      "summary": "NAACL tutorial covering intermediate and prediction matching, RL-based KD, multi-teacher distillation, and LLM self-distillation.",
+      "evidence": {
+        "student_generated_states": "not_applicable",
+        "multiple_independent_supervisors": "not_applicable",
+        "direct_distillation_objective": "not_applicable",
+        "classification_note": "Tutorial record; method-level MOPD evidence criteria are not applicable."
+      }
     },
     {
       "id": "arxiv:2604.00626",
       "title": "A Survey of On-Policy Distillation for Large Language Models",
       "date": "2026-04-01",
-      "category": "foundations_surveys",
-      "scope": "foundation",
-      "domain": "OPD survey",
+      "collection": "review_tutorial",
+      "record_type": "survey",
+      "training_regime": "not_applicable",
+      "state_source": "not_applicable",
+      "teacher_topology": [],
+      "primary_mechanism": "not_applicable",
+      "mechanism_tags": [],
+      "signals": [],
+      "domains": [
+        "llm_general"
+      ],
       "paper": "https://arxiv.org/abs/2604.00626",
-      "code": null,
-      "project": null,
-      "summary": "A comprehensive OPD taxonomy and survey covering objectives, signal sources, stabilization, systems, and applications."
+      "artifacts": [],
+      "summary": "A comprehensive OPD taxonomy and survey covering objectives, signal sources, stabilization, systems, and applications.",
+      "evidence": {
+        "student_generated_states": "not_applicable",
+        "multiple_independent_supervisors": "not_applicable",
+        "direct_distillation_objective": "not_applicable",
+        "classification_note": "On-policy distillation survey record; method-level MOPD evidence criteria are not applicable."
+      }
     }
   ]
 }

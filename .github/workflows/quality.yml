@@ -13,17 +13,29 @@ jobs:
   metadata:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - name: Validate paper metadata and catalog coverage
-        run: python3 scripts/validate.py
+      - name: Validate metadata and generated catalogs
+        run: |
+          python3 scripts/validate.py
+          python3 scripts/render.py --check
+
+  awesome:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Lint the curated README
+        run: npx --yes awesome-lint@latest
 
   links:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Check Markdown links
         uses: lycheeverse/lychee-action@v2
         with:

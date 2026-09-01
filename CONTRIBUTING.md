@@ -1,43 +1,46 @@
 # Contributing
 
-Thank you for helping keep this list accurate. The repository favors a small number of well-classified, primary-source-backed entries over a large unverified dump.
+Thank you for helping keep this list accurate and useful. The repository favors well-classified, primary-source-backed entries over an unverified paper dump.
 
-## Before submitting a paper
+## Eligibility
 
-Please check that the work has a public paper, technical report, or official proceedings page and that knowledge transfer from more than one source is a material part of training.
+An accepted research entry must have a public paper, technical report, or official proceedings page. Knowledge transfer from one or more teachers must be a material part of training; pure merging, inference-only ensembles, ordinary mixture-of-experts routing, debate without student training, and reward-only reinforcement learning are out of scope.
 
-Classify it using exactly one primary category:
+Choose exactly one primary collection:
 
-- `core_mopd`: the current or near-current student policy generates the training states, and at least two teachers, expert checkpoints, teacher views, or peer policies directly supervise the student.
-- `mopd_systems`: a model/system report in which MOPD is a material training stage.
-- `adjacent`: an online co-distillation, multi-view/self-teacher method, or a carefully motivated alternative/boundary case.
-- `multi_teacher_kd`: offline or static-data transfer from multiple teacher logits, features, relations, responses, or rationales.
-- `foundations_surveys`: a foundational policy/KD/OPD paper, survey, or tutorial needed to understand the field.
+- `multi_teacher_on_policy`: current or near-current student states, multiple independent supervisors, and a direct distillation objective;
+- `offline_multi_teacher`: multiple teachers or an ensemble distilled through static data, teacher generations, cached targets, or replay;
+- `adjacent_alternative`: a close peer, self/EMA, privileged-view, multi-rollout, or replay boundary case that fails a strict-MOPD test;
+- `single_teacher_foundation`: a foundational generative or on-policy method with one teacher; or
+- `review_tutorial`: a field-level survey or tutorial.
 
-Pure parameter merging, inference-only ensembles, ordinary MoE routing, multi-agent debate without student training, and reward-only RL do not qualify as MOPD.
+Record type and mechanism are separate from the collection. In particular, `system_report` is a record type, not a sixth category. Read the complete [taxonomy](resources/taxonomy.md) before proposing a boundary case.
 
 ## Submission checklist
 
-1. Search the title, arXiv ID, DOI, and paper URL in `data/papers.json` and the Markdown catalogs.
-2. Read the paper itself; do not classify from a search snippet or another awesome list.
-3. Use the paper's current title and first public date in `YYYY-MM-DD` form.
-4. Link the primary paper/proceedings page. Link code only when it is an author or organization repository clearly tied to the work.
-5. Write a neutral one-sentence summary of the mechanism—not a leaderboard or marketing claim.
-6. Add one JSON entry and one Markdown catalog entry. Do not duplicate the same paper across multiple primary sections.
-7. Run `python3 scripts/validate.py` from the repository root.
+1. Search the title, stable ID, and primary URL in `data/papers.json`.
+2. Read the paper itself; do not classify from a search result, abstract snippet, or secondary list.
+3. Use the current paper title and first public date in `YYYY-MM-DD` format.
+4. Link the primary paper or proceedings page. Include artifacts only when the author or organization connection is explicit.
+5. Answer the three evidence tests separately: student-generated states, multiple independent supervisors, and direct distillation objective.
+6. Select the record type, training regime, state source, teacher topology, one primary mechanism, optional secondary mechanisms, supervision signals, and domains.
+7. Write a neutral one-sentence mechanism summary, not a marketing claim or isolated leaderboard result.
+8. Add or edit only the canonical entry in `data/papers.json`; generated catalogs and views must not be edited by hand.
+9. Run `python3 scripts/render.py`, `python3 scripts/validate.py`, and `python3 scripts/render.py --check` from the repository root.
 
-## Metadata style
+## Metadata rules
 
-- IDs use a stable namespace, such as `arxiv:2608.19098`, `doi:10.x/...`, `acl:2026.acl-long.666`, or `cvf:cvpr2024-short-name`.
-- `—` means no official code/project link was verified; it does not claim that no implementation exists.
-- Preprints must not be described as peer-reviewed unless an official proceedings page confirms publication.
-- In tables, write the direction as `Teachers → student`.
-- `MOPD` means Multi-Teacher On-Policy Distillation here; write Multi-Rollout OPD as `MR-OPD`.
-
-## Human review and disclosure
-
-Automated search, metadata extraction, and language tools may help discover candidates, but a maintainer must verify every accepted entry against a primary source and take responsibility for the final wording. This is also required before seeking inclusion in the official Awesome index.
+- Stable IDs use a namespace such as `arxiv:2608.19098`, `doi:10.x/...`, `acl:2026.acl-long.666`, or `cvf:cvpr2024-short-name`.
+- Every list-valued facet contains unique controlled labels.
+- `primary_mechanism` must not be repeated in `mechanism_tags`.
+- Use `partial` only when part of a recipe satisfies an evidence test and explain the boundary in `classification_note`.
+- Use `unclear` only while the exact method evidence remains unresolved; accepted entries should minimize this value.
+- Use `not_applicable` for method evidence only on survey and tutorial records.
+- `MOPD` means multi-teacher on-policy distillation here; write multi-rollout OPD as `MR-OPD`.
+- Do not describe an arXiv preprint as peer reviewed unless an official proceedings page confirms publication.
 
 ## Pull requests
 
-Keep each pull request focused. Explain the classification decision, quote or point to the section of the paper establishing the rollout source and teacher topology, and note any ambiguous boundary. The maintainers may move an entry to `papers/pending.md` while evidence is incomplete.
+Keep each pull request focused. Point to the exact paper section that establishes the state source, teacher topology, and student-training objective. Explain every boundary decision and every official artifact link. A maintainer may move an entry to `papers/pending.md` when evidence is incomplete.
+
+Automated discovery and metadata tools can help find candidates, but an accepting maintainer must verify the primary source and take responsibility for the final classification and wording.

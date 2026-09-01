@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: >-
-        Please check the paper and its current title against a primary source before submitting.
+        Please read the primary source and the repository taxonomy before submitting.
   - type: input
     id: title
     attributes:
@@ -18,8 +18,15 @@ body:
     id: primary
     attributes:
       label: Primary paper URL
-      description: arXiv, DOI, or official proceedings page; not a search result or secondary list.
+      description: Use arXiv, DOI, or an official proceedings page, not a search result or secondary list.
       placeholder: https://...
+    validations:
+      required: true
+  - type: input
+    id: stable_id
+    attributes:
+      label: Stable ID
+      placeholder: arxiv:2608.19098
     validations:
       required: true
   - type: input
@@ -30,43 +37,68 @@ body:
     validations:
       required: true
   - type: dropdown
-    id: category
+    id: collection
     attributes:
-      label: Proposed primary category
+      label: Primary collection
       options:
-        - Core MOPD
-        - MOPD system or application
-        - Adjacent online paradigm
-        - Offline multi-teacher KD
-        - Foundation, survey, or tutorial
+        - Multi-teacher on-policy distillation
+        - Offline multi-teacher distillation
+        - Adjacent or alternative paradigm
+        - Single-teacher foundation
+        - Review or tutorial
+    validations:
+      required: true
+  - type: dropdown
+    id: record_type
+    attributes:
+      label: Record type
+      options:
+        - Method
+        - Analysis
+        - System report
+        - Survey
+        - Tutorial
     validations:
       required: true
   - type: textarea
     id: evidence
     attributes:
-      label: Classification evidence
-      description: Identify the rollout/state source, teacher topology, and direct student-training signal. Point to a section of the paper.
+      label: Three-part classification evidence
+      description: >-
+        State (1) who generates the trained-on states, (2) whether multiple independent supervisors exist,
+        and (3) which teacher signal directly updates the student. Point to the relevant paper section.
+      placeholder: |
+        Student-generated states: yes/no/partial, because ...
+        Multiple independent supervisors: yes/no/partial, because ...
+        Direct distillation objective: yes/no/partial, because ...
+    validations:
+      required: true
+  - type: textarea
+    id: facets
+    attributes:
+      label: Proposed facets
+      description: Include training regime, state source, teacher topology, primary mechanism, secondary mechanisms, signals, and domains.
     validations:
       required: true
   - type: textarea
     id: contribution
     attributes:
       label: One-sentence contribution
-      description: Neutral mechanism summary; avoid marketing or isolated benchmark claims.
+      description: Describe the mechanism neutrally; avoid marketing or isolated benchmark claims.
     validations:
       required: true
   - type: input
-    id: code
+    id: artifacts
     attributes:
-      label: Official code or project URL
-      description: Leave blank unless the author/project connection is explicit.
+      label: Official artifacts
+      description: Leave blank unless the author or project connection is explicit.
       placeholder: https://github.com/...
   - type: checkboxes
     id: checks
     attributes:
       label: Checks
       options:
-        - label: I searched the title, identifier, and URL for duplicates.
+        - label: I searched the title, stable ID, and primary URL for duplicates.
           required: true
         - label: I checked the paper itself, not only a snippet or secondary list.
           required: true

@@ -22,15 +22,17 @@ Every accepted entry must have at least one primary source: the paper/preprint, 
 
 The catalog does not infer peer-review status from an arXiv page. Code links are included only when their authorship or project connection is explicit. `—` means an official implementation was not verified by the cutoff date.
 
-## Strict MOPD decision rule
+## Classification protocol
 
-All three must hold:
+Strict MOPD requires all three evidence tests to hold:
 
 1. the student or a near-current copy/mixture of it generates the training trajectory or state;
 2. at least two independent teachers, expert checkpoints, teacher views, or peer policies provide supervision; and
 3. those signals directly update the student through divergence, sampled-token advantage, feature/field matching, or an equivalent objective.
 
-System reports are kept separate from dedicated method papers. Static teacher data/logits/features/rationales are MTKD. Multi-rollout, EMA, privileged-view, and bidirectional co-distillation are adjacent unless they satisfy the independent-teacher criterion.
+System reports are represented through `record_type`, not a separate primary collection. Static teacher data, logits, features, and rationales belong to `offline_multi_teacher`. Multi-rollout, EMA, privileged-view, peer, and bidirectional co-distillation belong to `adjacent_alternative` unless they satisfy every strict-MOPD test. Single-teacher generative OPD methods are kept in `single_teacher_foundation`; surveys and tutorials have their own collection.
+
+After assigning one primary collection, the maintainer independently records training regime, state source, record type, teacher topology, primary and secondary mechanisms, supervision signals, domains, and the three evidence values. The controlled vocabulary is defined in `resources/taxonomy.md` and enforced by `data/schema.json` and `scripts/validate.py`.
 
 ## Exclusions
 
@@ -44,10 +46,11 @@ System reports are kept separate from dedicated method papers. Static teacher da
 ## Maintenance workflow
 
 1. Put a newly discovered item in `papers/pending.md` with the discovery date and source.
-2. Check title, first-public date, current version, teacher topology, rollout source, objective, and claimed official artifacts.
-3. Assign exactly one primary category and write a neutral mechanism summary.
-4. Add the entry to `data/papers.json` and its Markdown catalog.
-5. Run `python3 scripts/validate.py`; review the diff manually.
-6. Re-check renamed arXiv papers and dead project/code links during scheduled maintenance.
+2. Check title, first-public date, current version, teacher topology, state source, objective, and claimed official artifacts.
+3. Record all three strict-MOPD evidence tests and explain any `partial` or `unclear` value.
+4. Assign exactly one primary collection, choose one primary mechanism, and write a neutral mechanism summary.
+5. Add the entry to `data/papers.json`; run `python3 scripts/render.py` to rebuild canonical catalogs and views.
+6. Run `python3 scripts/validate.py` and `python3 scripts/render.py --check`, then review the complete diff manually.
+7. Re-check renamed arXiv papers and dead project/code links during scheduled maintenance.
 
 The initial discovery and organization were AI-assisted, followed by primary-source checks. A maintainer should independently review every item before publication and must do so before applying to the official Awesome index.

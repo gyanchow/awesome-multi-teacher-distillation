@@ -1,17 +1,26 @@
 ## Paper or change
 
 - Primary source:
-- Stable ID (arXiv / DOI / proceedings):
-- Proposed category:
+- Stable ID:
+- Primary collection:
+- Record type:
 - First public date:
-- Official code/project (if verified):
+- Official artifacts, if verified:
 
 ## Classification evidence
 
-- Who generates the training state or rollout?
-- How many independently identifiable teachers, checkpoints, views, or peers supervise the student?
-- What signal and objective update the student?
-- Why is this MOPD, a system, adjacent work, offline MTKD, or a foundation?
+- Student-generated states (`yes` / `no` / `partial`):
+- Multiple independent supervisors (`yes` / `no` / `partial`):
+- Direct distillation objective (`yes` / `no` / `partial`):
+- Relevant paper section and boundary explanation:
+
+## Facets
+
+- Training regime and state source:
+- Teacher topology:
+- Primary and secondary mechanisms:
+- Supervision signals:
+- Domains:
 
 ## Checklist
 
@@ -19,6 +28,7 @@
 - [ ] I searched titles, IDs, and URLs for duplicates.
 - [ ] I used the current title and first public date.
 - [ ] The summary describes the mechanism neutrally.
-- [ ] I added/updated both `data/papers.json` and the appropriate Markdown catalog.
-- [ ] I ran `python3 scripts/validate.py` successfully.
-- [ ] Any code/project link is official or author-maintained.
+- [ ] I edited `data/papers.json`, not generated catalogs or views.
+- [ ] I ran `python3 scripts/render.py`.
+- [ ] I ran `python3 scripts/validate.py` and `python3 scripts/render.py --check` successfully.
+- [ ] Every artifact link is official or author-maintained.
