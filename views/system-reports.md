@@ -4,10 +4,11 @@
 
 Technical and model reports in which multi-teacher distillation is a material training stage, rather than a separate primary collection.
 
-Entries link to their canonical catalog record. This is a derived view; edit `data/papers.json` instead. Verified through 2026-08-31.
+Entries link to their canonical catalog record. This is a derived view; edit `data/papers.json` instead. Verified through 2026-09-08.
 
-## Reports (20)
+## Reports (21)
 
+- [Instella-MoE Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2609-00791) - 2026-09-01; Routing and Selection; General LLMs, LLM Reasoning.
 - [Exploring the Performance Frontier of Compact Unified Image Generation Models](../papers/multi-teacher-on-policy.md#arxiv-2608-20334) - 2026-08-20; Routing and Selection; Vision, Generative Models.
 - [Mint-Agent: Introducing Finance-Native Agentic Foundation Models](../papers/multi-teacher-on-policy.md#arxiv-2608-16386) - 2026-08-17; Progressive and Sequential Transfer; LLM Agents.
 - [From Passive Delegates to Strategic Negotiators: Reinforcing Social Reasoning in Small Language Models with SocialRL](../papers/multi-teacher-on-policy.md#arxiv-2608-13787) - 2026-08-13; Routing and Selection; LLM Agents, LLM Reasoning.

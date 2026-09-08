@@ -4,10 +4,13 @@
 
 Papers for which an author- or organization-linked code, project, model, or data artifact was verified.
 
-Entries link to their canonical catalog record. This is a derived view; edit `data/papers.json` instead. Verified through 2026-08-31.
+Entries link to their canonical catalog record. This is a derived view; edit `data/papers.json` instead. Verified through 2026-09-08.
 
-## Entries (38)
+## Entries (44)
 
+- [Rethinking On-Policy Distillation of Large Language Models II: One Training Example](../papers/multi-teacher-on-policy.md#arxiv-2609-04172) - Code; Multi-Teacher On-Policy Distillation.
+- [Learn from Whoever Is Right: Answer-Verified Multi-Teacher Distillation for Multi-Domain LLMs](../papers/multi-teacher-on-policy.md#arxiv-2609-02548) - Code; Multi-Teacher On-Policy Distillation.
+- [Instella-MoE Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2609-00791) - Code, Model; Multi-Teacher On-Policy Distillation.
 - [Consolidating RLVR Capabilities Across Domains: A Deep Dive into Fusion Paradigms](../papers/multi-teacher-on-policy.md#arxiv-2608-27409) - Code; Multi-Teacher On-Policy Distillation.
 - [Open-MOPD: Diagnosing and Fixing Capability Imbalance in Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2608-19098) - Code, Project; Multi-Teacher On-Policy Distillation.
 - [The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation](../papers/multi-teacher-on-policy.md#arxiv-2607-24720) - Code, Project; Multi-Teacher On-Policy Distillation.
@@ -18,8 +21,11 @@ Entries link to their canonical catalog record. This is a derived view; edit `da
 - [H-OPD: Confidence Aware Heterogeneous Multi-Teacher Multimodal On-policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2607-02592) - Code; Multi-Teacher On-Policy Distillation.
 - [Find Your Optimal Teacher: Personalized Data Synthesis via Router-Guided Multi-Teacher Distillation](../papers/offline-multi-teacher.md#acl-2026-acl-long-666) - Code; Offline Multi-Teacher Distillation.
 - [Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning](../papers/multi-teacher-on-policy.md#arxiv-2606-15007) - Code; Multi-Teacher On-Policy Distillation.
+- [Skill-Conditioned Gated Self-Distillation for LLM Reasoning](../papers/adjacent-alternatives.md#arxiv-2605-28791) - Code; Adjacent and Alternative Paradigms.
+- [When the Strongest Teacher Is Not the Best Teacher: Student-Centric Answer Selection](../papers/offline-multi-teacher.md#arxiv-2605-26872) - Code; Offline Multi-Teacher Distillation.
 - [CollectionLoRA: Collecting 50 Effects in 1 LoRA via Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2605-25378) - Code, Project; Multi-Teacher On-Policy Distillation.
 - [ProteinOPD: Towards Effective and Efficient Preference Alignment for Protein Design](../papers/multi-teacher-on-policy.md#arxiv-2605-10189) - Code; Multi-Teacher On-Policy Distillation.
+- [On-Policy Distillation with Best-of-N Teacher Rollout Selection](../papers/adjacent-alternatives.md#arxiv-2605-09725) - Code; Adjacent and Alternative Paradigms.
 - [UniSD: Towards a Unified Self-Distillation Framework for Large Language Models](../papers/adjacent-alternatives.md#arxiv-2605-06597) - Code; Adjacent and Alternative Paradigms.
 - [Uni-OPD: Unifying On-Policy Distillation with a Dual-Perspective Recipe](../papers/multi-teacher-on-policy.md#arxiv-2605-03677) - Code; Multi-Teacher On-Policy Distillation.
 - [MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate](../papers/multi-teacher-on-policy.md#arxiv-2605-01347) - Code; Multi-Teacher On-Policy Distillation.

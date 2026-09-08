@@ -4,7 +4,7 @@
 
 These works are useful boundary cases or alternatives: peer co-distillation, self/EMA distillation, privileged views, sibling rollouts, and offline replay. Their evidence notes state exactly which strict-MOPD condition does not hold.
 
-**6 records · metadata verified through 2026-08-31 · [Taxonomy](../resources/taxonomy.md)**
+**11 records · metadata verified through 2026-09-08 · [Taxonomy](../resources/taxonomy.md)**
 
 ## Offline
 
@@ -29,8 +29,35 @@ These works are useful boundary cases or alternatives: peer co-distillation, sel
   - **Classification evidence:** DOPD routes token supervision between one privileged external teacher and a privileged student view, not a pool of independent teachers.
   - **Artifacts:** None verified
 
+<a id="arxiv-2605-09725"></a>
+- [On-Policy Distillation with Best-of-N Teacher Rollout Selection](https://arxiv.org/abs/2605.09725) - 2026-05-10. Selects the most correct and student-aligned trajectory from several samples of one teacher, then adds teacher-context supervision to standard student-context OPD.
+  - **Facets:** `arxiv:2605.09725` · Method · On Policy · State: Mixed
+  - **Teacher topology:** Single Teacher, Privileged Views
+  - **Mechanism:** Routing and Selection · Secondary: Conflict Resolution, Direct Matching
+  - **Signals and domains:** Logits / Distribution, Teacher-Generated Data · LLM Reasoning
+  - **Classification evidence:** The main OPD branch uses current-student states, while the auxiliary branch uses a selected teacher trajectory; the rollout pool contains several samples from one teacher, not independent teachers.
+  - **Artifacts:** [Code](https://github.com/BWGZK-keke/BRTS)
+
 
 ## Online Peer
+
+<a id="arxiv-2609-00446"></a>
+- [CRAD: Class-wise Reliability-Aware Distillation for Decentralized Heterogeneous Federated Learning](https://arxiv.org/abs/2609.00446) - 2026-08-31. Filters peer teachers by class-wise consensus and weights the survivors by local reliability, enabling decentralized distillation across heterogeneous federated clients.
+  - **Facets:** `arxiv:2609.00446` · Method · Online Peer · State: Static Corpus
+  - **Teacher topology:** Peer Mutual, Heterogeneous Pool, Independent Multi-Teacher
+  - **Mechanism:** Conflict Resolution · Secondary: Adaptive Weighting, Direct Matching
+  - **Signals and domains:** Logits / Distribution · Vision, Scientific and Healthcare, General Machine Learning
+  - **Classification evidence:** Each client distills several heterogeneous peer snapshots on its fixed local data; because every client remains a changing teacher and learner rather than one final student, the method is cataloged as online-peer adjacent work.
+  - **Artifacts:** None verified
+
+<a id="arxiv-2608-09447"></a>
+- [WDL-OPD: Weak-Driven On-Policy Distillation via Mixture-Constrained Co-Training](https://arxiv.org/abs/2608.09447) - 2026-08-10. Co-trains an anchor and auxiliary policy by matching their geometric token-distribution mixture to one frozen teacher on anchor-generated states, allowing either learned branch to be deployed.
+  - **Facets:** `arxiv:2608.09447` · Method · Online Peer · State: Current Student
+  - **Teacher topology:** Peer Mutual, Single Teacher
+  - **Mechanism:** Adaptive Weighting · Secondary: Direct Matching
+  - **Signals and domains:** Logits / Distribution · LLM Reasoning
+  - **Classification evidence:** The anchor supplies current-student states and reverse KL trains both branches, but only one frozen external teacher exists and the auxiliary is a co-trained learner.
+  - **Artifacts:** None verified
 
 <a id="arxiv-2606-14368"></a>
 - [Be My Tutor: On-Policy Co-Distillation for Mutual LLM Improvement via Peer Feedback](https://arxiv.org/abs/2606.14368) - 2026-06-12. Two domain-specialized peers tutor each other through feedback-conditioned self-distillation loops to achieve mutual Pareto improvement.
@@ -52,6 +79,24 @@ These works are useful boundary cases or alternatives: peer co-distillation, sel
 
 
 ## Self-Distillation
+
+<a id="arxiv-2609-05295"></a>
+- [RISE: Recursive Improvement via Self-Extrapolating Policy Distillation](https://arxiv.org/abs/2609.05295) - 2026-09-04. Builds a synthetic teacher by extrapolating between the current policy and a trailing checkpoint, then alternates dense on-policy self-distillation with outcome-grounded RLVR.
+  - **Facets:** `arxiv:2609.05295` · Method · Self-Distillation · State: Current Student
+  - **Teacher topology:** Checkpoint Pool, Self / EMA
+  - **Mechanism:** Progressive and Sequential Transfer · Secondary: Dynamic Scheduling, Direct Matching
+  - **Signals and domains:** Logits / Distribution, Feedback / Reward · LLM Reasoning, LLM Agents
+  - **Classification evidence:** Current-student rollouts receive a direct target extrapolated from two checkpoints in the same policy lineage; there is no independent external teacher pool.
+  - **Artifacts:** None verified
+
+<a id="arxiv-2605-28791"></a>
+- [Skill-Conditioned Gated Self-Distillation for LLM Reasoning](https://arxiv.org/abs/2605.28791) - 2026-05-27. Instantiates several skill-conditioned views of a live self-teacher, validates each view against verifier outcomes, and weights a bounded polarity-aware sampled-token loss.
+  - **Facets:** `arxiv:2605.28791` · Method · Self-Distillation · State: Current Student
+  - **Teacher topology:** Self / EMA, Privileged Views
+  - **Mechanism:** Conflict Resolution · Secondary: Adaptive Weighting, Direct Matching
+  - **Signals and domains:** Sampled-Token Advantage, Responses / Rationales, Feedback / Reward · LLM Reasoning
+  - **Classification evidence:** All named teachers are stop-gradient privileged views of the same synchronized policy under different skill contexts, not independent teacher checkpoints.
+  - **Artifacts:** [Code](https://github.com/walawalagoose/SGSD)
 
 <a id="arxiv-2605-12652"></a>
 - [Multi-Rollout On-Policy Distillation via Peer Successes and Failures](https://arxiv.org/abs/2605.12652) - 2026-05-12. Constructs peer-conditioned teacher signals from successful and failed sibling rollouts; multiple rollouts, not multiple independent teachers.

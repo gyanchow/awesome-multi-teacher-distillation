@@ -4,7 +4,7 @@
 
 These methods establish the generative or on-policy distillation machinery used by later MOPD work, but use one teacher rather than multiple independent supervisors.
 
-**3 records · metadata verified through 2026-08-31 · [Taxonomy](../resources/taxonomy.md)**
+**3 records · metadata verified through 2026-09-08 · [Taxonomy](../resources/taxonomy.md)**
 
 ## Hybrid
 

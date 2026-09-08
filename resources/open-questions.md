@@ -6,7 +6,11 @@ How should complementary teachers be produced rather than selected only after in
 
 ## Routing granularity
 
-When should selection happen per domain, prompt, trajectory, step, token, vocabulary coordinate, or latent field? Comparisons should report both quality and the cost of obtaining and applying the routing signal.
+When should selection happen per domain, prompt, trajectory, step, token, vocabulary coordinate, or latent field? Should a verifier select one teacher, admit every verified teacher, or reject distillation entirely for that sample? Comparisons should report both quality and the cost of obtaining and applying the routing signal.
+
+## Data and state coverage
+
+How few prompts can still induce the state coverage needed to absorb several teachers, and how should prompt diversity be measured independently of topical relevance? Data-efficiency claims should distinguish coverage of student-visited states from the number of unique training examples.
 
 ## Capability balance
 

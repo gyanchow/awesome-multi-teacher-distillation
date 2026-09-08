@@ -2,7 +2,7 @@
 
 This staging area is for discoveries that have not yet passed primary-source and scope verification. Pending items are not counted in the repository total.
 
-There are no pending items as of **2026-08-31**.
+There are no pending items as of **2026-09-08**.
 
 ## Candidate template
 

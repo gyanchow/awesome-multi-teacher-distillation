@@ -4,9 +4,18 @@
 
 Works in this collection distill multiple teachers or an ensemble using a static corpus, teacher-generated data, cached activations, or replay. They do not satisfy the repository's student-state criterion for strict MOPD.
 
-**41 records · metadata verified through 2026-08-31 · [Taxonomy](../resources/taxonomy.md)**
+**45 records · metadata verified through 2026-09-08 · [Taxonomy](../resources/taxonomy.md)**
 
 ## Adaptive Weighting
+
+<a id="arxiv-2601-09165"></a>
+- [Multi-Teacher Ensemble Distillation: A Mathematical Framework for Probability-Domain Knowledge Aggregation](https://arxiv.org/abs/2601.09165) - 2026-01-14. Provides an axiomatic operator framework and variance, bias, log-loss, and safety guarantees for probability-domain aggregation across heterogeneous teachers.
+  - **Facets:** `arxiv:2601.09165` · Analysis · Offline · State: Static Corpus
+  - **Teacher topology:** Ensemble to One, Independent Multi-Teacher, Heterogeneous Pool
+  - **Mechanism:** Adaptive Weighting · Secondary: Direct Matching
+  - **Signals and domains:** Logits / Distribution · General Machine Learning
+  - **Classification evidence:** The analysis formalizes probability aggregation from multiple teachers into a student target on conventional static inputs; it does not use student-generated states.
+  - **Artifacts:** None verified
 
 <a id="arxiv-2408-05088"></a>
 - [UNIC: Universal Classification Models via Multi-teacher Distillation](https://arxiv.org/abs/2408.05088) - 2024-08-09. Uses expendable ladder projectors and teacher dropping to balance complementary pretrained vision teachers in one universal encoder.
@@ -76,6 +85,15 @@ Works in this collection distill multiple teachers or an ensemble using a static
 
 
 ## Conflict Resolution
+
+<a id="arxiv-2609-01913"></a>
+- [MERGED: Multimodal Entity Resolution via Generated Expert Reasoning Distillation](https://arxiv.org/abs/2609.01913) - 2026-09-01. Uses two teacher VLMs to generate product-pair labels and rationales, training on agreements by SFT and turning meta-judged disagreements into DPO preferences.
+  - **Facets:** `arxiv:2609.01913` · Method · Offline · State: Teacher-Generated
+  - **Teacher topology:** Independent Multi-Teacher, Heterogeneous Pool
+  - **Mechanism:** Conflict Resolution · Secondary: Routing and Selection, Direct Matching
+  - **Signals and domains:** Responses / Rationales, Feedback / Reward, Teacher-Generated Data · Multimodal, Recommendation and Search
+  - **Classification evidence:** Two distinct teacher VLMs generate fixed labels and rationales; consensus examples train the student with SFT and meta-judged disagreements train it with DPO.
+  - **Artifacts:** None verified
 
 <a id="arxiv-2602-01064"></a>
 - [Exploring Knowledge Purification in Multi-Teacher Knowledge Distillation for LLMs](https://arxiv.org/abs/2602.01064) - 2026-02-01. Purifies conflicting rationales from multiple teacher LLMs into a single training rationale and compares several routing strategies.
@@ -199,6 +217,15 @@ Works in this collection distill multiple teachers or an ensemble using a static
 
 
 ## Heterogeneous Alignment
+
+<a id="arxiv-2609-02676"></a>
+- [LoFi RADIO: A Distilled In-Domain Backbone Applied for Artifact-Severity Grading of Ultra-Low-Field Neonatal Brain MR](https://arxiv.org/abs/2609.02676) - 2026-09-02. Distills DINOv2, BiomedCLIP, and Phikon features on unlabeled low-field MRI into one compact in-domain ViT-S backbone for neonatal artifact grading.
+  - **Facets:** `arxiv:2609.02676` · Method · Offline · State: Static Corpus
+  - **Teacher topology:** Independent Multi-Teacher, Heterogeneous Pool, Specialist Pool
+  - **Mechanism:** Heterogeneous Alignment · Secondary: Direct Matching
+  - **Signals and domains:** Features · Vision, Scientific and Healthcare
+  - **Classification evidence:** Three frozen heterogeneous vision foundation models provide summary-token and dense-feature targets on a fixed low-field MRI corpus to one ViT-S student.
+  - **Artifacts:** None verified
 
 <a id="cvf-wacv2026-histomilkd"></a>
 - [HistoMILKD: A Multiple Instance Learning based Multi-Teacher Knowledge Distillation Framework for Whole Slide Image Classification](https://openaccess.thecvf.com/content/WACV2026/html/Mallya_HistoMILKD_A_Multiple_Instance_Learning_based_Multi-Teacher_Knowledge_Distillation_Framework_WACV_2026_paper.html) - 2026-03-01. Distills complementary pathology foundation models into a single multiple-instance-learning adapter for whole-slide classification.
@@ -358,6 +385,15 @@ Works in this collection distill multiple teachers or an ensemble using a static
   - **Signals and domains:** Responses / Rationales, Teacher-Generated Data · General LLMs
   - **Classification evidence:** A router chooses one of several teachers per prompt, and the selected teacher response becomes fixed synthetic student supervision.
   - **Artifacts:** [Code](https://anonymous.4open.science/r/PerSyn-8D85)
+
+<a id="arxiv-2605-26872"></a>
+- [When the Strongest Teacher Is Not the Best Teacher: Student-Centric Answer Selection](https://arxiv.org/abs/2605.26872) - 2026-05-26. Ranks verified answers from a heterogeneous thirty-model teacher pool by a forward-only student learning-cost proxy and resamples low-cost supervision as the student evolves.
+  - **Facets:** `arxiv:2605.26872` · Method · Offline · State: Teacher-Generated
+  - **Teacher topology:** Independent Multi-Teacher, Heterogeneous Pool
+  - **Mechanism:** Routing and Selection · Secondary: Dynamic Scheduling
+  - **Signals and domains:** Responses / Rationales, Teacher-Generated Data · General LLMs, LLM Reasoning
+  - **Classification evidence:** Verified responses from thirty independent teacher models form a fixed candidate pool; the current student only scores and selects answers before offline supervised updates.
+  - **Artifacts:** [Code](https://github.com/ppsmk388/Student-Centric-Answer-Selection)
 
 <a id="arxiv-2501-01709"></a>
 - [MoVE-KD: Knowledge Distillation for VLMs with Mixture of Visual Encoders](https://arxiv.org/abs/2501.01709) - 2025-01-03. Distills multiple visual encoders into one VLM encoder using teacher-token attention and a mixture-of-LoRA-experts router.

@@ -6,9 +6,9 @@ The catalog uses one **mutually exclusive primary collection** plus several **or
 
 | Collection | Inclusion rule | Current count |
 |---|---|---:|
-| `multi_teacher_on_policy` | Current or near-current student states receive direct distillation supervision from multiple independently identifiable teachers. | 41 |
-| `offline_multi_teacher` | Multiple teachers or an ensemble supervise the student through static data, teacher generations, cached targets, or replay. | 41 |
-| `adjacent_alternative` | Closely related online, peer, self/EMA, privileged-view, sibling-rollout, or replay method that fails at least one strict-MOPD test. | 6 |
+| `multi_teacher_on_policy` | Current or near-current student states receive direct distillation supervision from multiple independently identifiable teachers. | 47 |
+| `offline_multi_teacher` | Multiple teachers or an ensemble supervise the student through static data, teacher generations, cached targets, or replay. | 45 |
+| `adjacent_alternative` | Closely related online, peer, self/EMA, privileged-view, sibling-rollout, or replay method that fails at least one strict-MOPD test. | 11 |
 | `single_teacher_foundation` | A foundational generative or on-policy distillation method with one teacher. | 3 |
 | `review_tutorial` | A field-level survey or tutorial rather than a method record. | 4 |
 

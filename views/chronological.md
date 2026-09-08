@@ -4,10 +4,19 @@
 
 The complete catalog ordered by first public date, with collection and record-type facets.
 
-Entries link to their canonical catalog record. This is a derived view; edit `data/papers.json` instead. Verified through 2026-08-31.
+Entries link to their canonical catalog record. This is a derived view; edit `data/papers.json` instead. Verified through 2026-09-08.
 
-## 2026 (51)
+## 2026 (66)
 
+- [RISE: Recursive Improvement via Self-Extrapolating Policy Distillation](../papers/adjacent-alternatives.md#arxiv-2609-05295) - 2026-09-04; Adjacent and Alternative Paradigms; Method.
+- [Rethinking On-Policy Distillation of Large Language Models II: One Training Example](../papers/multi-teacher-on-policy.md#arxiv-2609-04172) - 2026-09-03; Multi-Teacher On-Policy Distillation; Analysis.
+- [Verify Before You Distill: Prompt-Level Teacher Gating for On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2609-02998) - 2026-09-02; Multi-Teacher On-Policy Distillation; Method.
+- [LoFi RADIO: A Distilled In-Domain Backbone Applied for Artifact-Severity Grading of Ultra-Low-Field Neonatal Brain MR](../papers/offline-multi-teacher.md#arxiv-2609-02676) - 2026-09-02; Offline Multi-Teacher Distillation; Method.
+- [Learn from Whoever Is Right: Answer-Verified Multi-Teacher Distillation for Multi-Domain LLMs](../papers/multi-teacher-on-policy.md#arxiv-2609-02548) - 2026-09-02; Multi-Teacher On-Policy Distillation; Method.
+- [CA-OPD: Confidence-Aware On-Policy Distillation for Structured Visual Prediction](../papers/multi-teacher-on-policy.md#arxiv-2609-02401) - 2026-09-02; Multi-Teacher On-Policy Distillation; Method.
+- [MERGED: Multimodal Entity Resolution via Generated Expert Reasoning Distillation](../papers/offline-multi-teacher.md#arxiv-2609-01913) - 2026-09-01; Offline Multi-Teacher Distillation; Method.
+- [Instella-MoE Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2609-00791) - 2026-09-01; Multi-Teacher On-Policy Distillation; System Report.
+- [CRAD: Class-wise Reliability-Aware Distillation for Decentralized Heterogeneous Federated Learning](../papers/adjacent-alternatives.md#arxiv-2609-00446) - 2026-08-31; Adjacent and Alternative Paradigms; Method.
 - [Preserving General Capabilities during Domain Specialization with Uncertainty-Calibrated MOPD](../papers/multi-teacher-on-policy.md#arxiv-2608-26735) - 2026-08-27; Multi-Teacher On-Policy Distillation; Method.
 - [Consolidating RLVR Capabilities Across Domains: A Deep Dive into Fusion Paradigms](../papers/multi-teacher-on-policy.md#arxiv-2608-27409) - 2026-08-27; Multi-Teacher On-Policy Distillation; Analysis.
 - [D$^3$-MOPD: Adaptive Dynamic Domain ScheDuling for Efficient Multi-Teacher Distillation](../papers/multi-teacher-on-policy.md#arxiv-2608-24987) - 2026-08-25; Multi-Teacher On-Policy Distillation; Method.
@@ -16,6 +25,7 @@ Entries link to their canonical catalog record. This is a derived view; edit `da
 - [Mint-Agent: Introducing Finance-Native Agentic Foundation Models](../papers/multi-teacher-on-policy.md#arxiv-2608-16386) - 2026-08-17; Multi-Teacher On-Policy Distillation; System Report.
 - [Every Coin Has Two Sides: On the Dual Nature of Generalization in On-Policy Distillation of Large Language Models](../papers/multi-teacher-on-policy.md#arxiv-2608-16647) - 2026-08-17; Multi-Teacher On-Policy Distillation; Analysis.
 - [From Passive Delegates to Strategic Negotiators: Reinforcing Social Reasoning in Small Language Models with SocialRL](../papers/multi-teacher-on-policy.md#arxiv-2608-13787) - 2026-08-13; Multi-Teacher On-Policy Distillation; System Report.
+- [WDL-OPD: Weak-Driven On-Policy Distillation via Mixture-Constrained Co-Training](../papers/adjacent-alternatives.md#arxiv-2608-09447) - 2026-08-10; Adjacent and Alternative Paradigms; Method.
 - [Motif 3: Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2608-09119) - 2026-08-10; Multi-Teacher On-Policy Distillation; System Report.
 - [Capek 0.5: An Execution-Centric Vision-Language Model for Embodied Intelligence](../papers/multi-teacher-on-policy.md#arxiv-2608-06756) - 2026-08-07; Multi-Teacher On-Policy Distillation; System Report.
 - [Poly-OPD: Heterogeneous Multi-Teacher On-Policy Distillation for Capability-Selectable Flow Models](../papers/multi-teacher-on-policy.md#arxiv-2608-04349) - 2026-08-05; Multi-Teacher On-Policy Distillation; Method.
@@ -33,6 +43,7 @@ Entries link to their canonical catalog record. This is a derived view; edit `da
 - [UI-MOPD: Multi-Platform On-Policy Distillation for Unified GUI Agents](../papers/multi-teacher-on-policy.md#arxiv-2607-04425) - 2026-07-05; Multi-Teacher On-Policy Distillation; Method.
 - [H-OPD: Confidence Aware Heterogeneous Multi-Teacher Multimodal On-policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2607-02592) - 2026-07-01; Multi-Teacher On-Policy Distillation; Method.
 - [Find Your Optimal Teacher: Personalized Data Synthesis via Router-Guided Multi-Teacher Distillation](../papers/offline-multi-teacher.md#acl-2026-acl-long-666) - 2026-07-01; Offline Multi-Teacher Distillation; Method.
+- [One Student, Many Teachers: Multi-Task On-Policy Distillation via Soft-Prompt Privileged Context](../papers/multi-teacher-on-policy.md#arxiv-2607-18293) - 2026-06-30; Multi-Teacher On-Policy Distillation; Method.
 - [Scaling the Horizon, Not the Parameters: Reaching Trillion-Parameter Performance with a 35B Agent](../papers/multi-teacher-on-policy.md#arxiv-2606-30616) - 2026-06-29; Multi-Teacher On-Policy Distillation; Method.
 - [MOPD: Multi-Teacher On-Policy Distillation for Capability Integration in LLM Post-Training](../papers/multi-teacher-on-policy.md#arxiv-2606-30406) - 2026-06-29; Multi-Teacher On-Policy Distillation; Method.
 - [DOPD: Dual On-policy Distillation](../papers/adjacent-alternatives.md#arxiv-2606-30626) - 2026-06-29; Adjacent and Alternative Paradigms; Method.
@@ -41,10 +52,13 @@ Entries link to their canonical catalog record. This is a derived view; edit `da
 - [Be My Tutor: On-Policy Co-Distillation for Mutual LLM Improvement via Peer Feedback](../papers/adjacent-alternatives.md#arxiv-2606-14368) - 2026-06-12; Adjacent and Alternative Paradigms; Method.
 - [Kwai Keye-VL-2.0 Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2606-10651) - 2026-06-09; Multi-Teacher On-Policy Distillation; System Report.
 - [OneReason Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2606-06260) - 2026-06-04; Multi-Teacher On-Policy Distillation; System Report.
+- [Skill-Conditioned Gated Self-Distillation for LLM Reasoning](../papers/adjacent-alternatives.md#arxiv-2605-28791) - 2026-05-27; Adjacent and Alternative Paradigms; Method.
+- [When the Strongest Teacher Is Not the Best Teacher: Student-Centric Answer Selection](../papers/offline-multi-teacher.md#arxiv-2605-26872) - 2026-05-26; Offline Multi-Teacher Distillation; Method.
 - [Counteraction-Aware Multi-Teacher On-Policy Distillation for General Capability Recovery with Domain Preservation](../papers/multi-teacher-on-policy.md#arxiv-2605-27115) - 2026-05-26; Multi-Teacher On-Policy Distillation; Method.
 - [CollectionLoRA: Collecting 50 Effects in 1 LoRA via Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2605-25378) - 2026-05-25; Multi-Teacher On-Policy Distillation; Method.
 - [Multi-Rollout On-Policy Distillation via Peer Successes and Failures](../papers/adjacent-alternatives.md#arxiv-2605-12652) - 2026-05-12; Adjacent and Alternative Paradigms; Method.
 - [ProteinOPD: Towards Effective and Efficient Preference Alignment for Protein Design](../papers/multi-teacher-on-policy.md#arxiv-2605-10189) - 2026-05-11; Multi-Teacher On-Policy Distillation; Method.
+- [On-Policy Distillation with Best-of-N Teacher Rollout Selection](../papers/adjacent-alternatives.md#arxiv-2605-09725) - 2026-05-10; Adjacent and Alternative Paradigms; Method.
 - [CoDistill-GRPO: A Co-Distillation Recipe for Efficient Group Relative Policy Optimization](../papers/adjacent-alternatives.md#arxiv-2605-08873) - 2026-05-09; Adjacent and Alternative Paradigms; Method.
 - [UniSD: Towards a Unified Self-Distillation Framework for Large Language Models](../papers/adjacent-alternatives.md#arxiv-2605-06597) - 2026-05-07; Adjacent and Alternative Paradigms; Method.
 - [Uni-OPD: Unifying On-Policy Distillation with a Dual-Perspective Recipe](../papers/multi-teacher-on-policy.md#arxiv-2605-03677) - 2026-05-05; Multi-Teacher On-Policy Distillation; Method.
@@ -57,6 +71,7 @@ Entries link to their canonical catalog record. This is a derived view; edit `da
 - [GLM-5: from Vibe Coding to Agentic Engineering](../papers/multi-teacher-on-policy.md#arxiv-2602-15763) - 2026-02-17; Multi-Teacher On-Policy Distillation; System Report.
 - [Baichuan-M3: Modeling Clinical Inquiry for Reliable Medical Decision-Making](../papers/multi-teacher-on-policy.md#arxiv-2602-06570) - 2026-02-06; Multi-Teacher On-Policy Distillation; System Report.
 - [Exploring Knowledge Purification in Multi-Teacher Knowledge Distillation for LLMs](../papers/offline-multi-teacher.md#arxiv-2602-01064) - 2026-02-01; Offline Multi-Teacher Distillation; Method.
+- [Multi-Teacher Ensemble Distillation: A Mathematical Framework for Probability-Domain Knowledge Aggregation](../papers/offline-multi-teacher.md#arxiv-2601-09165) - 2026-01-14; Offline Multi-Teacher Distillation; Analysis.
 - [ORBIT: On-policy Exploration-Exploitation for Controllable Multi-Budget Reasoning](../papers/multi-teacher-on-policy.md#arxiv-2601-08310) - 2026-01-13; Multi-Teacher On-Policy Distillation; System Report.
 - [MiMo-V2-Flash Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2601-02780) - 2026-01-06; Multi-Teacher On-Policy Distillation; System Report.
 

@@ -1,6 +1,6 @@
 # Search and Verification Strategy
 
-**Cutoff:** 2026-08-31 (Asia/Shanghai). The catalog is a snapshot, not a claim of permanent completeness.
+**Cutoff:** 2026-09-08 (Asia/Shanghai). The catalog is a snapshot, not a claim of permanent completeness. The latest new arXiv submission visible during this pass was dated 2026-09-04.
 
 ## Discovery queries
 
@@ -12,6 +12,8 @@ The seed search combined exact phrases and mechanism-level variants:
 - `"multi-teacher knowledge distillation"`, `"multiple teacher distillation"`
 - `ensemble distillation student`, `knowledge amalgamation heterogeneous teachers`
 - `teacher selection routing multi-teacher distillation`
+- `answer-verified teacher`, `teacher gating verifier`, `student-centric teacher selection`
+- `soft-prompt teacher on-policy`, `self-extrapolating policy distillation`, `best-of-N teacher rollout`
 - citation and reference chaining from foundational, survey, and system papers
 
 Searches covered arXiv, ACL Anthology, ACM/DOI landing pages, NeurIPS and PMLR proceedings, CVF Open Access, official project pages, author/organization GitHub repositories, and official model reports. General web search was used for discovery only.
@@ -53,4 +55,4 @@ After assigning one primary collection, the maintainer independently records tra
 6. Run `python3 scripts/validate.py` and `python3 scripts/render.py --check`, then review the complete diff manually.
 7. Re-check renamed arXiv papers and dead project/code links during scheduled maintenance.
 
-The initial discovery and organization were AI-assisted, followed by primary-source checks. A maintainer should independently review every item before publication and must do so before applying to the official Awesome index.
+Discovery and organization were AI-assisted, followed by primary-source checks. A maintainer should independently review every item before publication and must do so before applying to the official Awesome index.

@@ -2,6 +2,13 @@
 
 All notable curation changes are recorded here.
 
+## 2026-09-08
+
+- Added 15 primary-source-verified records: 6 strict multi-teacher OPD works, 4 offline multi-teacher works, and 5 adjacent or alternative methods.
+- Added the September submissions MT-SDPO, TGOPD, CA-OPD, One-Shot OPD II, Instella-MoE, LoFi RADIO, MERGED, and RISE.
+- Backfilled PromptSD, student-centric answer selection, BRTS, CRAD, and a probability-domain theory paper; incorporated major September revisions of SGSD and WDL-OPD.
+- Refreshed the bilingual 35-paper entry point, reading paths, cross-cutting views, and verification cutoff. The catalog now contains `47 + 45 + 11 + 3 + 4 = 110` records.
+
 ## 2026-09-01
 
 - Replaced the overlapping core/system/background categories with five mutually exclusive primary collections containing `41 + 41 + 6 + 3 + 4 = 95` records.
