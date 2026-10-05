@@ -6,12 +6,25 @@
 
 ## 目录
 
+- [从这里开始](#从这里开始)
 - [收录范围](#收录范围)
 - [多教师在线策略蒸馏](#多教师在线策略蒸馏)
 - [离线多教师蒸馏](#离线多教师蒸馏)
 - [相邻与替代范式](#相邻与替代范式)
 - [单教师基础工作](#单教师基础工作)
 - [综述与教程](#综述与教程)
+
+## 从这里开始
+
+![在线策略、离线和相邻蒸馏方法的分类地图](assets/method-map.svg)
+
+| 阅读目标 | 推荐入口 |
+| --- | --- |
+| 建立领域概念 | [方法导读](resources/guide_zh-CN.md)：三个证据问题、方法比较和八篇论文的阅读路线。 |
+| 深入研究问题 | [专题阅读路线](resources/reading-order.md)：教师路由、能力整合、异构模型和离线蒸馏。 |
+| 查找实现与模型 | [作者关联产物](views/with-artifacts.md)：代码、模型、数据集和项目页面；链接可访问不代表结果已复现。 |
+
+下方是入门用的代表性论文；完整目录和交叉分类见[附注](#附注)。
 
 ## 收录范围
 
@@ -79,8 +92,8 @@
 
 五个完整主目录分别为：[多教师在线策略蒸馏](papers/multi-teacher-on-policy.md)、[离线多教师蒸馏](papers/offline-multi-teacher.md)、[相邻与替代范式](papers/adjacent-alternatives.md)、[单教师基础工作](papers/single-teacher-foundations.md)和[综述与教程](papers/reviews-tutorials.md)。
 
-交叉视图支持按[组合机制](views/by-mechanism.md)、[教师拓扑](views/by-teacher-topology.md)、[监督信号](views/by-supervision-signal.md)、[应用领域](views/by-domain.md)、[系统报告](views/system-reports.md)、[已核验产物](views/with-artifacts.md)和[首次公开日期](views/chronological.md)浏览。
+交叉视图支持按[组合机制](views/by-mechanism.md)、[教师拓扑](views/by-teacher-topology.md)、[监督信号](views/by-supervision-signal.md)、[应用领域](views/by-domain.md)、[系统报告](views/system-reports.md)和[首次公开日期](views/chronological.md)浏览。
 
-维护与复现资料包括[机器可读目录](data/papers.json)、[数据规范](data/schema.json)、[分类说明](resources/taxonomy.md)、[阅读路径](resources/reading-order.md)、[开放研究问题](resources/open-questions.md)以及[检索与核验流程](resources/search-strategy.md)。
+维护与复现资料包括[机器可读目录](data/papers.json)、[数据规范](data/schema.json)、[分类说明](resources/taxonomy.md)、[开放研究问题](resources/open-questions.md)以及[检索与核验流程](resources/search-strategy.md)。
 
 本次更新的来源与分类边界见[10 月检索记录](resources/update-2026-10-05.md)；向 awesome 总榜投稿前请核对[收录准备检查](resources/awesome-submission.md)。

@@ -9,6 +9,7 @@ All notable curation changes are recorded here.
 - Kept MAS-OPD and ROSS in the adjacent collection; recorded the limited artifact availability of Latent-MOPD and Video-MOPD.
 - Refreshed both 35-entry READMEs, reading paths, and generated views. Added a dated source/classification record and unresolved candidate notes.
 - Audited official Awesome submission requirements, corrected the introductory topic description, and enabled full Git history for the lint job. Remote topics and human eligibility requirements remain unresolved.
+- Added bilingual field guides with an eight-paper route and method comparison, an editable method map, a social-preview image, a prominent reading entry point, and an evidence-based correction form. Corrected the taxonomy page's stale counts and prepared an outreach kit with publication status tracked separately.
 
 ## 2026-09-08
 

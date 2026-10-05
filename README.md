@@ -6,12 +6,25 @@ Multi-teacher distillation transfers knowledge from several complementary or spe
 
 ## Contents
 
+- [Start Here](#start-here)
 - [Scope](#scope)
 - [Multi-Teacher On-Policy Distillation](#multi-teacher-on-policy-distillation)
 - [Offline Multi-Teacher Distillation](#offline-multi-teacher-distillation)
 - [Adjacent and Alternative Paradigms](#adjacent-and-alternative-paradigms)
 - [Single-Teacher Foundations](#single-teacher-foundations)
 - [Reviews and Tutorials](#reviews-and-tutorials)
+
+## Start Here
+
+![A map comparing on-policy, offline, and adjacent distillation methods](assets/method-map.svg)
+
+| Goal                            | Starting point                                                                                                                                 |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Learn the field                 | [Field Guide](resources/guide.md): three evidence tests, a method comparison, and an eight-paper route.                                        |
+| Explore a research problem      | [Reading Paths](resources/reading-order.md): routing, capability consolidation, heterogeneous models, and offline distillation.                |
+| Find implementations and models | [Author-Linked Artifacts](views/with-artifacts.md): code, models, datasets, and project pages; availability does not imply reproduced results. |
+
+Use the selected papers below for an overview. The full catalogs and cross-cutting views are linked in [Footnotes](#footnotes).
 
 ## Scope
 
@@ -79,8 +92,8 @@ Suggestions and corrections are welcome. Please read the [contribution guide](CO
 
 The complete canonical catalogs cover [multi-teacher on-policy distillation](papers/multi-teacher-on-policy.md), [offline multi-teacher distillation](papers/offline-multi-teacher.md), [adjacent and alternative paradigms](papers/adjacent-alternatives.md), [single-teacher foundations](papers/single-teacher-foundations.md), and [reviews and tutorials](papers/reviews-tutorials.md).
 
-Cross-cutting views are available by [mechanism](views/by-mechanism.md), [teacher topology](views/by-teacher-topology.md), [supervision signal](views/by-supervision-signal.md), [domain](views/by-domain.md), [system report](views/system-reports.md), [verified artifact](views/with-artifacts.md), and [first public date](views/chronological.md).
+Cross-cutting views are available by [mechanism](views/by-mechanism.md), [teacher topology](views/by-teacher-topology.md), [supervision signal](views/by-supervision-signal.md), [domain](views/by-domain.md), [system report](views/system-reports.md), and [first public date](views/chronological.md).
 
-For maintenance and reproducibility, see the [machine-readable catalog](data/papers.json), [schema](data/schema.json), [taxonomy](resources/taxonomy.md), [reading paths](resources/reading-order.md), [open research questions](resources/open-questions.md), and [search and verification protocol](resources/search-strategy.md).
+For maintenance and reproducibility, see the [machine-readable catalog](data/papers.json), [schema](data/schema.json), [taxonomy](resources/taxonomy.md), [open research questions](resources/open-questions.md), and [search and verification protocol](resources/search-strategy.md).
 
 See the [October search record](resources/update-2026-10-05.md) for sources and classification boundaries, and the [Awesome submission audit](resources/awesome-submission.md) before proposing this list to the main index.

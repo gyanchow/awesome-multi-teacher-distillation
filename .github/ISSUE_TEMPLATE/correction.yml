@@ -1,0 +1,30 @@
+name: Correct a paper or classification
+description: Report a factual error, missing evidence, or an incorrect artifact link.
+title: "[Correction]: "
+body:
+  - type: input
+    id: paper
+    attributes:
+      label: Paper or resource
+      description: Give the paper title, stable ID, or catalog URL.
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: What should change?
+      description: Describe the current statement and your proposed correction.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting evidence
+      description: Link the primary source and identify the relevant section, equation, or official artifact. For classification changes, explain the training-state source, teacher identities, and student objective.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Optional implementation details or author clarification that would help verify the correction.

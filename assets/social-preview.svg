@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+<title id="title">Multi-Teacher Distillation</title><desc id="desc">On-policy, offline and reading paths. A curated research collection.</desc>
+<rect x="0" y="0" width="1280" height="640" rx="0" fill="#122C3D" stroke="none"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#70D4C3" text-anchor="start">
+<tspan x="68" y="90.375">AWESOME RESEARCH COLLECTION</tspan>
+</text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="700" fill="#FFFFFF" text-anchor="start">
+<tspan x="68" y="205.5">Multi-Teacher</tspan>
+<tspan x="68" y="288.0">Distillation</tspan>
+</text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" fill="#D2E5E9" text-anchor="start">
+<tspan x="70" y="372.5">On-policy · Offline · Reading paths</tspan>
+</text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#A5BCC7" text-anchor="start">
+<tspan x="70" y="448.25">A curated map of methods, evidence</tspan>
+<tspan x="70" y="477.0">and the boundaries between them.</tspan>
+</text>
+<rect x="70" y="546" width="1140" height="1" rx="0" fill="#365566" stroke="none"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#D2E5E9" text-anchor="start">
+<tspan x="70" y="592.75">github.com/gyanchow/awesome-multi-teacher-distillation</tspan>
+</text>
+<rect x="957" y="159" width="86" height="58" rx="10" fill="#254757" stroke="none"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#D2E5E9" text-anchor="middle">
+<tspan x="1000.0" y="197.0">T1</tspan>
+</text>
+<rect x="957" y="247" width="86" height="58" rx="10" fill="#254757" stroke="none"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#D2E5E9" text-anchor="middle">
+<tspan x="1000.0" y="285.0">T2</tspan>
+</text>
+<rect x="957" y="335" width="86" height="58" rx="10" fill="#254757" stroke="none"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#D2E5E9" text-anchor="middle">
+<tspan x="1000.0" y="373.0">T3</tspan>
+</text>
+<rect x="1092" y="231" width="121" height="95" rx="10" fill="#70D4C3" stroke="none"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#122C3D" text-anchor="middle">
+<tspan x="1152.5" y="286.75">Student</tspan>
+</text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#A5BCC7" text-anchor="middle">
+<tspan x="1002.0" y="134.25">TEACHERS</tspan>
+</text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#A5BCC7" text-anchor="middle">
+<tspan x="1084.5" y="432.75">Teacher supervision → student</tspan>
+</text>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="none" stroke="#70D4C3" stroke-width="1.2"/></marker></defs><g fill="none" stroke="#70D4C3" stroke-width="2" marker-end="url(#arrow)"><path d="M1043 188 H1067 V252 H1088"/><path d="M1043 276 H1088"/><path d="M1043 364 H1067 V303 H1088"/></g></svg>
