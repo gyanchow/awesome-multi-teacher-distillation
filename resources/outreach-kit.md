@@ -1,14 +1,18 @@
 # Outreach kit
 
-Status: **Prepared**. Date: 2026-10-05. All posts, messages, collection notes, and the upstream proposal below are drafts. This file does not record publication, contact with authors, or acceptance by another project.
+Status: **Repository materials published; external distribution pending**. Date: 2026-10-05. The guides, illustrations, and this kit are on `main` in commit `1e59fdd`. Social posts, author invitations, collection notes, and the upstream proposal remain unsent drafts; no external acceptance or author endorsement is claimed.
 
 | Channel / artifact | Status |
 | --- | --- |
+| Bilingual guides, method map, sharing image, and correction form | **Published in this repository** |
 | Zhihu account and publication arrangements | **Deferred by owner** |
 | X account and publication arrangements | **Deferred by owner** |
 | Hugging Face account and Collection publication | **Deferred by owner** |
 | Chinese introduction, X thread, and HF reading-path manifest | **Prepared** |
-| GitHub related-resource proposal | **Prepared**; publication status awaits a verified issue URL |
+| GitHub related-resource proposal | **Prepared; submission blocked** by integration permissions (HTTP 403); no issue was created |
+| Author verification invitations | **Templates prepared**; no authors contacted |
+| Topics, profile pin, and configured social preview | **Manual account steps remain**; the available tools cannot apply these settings |
+| Weekly Traffic record | **Template prepared**; private metrics not measured and no recurring job scheduled |
 
 The owner will decide the Zhihu, X, and Hugging Face arrangements later. The material below is retained for that later decision; it does not authorize or record publication on those platforms.
 
@@ -16,7 +20,7 @@ The catalog snapshot contains **134 records**: 63 multi-teacher on-policy, 50 of
 
 ## Public links for publication
 
-Use these links after the corresponding files are available on `main`. Open them once before publishing a post that links to them.
+These files are available on `main`; the six new guide, kit, and visual-asset URLs checked after publication returned HTTP 200. Open the relevant destination again before a later social post. The publication's metadata and link CI jobs passed; Awesome lint still reported only the missing `awesome` and `awesome-list` topics.
 
 | Destination | Public URL |
 | --- | --- |
@@ -96,7 +100,9 @@ Checked on 2026-10-05 against [mbzuai-oryx/Awesome-LLM-Post-training](https://gi
 - The complete default-branch file tree returned no dedicated `CONTRIBUTING` file or repository-local issue/PR template. Organization-level defaults or the logged-in creation screen may still supply a form; follow any form shown there.
 - Public GitHub issue search, covering open and closed issues and PRs, returned zero results for each of these queries: `repo:mbzuai-oryx/Awesome-LLM-Post-training "awesome-multi-teacher-distillation"`, `repo:mbzuai-oryx/Awesome-LLM-Post-training "multi-teacher"`, and `repo:mbzuai-oryx/Awesome-LLM-Post-training author:gyanchow`. Results were marked complete. No duplicate was found with those queries; recheck before posting because differently worded or later proposals may exist.
 
-Start from the repository's [Issues page](https://github.com/mbzuai-oryx/Awesome-LLM-Post-training/issues). Submit only one suggestion. If a matching issue or PR appears, use that discussion rather than opening another. No issue or PR has been sent as part of preparing this file.
+An attempt to submit the prepared suggestion on 2026-10-05 was rejected by GitHub with HTTP 403, `Resource not accessible by integration`. No issue was created. This is a permission limit of the connected integration, not a rejection of the resource by the maintainers.
+
+For manual submission, start from the repository's [Issues page](https://github.com/mbzuai-oryx/Awesome-LLM-Post-training/issues), choose **New issue**, and copy the title and body below. Submit only one suggestion. If a matching issue or PR appears, use that discussion rather than opening another. Record the resulting issue URL only after successful submission.
 
 ### Issue title
 
