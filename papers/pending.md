@@ -10,7 +10,7 @@ These items have not passed all relevant source or artifact checks as of **2026-
 
 ## Artifact follow-up for an accepted paper
 
-- **[Video-MOPD](https://arxiv.org/abs/2609.09300)** — Paper accepted after method verification. Its author-linked [model weights](https://huggingface.co/LandH/Video-MOPD-8B) returned HTTP 401 during this pass. The catalog's artifact list remains empty until availability can be verified. This does not make the paper itself pending.
+- **[Video-MOPD](https://arxiv.org/abs/2609.09300)** — Paper accepted after method verification. Its author-linked Hugging Face model `LandH/Video-MOPD-8B` returned HTTP 401 during this pass. The catalog's artifact list remains empty until availability can be verified. This does not make the paper itself pending.
 
 ## Candidate template
 
