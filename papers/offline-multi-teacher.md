@@ -4,9 +4,27 @@
 
 Works in this collection distill multiple teachers or an ensemble using a static corpus, teacher-generated data, cached activations, or replay. They do not satisfy the repository's student-state criterion for strict MOPD.
 
-**45 records · metadata verified through 2026-09-08 · [Taxonomy](../resources/taxonomy.md)**
+**50 records · catalog refreshed on 2026-10-05 · [Taxonomy](../resources/taxonomy.md)**
 
 ## Adaptive Weighting
+
+<a id="arxiv-2609-32493"></a>
+- [SoFT: Soft Targets for Generalizable LLM Fine-Tuning](https://arxiv.org/abs/2609.32493) - 2026-09-26. Balances imitation of fixed multi-teacher demonstrations with preservation of the base model through token-wise soft targets and domain-specific gradient budgets.
+  - **Facets:** `arxiv:2609.32493` · Method · Offline · State: Teacher-Generated
+  - **Teacher topology:** Independent Multi-Teacher, Heterogeneous Pool
+  - **Mechanism:** Adaptive Weighting · Secondary: Direct Matching
+  - **Signals and domains:** Responses / Rationales, Teacher-Generated Data, Logits / Distribution · General LLMs, LLM Reasoning, LLM Agents
+  - **Classification evidence:** Section 3 constructs targets on teacher-forced prefixes from offline demonstrations and the frozen base distribution; Appendix C identifies independent teachers including DeepSeek-R1, GLM-5.1, Kimi-K2.5, and Qwen models. There are no student rollouts or required teacher logits.
+  - **Artifacts:** None verified
+
+<a id="arxiv-2605-27967"></a>
+- [Multi-Teacher Knowledge Distillation via Teacher-Informed Mixture Priors](https://arxiv.org/abs/2605.27967) - 2026-05-27. Forms a teacher-informed mixture prior with sample-wise entropy weights and samples the student posterior to combine teacher expertise with uncertainty estimates.
+  - **Facets:** `arxiv:2605.27967` · Method · Offline · State: Static Corpus
+  - **Teacher topology:** Independent Multi-Teacher, Heterogeneous Pool
+  - **Mechanism:** Adaptive Weighting · Secondary: Direct Matching
+  - **Signals and domains:** Logits / Distribution · General Machine Learning, Vision, Scientific and Healthcare
+  - **Classification evidence:** Sections 3–5 construct a mixture prior from several pretrained teachers’ class probabilities on fixed training inputs, then directly update student parameters through posterior gradients; Section 8 includes protein and image-classification tasks.
+  - **Artifacts:** None verified
 
 <a id="arxiv-2601-09165"></a>
 - [Multi-Teacher Ensemble Distillation: A Mathematical Framework for Probability-Domain Knowledge Aggregation](https://arxiv.org/abs/2601.09165) - 2026-01-14. Provides an axiomatic operator framework and variance, bias, log-loss, and safety guarantees for probability-domain aggregation across heterogeneous teachers.
@@ -103,6 +121,15 @@ Works in this collection distill multiple teachers or an ensemble using a static
   - **Signals and domains:** Responses / Rationales, Teacher-Generated Data · LLM Reasoning
   - **Classification evidence:** Multiple teacher rationales are consolidated or selected into static purified supervision before student training.
   - **Artifacts:** [Code](https://github.com/M1nasGera1s/KnowledgePurification)
+
+<a id="arxiv-2509-08814"></a>
+- [Merge-of-Thought Distillation](https://arxiv.org/abs/2509.08814) - 2025-09-10. Alternates teacher-specific supervised distillation branches with weight averaging to consolidate complementary long-chain reasoning from multiple teachers.
+  - **Facets:** `arxiv:2509.08814` · Method · Offline · State: Teacher-Generated
+  - **Teacher topology:** Independent Multi-Teacher, Heterogeneous Pool
+  - **Mechanism:** Conflict Resolution · Secondary: Progressive and Sequential Transfer
+  - **Signals and domains:** Responses / Rationales, Teacher-Generated Data · LLM Reasoning
+  - **Classification evidence:** Version 3, Section 4, trains branches by token-level cross-entropy on fixed teacher-generated rationale corpora before each weight merge. This includes substantive distillation rather than pure parameter merging, but does not train on student rollouts.
+  - **Artifacts:** None verified
 
 <a id="acl-2024-emnlp-industry-120"></a>
 - [GOVERN: Gradient Orientation Vote Ensemble for Multi-Teacher Reinforced Distillation](https://aclanthology.org/2024.emnlp-industry.120/) - 2024-11-01. Uses gradient-orientation voting to combine multiple teachers during unsupervised distillation without label guidance.
@@ -217,6 +244,15 @@ Works in this collection distill multiple teachers or an ensemble using a static
 
 
 ## Heterogeneous Alignment
+
+<a id="arxiv-2609-37682"></a>
+- [Med-RADIO: Reducing All Medical Domains Into One via Multi-Teacher Distillation](https://arxiv.org/abs/2609.37682) - 2026-09-29. Combines a medical generalist and modality specialists through translator heads, modality-aligned data streams, and feature-dispersion-normalized angular distillation.
+  - **Facets:** `arxiv:2609.37682` · Method · Offline · State: Static Corpus
+  - **Teacher topology:** Independent Multi-Teacher, Heterogeneous Pool, Specialist Pool
+  - **Mechanism:** Heterogeneous Alignment · Secondary: Direct Matching
+  - **Signals and domains:** Features · Vision, Scientific and Healthcare
+  - **Classification evidence:** Sections 3.2–3.5 use a fixed medical image corpus and frozen generalist/specialist teachers; teacher-specific projectors align feature spaces and angular matching directly trains the student. Dispersion normalization is estimated offline, not dynamically learned weighting.
+  - **Artifacts:** [Code](https://github.com/CAIR-HKISI/Med-RADIO)
 
 <a id="arxiv-2609-02676"></a>
 - [LoFi RADIO: A Distilled In-Domain Backbone Applied for Artifact-Severity Grading of Ultra-Low-Field Neonatal Brain MR](https://arxiv.org/abs/2609.02676) - 2026-09-02. Distills DINOv2, BiomedCLIP, and Phikon features on unlabeled low-field MRI into one compact in-domain ViT-S backbone for neonatal artifact grading.
@@ -376,6 +412,15 @@ Works in this collection distill multiple teachers or an ensemble using a static
 
 
 ## Routing and Selection
+
+<a id="arxiv-2609-09702"></a>
+- [Decision Shifts, Lost Label Functionality, and an Inconclusive Grounding Audit in Correctness-Gated Multi-Teacher Distillation](https://arxiv.org/abs/2609.09702) - 2026-09-09. Analyzes correctness-based filtering and weighting of fixed teacher responses, showing that aggregate decision gains can coexist with lost label recall and inconclusive grounding evidence.
+  - **Facets:** `arxiv:2609.09702` · Analysis · Offline · State: Teacher-Generated
+  - **Teacher topology:** Independent Multi-Teacher, Heterogeneous Pool, Specialist Pool
+  - **Mechanism:** Routing and Selection · Secondary: Adaptive Weighting
+  - **Signals and domains:** Responses / Rationales, Teacher-Generated Data, Logits / Distribution · NLP, LLM Reasoning
+  - **Classification evidence:** Sections 3.3–4.3 distill archived responses from Command-R7B, Qwen3.5, and Granite4.1 into language-model and soft-decision objectives. All arms use fixed evidence and a preserved teacher-response pool; no student-generated training states are used.
+  - **Artifacts:** None verified
 
 <a id="acl-2026-acl-long-666"></a>
 - [Find Your Optimal Teacher: Personalized Data Synthesis via Router-Guided Multi-Teacher Distillation](https://aclanthology.org/2026.acl-long.666/) - 2026-07-01. Routes each prompt to the teacher that jointly maximizes response quality and student learnability for personalized synthetic data.

@@ -223,7 +223,7 @@ def render_catalog(
         COLLECTION_INTROS[collection],
         "",
         (
-            f"**{len(selected)} records · metadata verified through "
+            f"**{len(selected)} records · catalog refreshed on "
             f"{catalog['last_verified']} · [Taxonomy](../resources/taxonomy.md)**"
         ),
     ]
@@ -244,7 +244,7 @@ def view_header(title: str, description: str, catalog: dict[str, object]) -> lis
         "",
         (
             "Entries link to their canonical catalog record. This is a derived view; edit "
-            f"`data/papers.json` instead. Verified through {catalog['last_verified']}."
+            f"`data/papers.json` instead. Catalog refreshed on {catalog['last_verified']}."
         ),
     ]
 

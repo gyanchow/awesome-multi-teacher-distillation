@@ -4,10 +4,11 @@
 
 Technical and model reports in which multi-teacher distillation is a material training stage, rather than a separate primary collection.
 
-Entries link to their canonical catalog record. This is a derived view; edit `data/papers.json` instead. Verified through 2026-09-08.
+Entries link to their canonical catalog record. This is a derived view; edit `data/papers.json` instead. Catalog refreshed on 2026-10-05.
 
-## Reports (21)
+## Reports (24)
 
+- [Video-MOPD: Multi-Teacher On-Policy Distillation for Video Understanding](../papers/multi-teacher-on-policy.md#arxiv-2609-09300) - 2026-09-08; Routing and Selection; Vision, Multimodal.
 - [Instella-MoE Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2609-00791) - 2026-09-01; Routing and Selection; General LLMs, LLM Reasoning.
 - [Exploring the Performance Frontier of Compact Unified Image Generation Models](../papers/multi-teacher-on-policy.md#arxiv-2608-20334) - 2026-08-20; Routing and Selection; Vision, Generative Models.
 - [Mint-Agent: Introducing Finance-Native Agentic Foundation Models](../papers/multi-teacher-on-policy.md#arxiv-2608-16386) - 2026-08-17; Progressive and Sequential Transfer; LLM Agents.
@@ -19,6 +20,8 @@ Entries link to their canonical catalog record. This is a derived view; edit `da
 - [Solar Open 2 Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2607-20062) - 2026-07-22; Routing and Selection; General LLMs, LLM Agents.
 - [Mach-Mind-4-Flash Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2607-09375) - 2026-07-10; Dynamic Scheduling; General LLMs, LLM Reasoning, LLM Agents.
 - [KAT-Coder-V2.5 Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2607-05471) - 2026-07-06; Routing and Selection; LLM Agents.
+- [Qwen-Image-2.0-RL Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2606-27608) - 2026-06-25; Routing and Selection; Vision, Multimodal, Generative Models.
+- [NebulaExp-8B: An Empirical Post-Training Pipeline via Full-Scale Ablation Research](../papers/multi-teacher-on-policy.md#arxiv-2606-26671) - 2026-06-25; Routing and Selection; General LLMs, LLM Reasoning.
 - [Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning](../papers/multi-teacher-on-policy.md#arxiv-2606-15007) - 2026-06-12; Routing and Selection; General LLMs, LLM Reasoning, LLM Agents.
 - [Kwai Keye-VL-2.0 Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2606-10651) - 2026-06-09; Heterogeneous Alignment; Multimodal, LLM Agents.
 - [OneReason Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2606-06260) - 2026-06-04; Routing and Selection; Recommendation and Search, LLM Reasoning.

@@ -2,6 +2,14 @@
 
 All notable curation changes are recorded here.
 
+## 2026-10-05
+
+- Added 24 records: 16 multi-teacher on-policy works, 5 offline works, 2 adjacent methods, and 1 survey; 18 are newer than the previous cutoff and 6 are backfills. The catalog now contains `63 + 50 + 13 + 3 + 5 = 134` records.
+- Added TrustMOPD, MOPD-Router, PMOPD, IM-MOPD, DN-MOPD, Latent-MOPD, SF-MOPD, From Gradients to Capabilities, ACLArena, Video-MOPD, and other verified additions.
+- Kept MAS-OPD and ROSS in the adjacent collection; recorded the limited artifact availability of Latent-MOPD and Video-MOPD.
+- Refreshed both 35-entry READMEs, reading paths, and generated views. Added a dated source/classification record and unresolved candidate notes.
+- Audited official Awesome submission requirements, corrected the introductory topic description, and enabled full Git history for the lint job. Remote topics and human eligibility requirements remain unresolved.
+
 ## 2026-09-08
 
 - Added 15 primary-source-verified records: 6 strict multi-teacher OPD works, 4 offline multi-teacher works, and 5 adjacent or alternative methods.

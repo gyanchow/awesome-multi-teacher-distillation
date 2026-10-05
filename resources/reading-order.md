@@ -62,4 +62,23 @@ These paths are intentionally separate from the primary taxonomy. A paper has on
 4. [WDL-OPD](https://arxiv.org/abs/2608.09447) co-trains two learner branches against one frozen external teacher.
 5. [RISE](https://arxiv.org/abs/2609.05295) extrapolates a synthetic teacher from checkpoints in one policy lineage.
 
-For exhaustive browsing, use the generated views by [mechanism](../views/by-mechanism.md), [teacher topology](../views/by-teacher-topology.md), [supervision signal](../views/by-supervision-signal.md), [domain](../views/by-domain.md), or [date](../views/chronological.md).
+## Recent optimization, preservation, and analysis
+
+1. [TrustMOPD](https://arxiv.org/abs/2609.23697) calibrates teacher specialization relative to a shared reference before weighting supervision.
+2. [MOPD-Router](https://arxiv.org/abs/2609.30837) compares token-level routing over the full teacher pool.
+3. [DN-MOPD](https://arxiv.org/abs/2609.35347) isolates unequal domain signal scales while retaining domain-label routing.
+4. [PMOPD](https://arxiv.org/abs/2609.34605) protects update subspaces across ordered task cycles; [IM-MOPD](https://arxiv.org/abs/2609.34745) interleaves validation-triggered parameter corrections.
+5. [From Gradients to Capabilities](https://arxiv.org/abs/2610.02179) audits how loss averaging and optimizer behavior affect actual capability gains.
+6. [Understanding Off- vs On-Policy Distillation](https://arxiv.org/abs/2609.38666) analyzes arithmetic and geometric teacher aggregation under explicit theoretical assumptions.
+7. [SF-MOPD](https://arxiv.org/abs/2610.02324) uses a slow reference to constrain conflicting visual-teacher updates; [Latent-MOPD](https://arxiv.org/abs/2610.02381) adds hidden-state supervision.
+8. [ACLArena](https://arxiv.org/abs/2609.23989) compares MOPD, replay, and merging after sequential agent training.
+
+## Recent offline methods and boundary cases
+
+1. [SoFT](https://arxiv.org/abs/2609.32493) learns from fixed multi-teacher demonstrations without online rollouts.
+2. [Med-RADIO](https://arxiv.org/abs/2609.37682) aligns medical generalist and specialist feature spaces.
+3. [Merge-of-Thought](https://arxiv.org/abs/2509.08814) distills teacher-specific branches before parameter merging.
+4. [ROSS](https://arxiv.org/abs/2609.35954) adds offline relearning of historical rollouts after MOPD or RL.
+5. [MAS-OPD](https://arxiv.org/abs/2609.34234) trains multiple agents using one teacher, illustrating why multi-agent and multi-teacher are different categories.
+
+For full catalog browsing, use the generated views by [mechanism](../views/by-mechanism.md), [teacher topology](../views/by-teacher-topology.md), [supervision signal](../views/by-supervision-signal.md), [domain](../views/by-domain.md), or [date](../views/chronological.md).

@@ -4,10 +4,16 @@
 
 Papers for which an author- or organization-linked code, project, model, or data artifact was verified.
 
-Entries link to their canonical catalog record. This is a derived view; edit `data/papers.json` instead. Verified through 2026-09-08.
+Entries link to their canonical catalog record. This is a derived view; edit `data/papers.json` instead. Catalog refreshed on 2026-10-05.
 
-## Entries (44)
+## Entries (50)
 
+- [Latent-MOPD: Latent Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2610-02381) - Project; Multi-Teacher On-Policy Distillation.
+- [Med-RADIO: Reducing All Medical Domains Into One via Multi-Teacher Distillation](../papers/offline-multi-teacher.md#arxiv-2609-37682) - Code; Offline Multi-Teacher Distillation.
+- [Beyond Teacher Assignment: Domain-Normalized Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2609-35347) - Code, Project; Multi-Teacher On-Policy Distillation.
+- [MOPD-Router: Rethinking Teacher Routing in Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2609-30837) - Code; Multi-Teacher On-Policy Distillation.
+- [ACLArena: Agent Continue Learning in Multi-stage Post-training](../papers/multi-teacher-on-policy.md#arxiv-2609-23989) - Code; Multi-Teacher On-Policy Distillation.
+- [One to More, More to One: Category-Aware Iterative Expert Training for Software Engineering Agents](../papers/multi-teacher-on-policy.md#arxiv-2609-23377) - Code, Model, Data; Multi-Teacher On-Policy Distillation.
 - [Rethinking On-Policy Distillation of Large Language Models II: One Training Example](../papers/multi-teacher-on-policy.md#arxiv-2609-04172) - Code; Multi-Teacher On-Policy Distillation.
 - [Learn from Whoever Is Right: Answer-Verified Multi-Teacher Distillation for Multi-Domain LLMs](../papers/multi-teacher-on-policy.md#arxiv-2609-02548) - Code; Multi-Teacher On-Policy Distillation.
 - [Instella-MoE Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2609-00791) - Code, Model; Multi-Teacher On-Policy Distillation.

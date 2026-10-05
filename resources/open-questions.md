@@ -14,7 +14,7 @@ How few prompts can still induce the state coverage needed to absorb several tea
 
 ## Capability balance
 
-How should output length, initial teacher-student gap, convergence rate, stale rewards, and unequal headroom determine each domain's rollout and optimization budget?
+How should output length, initial teacher-student gap, convergence rate, stale rewards, and unequal headroom determine each domain's rollout and optimization budget? The comparison between [DN-MOPD](https://arxiv.org/abs/2609.35347) and [From Gradients to Capabilities](https://arxiv.org/abs/2610.02179) motivates separating signal-scale correction from the update geometry induced by the optimizer.
 
 ## Conflict and generalization
 
@@ -35,3 +35,7 @@ What protocol can jointly measure capability inheritance, retention, calibration
 ## Theory
 
 When can a student exceed every teacher through aggregation and exploration, and when is it bounded by the support of the teacher union? Theory should account for conflicting targets, limited student capacity, and changing student-induced state distributions.
+
+## Reusing training experience
+
+When does selective offline replay complement fresh MOPD rollouts, and when does it restore behaviors at the cost of exploration? [ROSS](https://arxiv.org/abs/2609.35954) motivates comparisons that separately control replay selection, token masks, extra optimization steps, and the cost of collecting new states.

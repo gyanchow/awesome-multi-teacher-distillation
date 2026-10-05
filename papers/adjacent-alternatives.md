@@ -4,9 +4,18 @@
 
 These works are useful boundary cases or alternatives: peer co-distillation, self/EMA distillation, privileged views, sibling rollouts, and offline replay. Their evidence notes state exactly which strict-MOPD condition does not hold.
 
-**11 records · metadata verified through 2026-09-08 · [Taxonomy](../resources/taxonomy.md)**
+**13 records · catalog refreshed on 2026-10-05 · [Taxonomy](../resources/taxonomy.md)**
 
 ## Offline
+
+<a id="arxiv-2609-35954"></a>
+- [ROSS: Relearning from Self-Generated Rollouts through Selective Supervision](https://arxiv.org/abs/2609.35954) - 2026-09-28. Reuses saved RL and MOPD trajectories with verifier filtering and reviewer-selected token masks, then applies offline supervised relearning while retaining full trajectory context.
+  - **Facets:** `arxiv:2609.35954` · Method · Offline · State: Replay Buffer
+  - **Teacher topology:** Checkpoint Pool
+  - **Mechanism:** Routing and Selection · Secondary: Direct Matching
+  - **Signals and domains:** Responses / Rationales, Feedback / Reward · LLM Reasoning, LLM Agents, General LLMs
+  - **Classification evidence:** Section 3, Eq. (4), and Section 4.1 use historical self-rollouts and masked cross-entropy; one LLM reviewer selects spans without replacing targets. The relearning stage neither samples current-policy states nor queries an independent teacher pool, despite following MOPD in one experiment.
+  - **Artifacts:** None verified
 
 <a id="arxiv-2607-19450"></a>
 - [REGEN: Replay-recycling for Expert-to-Generalist distillation with Offline Reinforcement Learning](https://arxiv.org/abs/2607.19450) - 2026-07-21. An explicit offline alternative to MOPD that recycles specialist RL replay memory and matches MOPD at lower coupled rollout-training cost.
@@ -19,6 +28,15 @@ These works are useful boundary cases or alternatives: peer co-distillation, sel
 
 
 ## On Policy
+
+<a id="arxiv-2609-34234"></a>
+- [MAS-OPD: On-Policy Distillation for Multi-agent Systems](https://arxiv.org/abs/2609.34234) - 2026-09-28. Trains interacting student agents with role-contrastive token advantages and teacher-only conflict attribution from one frozen teacher, making it a multi-agent rather than multi-teacher method.
+  - **Facets:** `arxiv:2609.34234` · Method · On Policy · State: Current Student
+  - **Teacher topology:** Single Teacher, Privileged Views
+  - **Mechanism:** Conflict Resolution · Secondary: Adaptive Weighting, Direct Matching
+  - **Signals and domains:** Sampled-Token Advantage · LLM Agents, LLM Reasoning
+  - **Classification evidence:** Sections 2.1 and 3.1-3.4 define joint current-agent rollouts and the direct token-level loss (Eq. 13); role contrast changes only the context of the same teacher. Section 4.1 and Appendix D.5 identify one frozen Qwen3-14B teacher, so independently trained student agents are not independent supervisors.
+  - **Artifacts:** None verified
 
 <a id="arxiv-2606-30626"></a>
 - [DOPD: Dual On-policy Distillation](https://arxiv.org/abs/2606.30626) - 2026-06-29. Routes token supervision between privileged teacher and privileged student policies; dual-source rather than a standard pool of independent teachers.

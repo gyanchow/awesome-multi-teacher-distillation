@@ -4,9 +4,18 @@
 
 Surveys and tutorials that provide field-level context. Method-specific evidence fields are marked not applicable.
 
-**4 records · metadata verified through 2026-09-08 · [Taxonomy](../resources/taxonomy.md)**
+**5 records · catalog refreshed on 2026-10-05 · [Taxonomy](../resources/taxonomy.md)**
 
 ## Survey
+
+<a id="arxiv-2609-33727"></a>
+- [A Statistical Perspective on Knowledge Distillation: Foundations, Classical Methods, and Large Language Model Extensions](https://arxiv.org/abs/2609.33727) - 2026-09-17. Reviews distillation through Bayesian inference, teacher uncertainty, multi-teacher aggregation, sequential transfer, and extensions to language models.
+  - **Facets:** `arxiv:2609.33727` · Survey · Not Applicable · State: Not Applicable
+  - **Teacher topology:** None
+  - **Mechanism:** Not Applicable · Secondary: None
+  - **Signals and domains:** None · General Machine Learning, General LLMs
+  - **Classification evidence:** Survey record; method-level MOPD tests are not applicable. Section 4.1 covers multi-teacher aggregation. The date is the journal’s first online publication, preceding the September 27 arXiv submission.
+  - **Artifacts:** None verified
 
 <a id="arxiv-2604-00626"></a>
 - [A Survey of On-Policy Distillation for Large Language Models](https://arxiv.org/abs/2604.00626) - 2026-04-01. A comprehensive OPD taxonomy and survey covering objectives, signal sources, stabilization, systems, and applications.

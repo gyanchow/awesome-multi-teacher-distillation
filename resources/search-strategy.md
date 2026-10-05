@@ -1,6 +1,6 @@
 # Search and Verification Strategy
 
-**Cutoff:** 2026-09-08 (Asia/Shanghai). The catalog is a snapshot, not a claim of permanent completeness. The latest new arXiv submission visible during this pass was dated 2026-09-04.
+**Latest search:** 2026-10-05 (Asia/Shanghai). This is an incremental refresh of the 2026-09-08 snapshot, not a claim of exhaustive coverage or a fresh review of every existing record. New accepted submissions reach 2026-10-01, and earlier omissions retain their first-public dates. See the [dated update record](update-2026-10-05.md) for method evidence and deferred candidates.
 
 ## Discovery queries
 
@@ -29,7 +29,7 @@ The catalog does not infer peer-review status from an arXiv page. Code links are
 Strict MOPD requires all three evidence tests to hold:
 
 1. the student or a near-current copy/mixture of it generates the training trajectory or state;
-2. at least two independent teachers, expert checkpoints, teacher views, or peer policies provide supervision; and
+2. at least two independently identifiable teacher models, expert checkpoints, or separately trained adapters provide supervision; different prompts or roles of a single unchanged teacher do not by themselves meet this test; and
 3. those signals directly update the student through divergence, sampled-token advantage, feature/field matching, or an equivalent objective.
 
 System reports are represented through `record_type`, not a separate primary collection. Static teacher data, logits, features, and rationales belong to `offline_multi_teacher`. Multi-rollout, EMA, privileged-view, peer, and bidirectional co-distillation belong to `adjacent_alternative` unless they satisfy every strict-MOPD test. Single-teacher generative OPD methods are kept in `single_teacher_foundation`; surveys and tutorials have their own collection.
@@ -55,4 +55,4 @@ After assigning one primary collection, the maintainer independently records tra
 6. Run `python3 scripts/validate.py` and `python3 scripts/render.py --check`, then review the complete diff manually.
 7. Re-check renamed arXiv papers and dead project/code links during scheduled maintenance.
 
-Discovery and organization were AI-assisted, followed by primary-source checks. A maintainer should independently review every item before publication and must do so before applying to the official Awesome index.
+Discovery and organization were AI-assisted, followed by primary-source checks. A maintainer should independently review the entries. Such review does not by itself resolve the official Awesome index’s separate non-AI-generated-list requirement; see the [submission audit](awesome-submission.md).

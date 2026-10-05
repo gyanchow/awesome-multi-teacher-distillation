@@ -4,22 +4,32 @@
 
 Primary and secondary combination mechanisms. A paper can appear in more than one section.
 
-Entries link to their canonical catalog record. This is a derived view; edit `data/papers.json` instead. Verified through 2026-09-08.
+Entries link to their canonical catalog record. This is a derived view; edit `data/papers.json` instead. Catalog refreshed on 2026-10-05.
 
-## Adaptive Weighting (35)
+## Adaptive Weighting (45)
 
+- [MAS-OPD: On-Policy Distillation for Multi-agent Systems](../papers/adjacent-alternatives.md#arxiv-2609-34234) - Secondary facet; Adjacent and Alternative Paradigms.
+- [Beyond Teacher Assignment: Domain-Normalized Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2609-35347) - Primary facet; Multi-Teacher On-Policy Distillation.
+- [SoFT: Soft Targets for Generalizable LLM Fine-Tuning](../papers/offline-multi-teacher.md#arxiv-2609-32493) - Primary facet; Offline Multi-Teacher Distillation.
+- [MOPD-Router: Rethinking Teacher Routing in Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2609-30837) - Secondary facet; Multi-Teacher On-Policy Distillation.
+- [ACLArena: Agent Continue Learning in Multi-stage Post-training](../papers/multi-teacher-on-policy.md#arxiv-2609-23989) - Secondary facet; Multi-Teacher On-Policy Distillation.
+- [Distill What You Trust: Reliability-Aware Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2609-23697) - Primary facet; Multi-Teacher On-Policy Distillation.
+- [Who Teaches Which Token? Verifier-Gated Multi-Expert On-Policy Distillation for Scientific Reasoning](../papers/multi-teacher-on-policy.md#arxiv-2609-15404) - Secondary facet; Multi-Teacher On-Policy Distillation.
+- [Decision Shifts, Lost Label Functionality, and an Inconclusive Grounding Audit in Correctness-Gated Multi-Teacher Distillation](../papers/offline-multi-teacher.md#arxiv-2609-09702) - Secondary facet; Offline Multi-Teacher Distillation.
 - [CRAD: Class-wise Reliability-Aware Distillation for Decentralized Heterogeneous Federated Learning](../papers/adjacent-alternatives.md#arxiv-2609-00446) - Secondary facet; Adjacent and Alternative Paradigms.
 - [Preserving General Capabilities during Domain Specialization with Uncertainty-Calibrated MOPD](../papers/multi-teacher-on-policy.md#arxiv-2608-26735) - Primary facet; Multi-Teacher On-Policy Distillation.
 - [Open-MOPD: Diagnosing and Fixing Capability Imbalance in Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2608-19098) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [WDL-OPD: Weak-Driven On-Policy Distillation via Mixture-Constrained Co-Training](../papers/adjacent-alternatives.md#arxiv-2608-09447) - Primary facet; Adjacent and Alternative Paradigms.
 - [SMOPD: Multi-Reward Reinforcement Learning via Specialize-and-Merge Online Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2608-03092) - Primary facet; Multi-Teacher On-Policy Distillation.
 - [Language-Specialized Multi-Teacher On-Policy Distillation for Multilingual LLM-Based ASR](../papers/multi-teacher-on-policy.md#arxiv-2608-03610) - Secondary facet; Multi-Teacher On-Policy Distillation.
+- [MAGA: Multi-Platform Self-Fusion of GUI Agents via Structured Action Distillation](../papers/multi-teacher-on-policy.md#arxiv-2607-29320) - Primary facet; Multi-Teacher On-Policy Distillation.
 - [Beyond the Best Teacher: Expanding and Compressing the Reasoning Solution Manifold](../papers/multi-teacher-on-policy.md#arxiv-2607-27770) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [Kimi K3: Open Frontier Intelligence](../papers/multi-teacher-on-policy.md#arxiv-2607-24653) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [H-OPD: Confidence Aware Heterogeneous Multi-Teacher Multimodal On-policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2607-02592) - Primary facet; Multi-Teacher On-Policy Distillation.
 - [DOPD: Dual On-policy Distillation](../papers/adjacent-alternatives.md#arxiv-2606-30626) - Secondary facet; Adjacent and Alternative Paradigms.
 - [Be My Tutor: On-Policy Co-Distillation for Mutual LLM Improvement via Peer Feedback](../papers/adjacent-alternatives.md#arxiv-2606-14368) - Secondary facet; Adjacent and Alternative Paradigms.
 - [Skill-Conditioned Gated Self-Distillation for LLM Reasoning](../papers/adjacent-alternatives.md#arxiv-2605-28791) - Secondary facet; Adjacent and Alternative Paradigms.
+- [Multi-Teacher Knowledge Distillation via Teacher-Informed Mixture Priors](../papers/offline-multi-teacher.md#arxiv-2605-27967) - Primary facet; Offline Multi-Teacher Distillation.
 - [Multi-Rollout On-Policy Distillation via Peer Successes and Failures](../papers/adjacent-alternatives.md#arxiv-2605-12652) - Secondary facet; Adjacent and Alternative Paradigms.
 - [ProteinOPD: Towards Effective and Efficient Preference Alignment for Protein Design](../papers/multi-teacher-on-policy.md#arxiv-2605-10189) - Primary facet; Multi-Teacher On-Policy Distillation.
 - [CoDistill-GRPO: A Co-Distillation Recipe for Efficient Group Relative Policy Optimization](../papers/adjacent-alternatives.md#arxiv-2605-08873) - Secondary facet; Adjacent and Alternative Paradigms.
@@ -51,8 +61,12 @@ Entries link to their canonical catalog record. This is a derived view; edit `da
 - [MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate](../papers/multi-teacher-on-policy.md#arxiv-2605-01347) - Primary facet; Multi-Teacher On-Policy Distillation.
 - [Learning from Committee: Reasoning Distillation from a Mixture of Teachers with Peer-Review](../papers/offline-multi-teacher.md#acl-2025-findings-acl-217) - Primary facet; Offline Multi-Teacher Distillation.
 
-## Conflict Resolution (23)
+## Conflict Resolution (28)
 
+- [Slow-Fast Multi-Teacher On-Policy Distillation for Capability Preservation](../papers/multi-teacher-on-policy.md#arxiv-2610-02324) - Primary facet; Multi-Teacher On-Policy Distillation.
+- [PMOPD: Task Ordering, Cycling, and Parameter-Update Subspace Protection in Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2609-34605) - Primary facet; Multi-Teacher On-Policy Distillation.
+- [MAS-OPD: On-Policy Distillation for Multi-agent Systems](../papers/adjacent-alternatives.md#arxiv-2609-34234) - Primary facet; Adjacent and Alternative Paradigms.
+- [Who Teaches Which Token? Verifier-Gated Multi-Expert On-Policy Distillation for Scientific Reasoning](../papers/multi-teacher-on-policy.md#arxiv-2609-15404) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [Verify Before You Distill: Prompt-Level Teacher Gating for On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2609-02998) - Primary facet; Multi-Teacher On-Policy Distillation.
 - [Learn from Whoever Is Right: Answer-Verified Multi-Teacher Distillation for Multi-Domain LLMs](../papers/multi-teacher-on-policy.md#arxiv-2609-02548) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [MERGED: Multimodal Entity Resolution via Generated Expert Reasoning Distillation](../papers/offline-multi-teacher.md#arxiv-2609-01913) - Primary facet; Offline Multi-Teacher Distillation.
@@ -70,6 +84,7 @@ Entries link to their canonical catalog record. This is a derived view; edit `da
 - [UniSD: Towards a Unified Self-Distillation Framework for Large Language Models](../papers/adjacent-alternatives.md#arxiv-2605-06597) - Primary facet; Adjacent and Alternative Paradigms.
 - [MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate](../papers/multi-teacher-on-policy.md#arxiv-2605-01347) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [Exploring Knowledge Purification in Multi-Teacher Knowledge Distillation for LLMs](../papers/offline-multi-teacher.md#arxiv-2602-01064) - Primary facet; Offline Multi-Teacher Distillation.
+- [Merge-of-Thought Distillation](../papers/offline-multi-teacher.md#arxiv-2509-08814) - Primary facet; Offline Multi-Teacher Distillation.
 - [Learning from Committee: Reasoning Distillation from a Mixture of Teachers with Peer-Review](../papers/offline-multi-teacher.md#acl-2025-findings-acl-217) - Secondary facet; Offline Multi-Teacher Distillation.
 - [GOVERN: Gradient Orientation Vote Ensemble for Multi-Teacher Reinforced Distillation](../papers/offline-multi-teacher.md#acl-2024-emnlp-industry-120) - Primary facet; Offline Multi-Teacher Distillation.
 - [Class Incremental Learning with Multi-Teacher Distillation](../papers/offline-multi-teacher.md#cvf-cvpr2024-mtd) - Secondary facet; Offline Multi-Teacher Distillation.
@@ -77,8 +92,18 @@ Entries link to their canonical catalog record. This is a derived view; edit `da
 - [Confidence-Aware Multi-Teacher Knowledge Distillation](../papers/offline-multi-teacher.md#arxiv-2201-00007) - Secondary facet; Offline Multi-Teacher Distillation.
 - [Agree to Disagree: Adaptive Ensemble Knowledge Distillation in Gradient Space](../papers/offline-multi-teacher.md#neurips-2020-ae-kd) - Primary facet; Offline Multi-Teacher Distillation.
 
-## Direct Matching (81)
+## Direct Matching (95)
 
+- [From Gradients to Capabilities: Understanding Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2610-02179) - Primary facet; Multi-Teacher On-Policy Distillation.
+- [Understanding Off- vs On-Policy Distillation: A Tale of Distinct Training Objectives](../papers/multi-teacher-on-policy.md#arxiv-2609-38666) - Primary facet; Multi-Teacher On-Policy Distillation.
+- [Med-RADIO: Reducing All Medical Domains Into One via Multi-Teacher Distillation](../papers/offline-multi-teacher.md#arxiv-2609-37682) - Secondary facet; Offline Multi-Teacher Distillation.
+- [ROSS: Relearning from Self-Generated Rollouts through Selective Supervision](../papers/adjacent-alternatives.md#arxiv-2609-35954) - Secondary facet; Adjacent and Alternative Paradigms.
+- [No Pain, More Gain: Iterative Merging for Effective Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2609-34745) - Secondary facet; Multi-Teacher On-Policy Distillation.
+- [MAS-OPD: On-Policy Distillation for Multi-agent Systems](../papers/adjacent-alternatives.md#arxiv-2609-34234) - Secondary facet; Adjacent and Alternative Paradigms.
+- [SoFT: Soft Targets for Generalizable LLM Fine-Tuning](../papers/offline-multi-teacher.md#arxiv-2609-32493) - Secondary facet; Offline Multi-Teacher Distillation.
+- [ACLArena: Agent Continue Learning in Multi-stage Post-training](../papers/multi-teacher-on-policy.md#arxiv-2609-23989) - Secondary facet; Multi-Teacher On-Policy Distillation.
+- [One to More, More to One: Category-Aware Iterative Expert Training for Software Engineering Agents](../papers/multi-teacher-on-policy.md#arxiv-2609-23377) - Secondary facet; Multi-Teacher On-Policy Distillation.
+- [Video-MOPD: Multi-Teacher On-Policy Distillation for Video Understanding](../papers/multi-teacher-on-policy.md#arxiv-2609-09300) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [RISE: Recursive Improvement via Self-Extrapolating Policy Distillation](../papers/adjacent-alternatives.md#arxiv-2609-05295) - Secondary facet; Adjacent and Alternative Paradigms.
 - [Rethinking On-Policy Distillation of Large Language Models II: One Training Example](../papers/multi-teacher-on-policy.md#arxiv-2609-04172) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [Verify Before You Distill: Prompt-Level Teacher Gating for On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2609-02998) - Secondary facet; Multi-Teacher On-Policy Distillation.
@@ -99,6 +124,7 @@ Entries link to their canonical catalog record. This is a derived view; edit `da
 - [Capek 0.5: An Execution-Centric Vision-Language Model for Embodied Intelligence](../papers/multi-teacher-on-policy.md#arxiv-2608-06756) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [SMOPD: Multi-Reward Reinforcement Learning via Specialize-and-Merge Online Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2608-03092) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [Cross-Domain Hybrid OPD for Generalizable Search Agents](../papers/multi-teacher-on-policy.md#arxiv-2608-02101) - Secondary facet; Multi-Teacher On-Policy Distillation.
+- [MAGA: Multi-Platform Self-Fusion of GUI Agents via Structured Action Distillation](../papers/multi-teacher-on-policy.md#arxiv-2607-29320) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [Kimi K3: Open Frontier Intelligence](../papers/multi-teacher-on-policy.md#arxiv-2607-24653) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [Solar Open 2 Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2607-20062) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [REGEN: Replay-recycling for Expert-to-Generalist distillation with Offline Reinforcement Learning](../papers/adjacent-alternatives.md#arxiv-2607-19450) - Primary facet; Adjacent and Alternative Paradigms.
@@ -110,12 +136,15 @@ Entries link to their canonical catalog record. This is a derived view; edit `da
 - [Scaling the Horizon, Not the Parameters: Reaching Trillion-Parameter Performance with a 35B Agent](../papers/multi-teacher-on-policy.md#arxiv-2606-30616) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [MOPD: Multi-Teacher On-Policy Distillation for Capability Integration in LLM Post-Training](../papers/multi-teacher-on-policy.md#arxiv-2606-30406) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [DOPD: Dual On-policy Distillation](../papers/adjacent-alternatives.md#arxiv-2606-30626) - Secondary facet; Adjacent and Alternative Paradigms.
+- [Qwen-Image-2.0-RL Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2606-27608) - Secondary facet; Multi-Teacher On-Policy Distillation.
+- [NebulaExp-8B: An Empirical Post-Training Pipeline via Full-Scale Ablation Research](../papers/multi-teacher-on-policy.md#arxiv-2606-26671) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [DanceOPD: On-Policy Generative Field Distillation](../papers/multi-teacher-on-policy.md#arxiv-2606-27377) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning](../papers/multi-teacher-on-policy.md#arxiv-2606-15007) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [Be My Tutor: On-Policy Co-Distillation for Mutual LLM Improvement via Peer Feedback](../papers/adjacent-alternatives.md#arxiv-2606-14368) - Secondary facet; Adjacent and Alternative Paradigms.
 - [Kwai Keye-VL-2.0 Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2606-10651) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [OneReason Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2606-06260) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [Skill-Conditioned Gated Self-Distillation for LLM Reasoning](../papers/adjacent-alternatives.md#arxiv-2605-28791) - Secondary facet; Adjacent and Alternative Paradigms.
+- [Multi-Teacher Knowledge Distillation via Teacher-Informed Mixture Priors](../papers/offline-multi-teacher.md#arxiv-2605-27967) - Secondary facet; Offline Multi-Teacher Distillation.
 - [CollectionLoRA: Collecting 50 Effects in 1 LoRA via Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2605-25378) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [Multi-Rollout On-Policy Distillation via Peer Successes and Failures](../papers/adjacent-alternatives.md#arxiv-2605-12652) - Secondary facet; Adjacent and Alternative Paradigms.
 - [ProteinOPD: Towards Effective and Efficient Preference Alignment for Protein Design](../papers/multi-teacher-on-policy.md#arxiv-2605-10189) - Secondary facet; Multi-Teacher On-Policy Distillation.
@@ -161,8 +190,11 @@ Entries link to their canonical catalog record. This is a derived view; edit `da
 - [Do Deep Nets Really Need to be Deep?](../papers/offline-multi-teacher.md#neurips-2014-depth) - Primary facet; Offline Multi-Teacher Distillation.
 - [Model Compression](../papers/offline-multi-teacher.md#doi-10-1145-1150402-1150464) - Primary facet; Offline Multi-Teacher Distillation.
 
-## Dynamic Scheduling (10)
+## Dynamic Scheduling (13)
 
+- [Latent-MOPD: Latent Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2610-02381) - Secondary facet; Multi-Teacher On-Policy Distillation.
+- [PMOPD: Task Ordering, Cycling, and Parameter-Update Subspace Protection in Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2609-34605) - Secondary facet; Multi-Teacher On-Policy Distillation.
+- [No Pain, More Gain: Iterative Merging for Effective Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2609-34745) - Primary facet; Multi-Teacher On-Policy Distillation.
 - [RISE: Recursive Improvement via Self-Extrapolating Policy Distillation](../papers/adjacent-alternatives.md#arxiv-2609-05295) - Secondary facet; Adjacent and Alternative Paradigms.
 - [CA-OPD: Confidence-Aware On-Policy Distillation for Structured Visual Prediction](../papers/multi-teacher-on-policy.md#arxiv-2609-02401) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [D$^3$-MOPD: Adaptive Dynamic Domain ScheDuling for Efficient Multi-Teacher Distillation](../papers/multi-teacher-on-policy.md#arxiv-2608-24987) - Primary facet; Multi-Teacher On-Policy Distillation.
@@ -174,8 +206,10 @@ Entries link to their canonical catalog record. This is a derived view; edit `da
 - [CollectionLoRA: Collecting 50 Effects in 1 LoRA via Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2605-25378) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [DistiLLM: Towards Streamlined Distillation for Large Language Models](../papers/single-teacher-foundations.md#arxiv-2402-03898) - Secondary facet; Single-Teacher Foundations.
 
-## Heterogeneous Alignment (21)
+## Heterogeneous Alignment (23)
 
+- [Latent-MOPD: Latent Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2610-02381) - Primary facet; Multi-Teacher On-Policy Distillation.
+- [Med-RADIO: Reducing All Medical Domains Into One via Multi-Teacher Distillation](../papers/offline-multi-teacher.md#arxiv-2609-37682) - Primary facet; Offline Multi-Teacher Distillation.
 - [LoFi RADIO: A Distilled In-Domain Backbone Applied for Artifact-Severity Grading of Ultra-Low-Field Neonatal Brain MR](../papers/offline-multi-teacher.md#arxiv-2609-02676) - Primary facet; Offline Multi-Teacher Distillation.
 - [Poly-OPD: Heterogeneous Multi-Teacher On-Policy Distillation for Capability-Selectable Flow Models](../papers/multi-teacher-on-policy.md#arxiv-2608-04349) - Primary facet; Multi-Teacher On-Policy Distillation.
 - [H-OPD: Confidence Aware Heterogeneous Multi-Teacher Multimodal On-policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2607-02592) - Secondary facet; Multi-Teacher On-Policy Distillation.
@@ -198,15 +232,18 @@ Entries link to their canonical catalog record. This is a derived view; edit `da
 - [Unifying Heterogeneous Classifiers With Distillation](../papers/offline-multi-teacher.md#cvf-cvpr2019-unifying-classifiers) - Primary facet; Offline Multi-Teacher Distillation.
 - [Distilling Knowledge from Ensembles of Neural Networks for Speech Recognition](../papers/offline-multi-teacher.md#isca-interspeech2016-chebotar) - Secondary facet; Offline Multi-Teacher Distillation.
 
-## Not Applicable (4)
+## Not Applicable (5)
 
+- [A Statistical Perspective on Knowledge Distillation: Foundations, Classical Methods, and Large Language Model Extensions](../papers/reviews-tutorials.md#arxiv-2609-33727) - Primary facet; Reviews and Tutorials.
 - [A Survey of On-Policy Distillation for Large Language Models](../papers/reviews-tutorials.md#arxiv-2604-00626) - Primary facet; Reviews and Tutorials.
 - [Knowledge Distillation for Language Models](../papers/reviews-tutorials.md#acl-2025-naacl-tutorial-4) - Primary facet; Reviews and Tutorials.
 - [A Survey on Knowledge Distillation of Large Language Models](../papers/reviews-tutorials.md#arxiv-2402-13116) - Primary facet; Reviews and Tutorials.
 - [Knowledge Distillation: A Survey](../papers/reviews-tutorials.md#arxiv-2006-05525) - Primary facet; Reviews and Tutorials.
 
-## Progressive and Sequential Transfer (12)
+## Progressive and Sequential Transfer (15)
 
+- [Understanding Off- vs On-Policy Distillation: A Tale of Distinct Training Objectives](../papers/multi-teacher-on-policy.md#arxiv-2609-38666) - Secondary facet; Multi-Teacher On-Policy Distillation.
+- [PMOPD: Task Ordering, Cycling, and Parameter-Update Subspace Protection in Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2609-34605) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [RISE: Recursive Improvement via Self-Extrapolating Policy Distillation](../papers/adjacent-alternatives.md#arxiv-2609-05295) - Primary facet; Adjacent and Alternative Paradigms.
 - [Instella-MoE Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2609-00791) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [Mint-Agent: Introducing Finance-Native Agentic Foundation Models](../papers/multi-teacher-on-policy.md#arxiv-2608-16386) - Primary facet; Multi-Teacher On-Policy Distillation.
@@ -215,13 +252,25 @@ Entries link to their canonical catalog record. This is a derived view; edit `da
 - [Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2603-19220) - Primary facet; Multi-Teacher On-Policy Distillation.
 - [GLM-5: from Vibe Coding to Agentic Engineering](../papers/multi-teacher-on-policy.md#arxiv-2602-15763) - Primary facet; Multi-Teacher On-Policy Distillation.
 - [Baichuan-M3: Modeling Clinical Inquiry for Reliable Medical Decision-Making](../papers/multi-teacher-on-policy.md#arxiv-2602-06570) - Primary facet; Multi-Teacher On-Policy Distillation.
+- [Merge-of-Thought Distillation](../papers/offline-multi-teacher.md#arxiv-2509-08814) - Secondary facet; Offline Multi-Teacher Distillation.
 - [FuseChat: Knowledge Fusion of Chat Models](../papers/offline-multi-teacher.md#arxiv-2408-07990) - Secondary facet; Offline Multi-Teacher Distillation.
 - [Learning Lightweight Object Detectors via Multi-Teacher Progressive Distillation](../papers/offline-multi-teacher.md#pmlr-v202-cao23c) - Primary facet; Offline Multi-Teacher Distillation.
 - [PILE: Pairwise Iterative Logits Ensemble for Multi-Teacher Labeled Distillation](../papers/offline-multi-teacher.md#acl-2022-emnlp-industry-60) - Primary facet; Offline Multi-Teacher Distillation.
 - [Model Compression with Two-stage Multi-teacher Knowledge Distillation for Web Question Answering System](../papers/offline-multi-teacher.md#arxiv-1910-08381) - Primary facet; Offline Multi-Teacher Distillation.
 
-## Routing and Selection (59)
+## Routing and Selection (73)
 
+- [Latent-MOPD: Latent Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2610-02381) - Secondary facet; Multi-Teacher On-Policy Distillation.
+- [ROSS: Relearning from Self-Generated Rollouts through Selective Supervision](../papers/adjacent-alternatives.md#arxiv-2609-35954) - Primary facet; Adjacent and Alternative Paradigms.
+- [No Pain, More Gain: Iterative Merging for Effective Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2609-34745) - Secondary facet; Multi-Teacher On-Policy Distillation.
+- [Beyond Teacher Assignment: Domain-Normalized Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2609-35347) - Secondary facet; Multi-Teacher On-Policy Distillation.
+- [MOPD-Router: Rethinking Teacher Routing in Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2609-30837) - Primary facet; Multi-Teacher On-Policy Distillation.
+- [ACLArena: Agent Continue Learning in Multi-stage Post-training](../papers/multi-teacher-on-policy.md#arxiv-2609-23989) - Primary facet; Multi-Teacher On-Policy Distillation.
+- [One to More, More to One: Category-Aware Iterative Expert Training for Software Engineering Agents](../papers/multi-teacher-on-policy.md#arxiv-2609-23377) - Primary facet; Multi-Teacher On-Policy Distillation.
+- [Distill What You Trust: Reliability-Aware Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2609-23697) - Secondary facet; Multi-Teacher On-Policy Distillation.
+- [Who Teaches Which Token? Verifier-Gated Multi-Expert On-Policy Distillation for Scientific Reasoning](../papers/multi-teacher-on-policy.md#arxiv-2609-15404) - Primary facet; Multi-Teacher On-Policy Distillation.
+- [Decision Shifts, Lost Label Functionality, and an Inconclusive Grounding Audit in Correctness-Gated Multi-Teacher Distillation](../papers/offline-multi-teacher.md#arxiv-2609-09702) - Primary facet; Offline Multi-Teacher Distillation.
+- [Video-MOPD: Multi-Teacher On-Policy Distillation for Video Understanding](../papers/multi-teacher-on-policy.md#arxiv-2609-09300) - Primary facet; Multi-Teacher On-Policy Distillation.
 - [Rethinking On-Policy Distillation of Large Language Models II: One Training Example](../papers/multi-teacher-on-policy.md#arxiv-2609-04172) - Primary facet; Multi-Teacher On-Policy Distillation.
 - [Verify Before You Distill: Prompt-Level Teacher Gating for On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2609-02998) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [Learn from Whoever Is Right: Answer-Verified Multi-Teacher Distillation for Multi-Domain LLMs](../papers/multi-teacher-on-policy.md#arxiv-2609-02548) - Primary facet; Multi-Teacher On-Policy Distillation.
@@ -242,6 +291,7 @@ Entries link to their canonical catalog record. This is a derived view; edit `da
 - [SMOPD: Multi-Reward Reinforcement Learning via Specialize-and-Merge Online Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2608-03092) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [Language-Specialized Multi-Teacher On-Policy Distillation for Multilingual LLM-Based ASR](../papers/multi-teacher-on-policy.md#arxiv-2608-03610) - Primary facet; Multi-Teacher On-Policy Distillation.
 - [Cross-Domain Hybrid OPD for Generalizable Search Agents](../papers/multi-teacher-on-policy.md#arxiv-2608-02101) - Primary facet; Multi-Teacher On-Policy Distillation.
+- [MAGA: Multi-Platform Self-Fusion of GUI Agents via Structured Action Distillation](../papers/multi-teacher-on-policy.md#arxiv-2607-29320) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [Beyond the Best Teacher: Expanding and Compressing the Reasoning Solution Manifold](../papers/multi-teacher-on-policy.md#arxiv-2607-27770) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation](../papers/multi-teacher-on-policy.md#arxiv-2607-24720) - Secondary facet; Multi-Teacher On-Policy Distillation.
 - [Kimi K3: Open Frontier Intelligence](../papers/multi-teacher-on-policy.md#arxiv-2607-24653) - Primary facet; Multi-Teacher On-Policy Distillation.
@@ -257,6 +307,8 @@ Entries link to their canonical catalog record. This is a derived view; edit `da
 - [Scaling the Horizon, Not the Parameters: Reaching Trillion-Parameter Performance with a 35B Agent](../papers/multi-teacher-on-policy.md#arxiv-2606-30616) - Primary facet; Multi-Teacher On-Policy Distillation.
 - [MOPD: Multi-Teacher On-Policy Distillation for Capability Integration in LLM Post-Training](../papers/multi-teacher-on-policy.md#arxiv-2606-30406) - Primary facet; Multi-Teacher On-Policy Distillation.
 - [DOPD: Dual On-policy Distillation](../papers/adjacent-alternatives.md#arxiv-2606-30626) - Primary facet; Adjacent and Alternative Paradigms.
+- [Qwen-Image-2.0-RL Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2606-27608) - Primary facet; Multi-Teacher On-Policy Distillation.
+- [NebulaExp-8B: An Empirical Post-Training Pipeline via Full-Scale Ablation Research](../papers/multi-teacher-on-policy.md#arxiv-2606-26671) - Primary facet; Multi-Teacher On-Policy Distillation.
 - [DanceOPD: On-Policy Generative Field Distillation](../papers/multi-teacher-on-policy.md#arxiv-2606-27377) - Primary facet; Multi-Teacher On-Policy Distillation.
 - [Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning](../papers/multi-teacher-on-policy.md#arxiv-2606-15007) - Primary facet; Multi-Teacher On-Policy Distillation.
 - [Kwai Keye-VL-2.0 Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2606-10651) - Secondary facet; Multi-Teacher On-Policy Distillation.
