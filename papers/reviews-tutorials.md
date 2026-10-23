@@ -4,7 +4,7 @@
 
 Surveys and tutorials that provide field-level context. Method-specific evidence fields are marked not applicable.
 
-**5 records · catalog refreshed on 2026-10-05 · [Taxonomy](../resources/taxonomy.md)**
+**9 records · catalog refreshed on 2026-10-23 · [Taxonomy](../resources/taxonomy.md)**
 
 ## Survey
 
@@ -17,13 +17,49 @@ Surveys and tutorials that provide field-level context. Method-specific evidence
   - **Classification evidence:** Survey record; method-level MOPD tests are not applicable. Section 4.1 covers multi-teacher aggregation. The date is the journal’s first online publication, preceding the September 27 arXiv submission.
   - **Artifacts:** None verified
 
+<a id="doi-10-13140-rg-2-2-18644-77441"></a>
+- [Echoes of the Oracle: A Survey of On-Policy Distillation in the Era of Large Language Models](https://www.researchgate.net/publication/405427626_Echoes_of_the_Oracle_A_Survey_of_On-Policy_Distillation_in_the_Era_of_Large_Language_Models) - 2026-05-29. Surveys white-box and black-box OPD, supervision granularity, optimization styles, multi-teacher integration, and failure modes.
+  - **Facets:** `doi:10.13140/RG.2.2.18644.77441` · Survey · Not Applicable · State: Not Applicable
+  - **Teacher topology:** None
+  - **Mechanism:** Not Applicable · Secondary: None
+  - **Signals and domains:** None · General LLMs
+  - **Classification evidence:** Author-uploaded preprint dated May 29, 2026, on ResearchGate; no independently verified venue publication. Section 3.2 discusses multi-teacher OPD but also cites broader multi-teacher methods, so its grouping is not evidence that every cited work satisfies this catalog's strict state criterion. Method-level evidence fields are not applicable.
+  - **Artifacts:** None verified
+
 <a id="arxiv-2604-00626"></a>
-- [A Survey of On-Policy Distillation for Large Language Models](https://arxiv.org/abs/2604.00626) - 2026-04-01. A comprehensive OPD taxonomy and survey covering objectives, signal sources, stabilization, systems, and applications.
+- [A Survey of On-Policy Distillation for Large Language Models](https://arxiv.org/abs/2604.00626) - 2026-04-01. Surveys OPD through student states, teacher information, and policy updates, including multi-teacher integration, self-distillation, RL, and agents.
   - **Facets:** `arxiv:2604.00626` · Survey · Not Applicable · State: Not Applicable
   - **Teacher topology:** None
   - **Mechanism:** Not Applicable · Secondary: None
   - **Signals and domains:** None · General LLMs
-  - **Classification evidence:** On-policy distillation survey record; method-level MOPD evidence criteria are not applicable.
+  - **Classification evidence:** Verified v5 (2026-10-21), retaining the first-public date of 2026-04-01. Section 6 covers teacher eligibility, routing, target composition, capability balance, and evolving specialists. The source is marked Work in Progress; method-level MOPD evidence fields are not applicable.
+  - **Artifacts:** [Project](https://github.com/nick7nlp/Awesome-LLM-On-Policy-Distillation)
+
+<a id="arxiv-2504-14772"></a>
+- [Knowledge Distillation and Dataset Distillation of Large Language Models: Emerging Trends, Challenges, and Future Directions](https://arxiv.org/abs/2504.14772) - 2025-04-20. Reviews LLM knowledge and dataset distillation, including multi-teacher supervision, synthetic data, and their integration.
+  - **Facets:** `arxiv:2504.14772` · Survey · Not Applicable · State: Not Applicable
+  - **Teacher topology:** None
+  - **Mechanism:** Not Applicable · Secondary: None
+  - **Signals and domains:** None · General LLMs, General Machine Learning
+  - **Classification evidence:** Verified v2 (2026-01-03). The Multi-Teacher KD subsection and Sections 4-5 connect teacher aggregation with dataset distillation. This is broader background rather than a dedicated MOPD review; method-level evidence fields are not applicable.
+  - **Artifacts:** None verified
+
+<a id="arxiv-2503-12067"></a>
+- [A Comprehensive Survey on Knowledge Distillation](https://arxiv.org/abs/2503.12067) - 2025-03-15. Organizes distillation by knowledge source, training scheme, algorithm, modality, and application, with a dedicated multi-teacher section.
+  - **Facets:** `arxiv:2503.12067` · Survey · Not Applicable · State: Not Applicable
+  - **Teacher topology:** None
+  - **Mechanism:** Not Applicable · Secondary: None
+  - **Signals and domains:** None · General Machine Learning, Vision, General LLMs, Multimodal
+  - **Classification evidence:** Verified v2 (2025-10-11). Section 4.3 covers teacher aggregation, adaptive weighting, and knowledge amalgamation; Section 6.1 covers LLM applications. Its broad multi-teacher category includes variants outside strict MOPD. Method-level evidence fields are not applicable.
+  - **Artifacts:** [Project](https://github.com/IPL-sharif/KD_Survey)
+
+<a id="arxiv-2407-01885"></a>
+- [Survey on Knowledge Distillation for Large Language Models: Methods, Evaluation, and Application](https://arxiv.org/abs/2407.01885) - 2024-07-02. Reviews white-box and black-box LLM distillation, robustness evaluation, and application settings.
+  - **Facets:** `arxiv:2407.01885` · Survey · Not Applicable · State: Not Applicable
+  - **Teacher topology:** None
+  - **Mechanism:** Not Applicable · Secondary: None
+  - **Signals and domains:** None · General LLMs
+  - **Classification evidence:** Sections 3.1 and 3.4 separate teacher-access settings, while Sections 3.2 and 3.5 discuss robustness evaluation. This general LLM-distillation survey predates the current MOPD wave; method-level evidence fields are not applicable.
   - **Artifacts:** None verified
 
 <a id="arxiv-2402-13116"></a>

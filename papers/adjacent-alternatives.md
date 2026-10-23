@@ -2,9 +2,21 @@
 
 # Adjacent and Alternative Paradigms
 
-These works are useful boundary cases or alternatives: peer co-distillation, self/EMA distillation, privileged views, sibling rollouts, and offline replay. Their evidence notes state exactly which strict-MOPD condition does not hold.
+These works are useful boundary cases or alternatives: peer co-distillation, self/EMA distillation, privileged views, sibling rollouts, offline replay, and branch consolidation. Their evidence notes state exactly which strict-MOPD condition does not hold.
 
-**13 records · catalog refreshed on 2026-10-05 · [Taxonomy](../resources/taxonomy.md)**
+**14 records · catalog refreshed on 2026-10-23 · [Taxonomy](../resources/taxonomy.md)**
+
+## Hybrid
+
+<a id="arxiv-2610-26525"></a>
+- [A Fisher-Geometric View of Multi-Teacher On-Policy Distillation](https://arxiv.org/abs/2610.26525) - 2026-10-19. Relates distillation to Fisher merging under a local approximation, then gates isolated specialist branches before a calibrated parameter re-merge.
+  - **Facets:** `arxiv:2610.26525` · Analysis · Hybrid · State: Mixed
+  - **Teacher topology:** Independent Multi-Teacher, Specialist Pool
+  - **Mechanism:** Progressive and Sequential Transfer · Secondary: Conflict Resolution
+  - **Signals and domains:** Logits / Distribution · General LLMs, LLM Reasoning
+  - **Classification evidence:** Sections 2 and 3.3 and Appendix C.7: RGBM first merges parameters, then trains isolated per-domain OPD branches and re-merges admitted updates; the consolidated model receives no joint multi-teacher gradient. Section 4.4 separately analyzes genuine joint MOPD baselines. The adjacent classification describes RGBM, not those baselines; the equivalence is local and second-order.
+  - **Artifacts:** None verified
+
 
 ## Offline
 
@@ -14,8 +26,8 @@ These works are useful boundary cases or alternatives: peer co-distillation, sel
   - **Teacher topology:** Checkpoint Pool
   - **Mechanism:** Routing and Selection · Secondary: Direct Matching
   - **Signals and domains:** Responses / Rationales, Feedback / Reward · LLM Reasoning, LLM Agents, General LLMs
-  - **Classification evidence:** Section 3, Eq. (4), and Section 4.1 use historical self-rollouts and masked cross-entropy; one LLM reviewer selects spans without replacing targets. The relearning stage neither samples current-policy states nor queries an independent teacher pool, despite following MOPD in one experiment.
-  - **Artifacts:** None verified
+  - **Classification evidence:** Rechecked v2 (2026-10-18). Section 3, Eq. (4), and Section 4.1 use historical self-rollouts and masked cross-entropy; one LLM reviewer selects spans without replacing targets. The relearning stage neither samples current-policy states nor queries an independent teacher pool, despite following MOPD in one experiment.
+  - **Artifacts:** [Code](https://github.com/AllSpark-Research/ROSS)
 
 <a id="arxiv-2607-19450"></a>
 - [REGEN: Replay-recycling for Expert-to-Generalist distillation with Offline Reinforcement Learning](https://arxiv.org/abs/2607.19450) - 2026-07-21. An explicit offline alternative to MOPD that recycles specialist RL replay memory and matches MOPD at lower coupled rollout-training cost.

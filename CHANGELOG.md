@@ -2,6 +2,14 @@
 
 All notable curation changes are recorded here.
 
+## 2026-10-23
+
+- Added 11 records: 5 multi-teacher on-policy works, 1 offline work, 1 adjacent analysis, and 4 surveys. Six are newer than the prior cutoff; five are backfills. The catalog now contains `68 + 51 + 14 + 3 + 9 = 145` records, including 8 surveys and 1 tutorial.
+- Added Nash-MOPD, Road MOPD, Delta-MOPD, SMD, OMNI, the controlled Rethinking Self-Distillation study, and the Fisher-geometric branch-and-merge analysis. Kept the latter's RGBM procedure in the adjacent collection.
+- Refreshed the OPD survey to v5 (October 21), added bilingual survey reading guides, and preserved all first-public dates. Echoes of the Oracle is explicitly labeled an author-uploaded preprint.
+- Rechecked ROSS v2, SoFT v2, and TrustMOPD v3 and verified their author-linked code repositories. Updated the bilingual 35-entry overview, reading paths, counts, and generated catalogs.
+- Added a dated verification record and retained unresolved candidates and unavailable artifacts with explicit check dates.
+
 ## 2026-10-05
 
 - Added 24 records: 16 multi-teacher on-policy works, 5 offline works, 2 adjacent methods, and 1 survey; 18 are newer than the previous cutoff and 6 are backfills. The catalog now contains `63 + 50 + 13 + 3 + 5 = 134` records.

@@ -1,7 +1,379 @@
 {
   "schema_version": "2.0",
-  "last_verified": "2026-10-05",
+  "last_verified": "2026-10-23",
   "papers": [
+    {
+      "id": "arxiv:2610.26525",
+      "title": "A Fisher-Geometric View of Multi-Teacher On-Policy Distillation",
+      "date": "2026-10-19",
+      "collection": "adjacent_alternative",
+      "record_type": "analysis",
+      "training_regime": "hybrid",
+      "state_source": "mixed",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "specialist_pool"
+      ],
+      "primary_mechanism": "progressive_sequential",
+      "mechanism_tags": [
+        "conflict_resolution"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "llm_general",
+        "llm_reasoning"
+      ],
+      "paper": "https://arxiv.org/abs/2610.26525",
+      "artifacts": [],
+      "summary": "Relates distillation to Fisher merging under a local approximation, then gates isolated specialist branches before a calibrated parameter re-merge.",
+      "evidence": {
+        "student_generated_states": "partial",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "partial",
+        "classification_note": "Sections 2 and 3.3 and Appendix C.7: RGBM first merges parameters, then trains isolated per-domain OPD branches and re-merges admitted updates; the consolidated model receives no joint multi-teacher gradient. Section 4.4 separately analyzes genuine joint MOPD baselines. The adjacent classification describes RGBM, not those baselines; the equivalence is local and second-order."
+      }
+    },
+    {
+      "id": "arxiv:2610.26124",
+      "title": "Nash-MOPD: Optimizing Task Trade-offs in Multi-Teacher On-Policy Distillation",
+      "date": "2026-10-19",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "method",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "specialist_pool"
+      ],
+      "primary_mechanism": "dynamic_scheduling",
+      "mechanism_tags": [
+        "routing_selection"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "llm_general",
+        "llm_reasoning"
+      ],
+      "paper": "https://arxiv.org/abs/2610.26124",
+      "artifacts": [],
+      "summary": "Uses exposure-normalized reverse-KL progress in a local minimax scheduler to allocate prompts across specialist domains.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Section 3.1, Eqs. (1)-(2), samples responses from the current student and applies the routed frozen specialist's reverse-KL loss. Sections 4.1-4.3 adapt domain prompt shares using existing loss statistics, without changing teacher routing. The scheduling guarantee concerns a local separable progress model, not universal benchmark gains."
+      }
+    },
+    {
+      "id": "arxiv:2610.18472",
+      "title": "Simplifying and Improving On-Policy Distillation for Few-Step Diffusion",
+      "date": "2026-10-13",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "method",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "specialist_pool"
+      ],
+      "primary_mechanism": "direct_matching",
+      "mechanism_tags": [
+        "routing_selection"
+      ],
+      "signals": [
+        "latent_velocity"
+      ],
+      "domains": [
+        "generative_models",
+        "vision",
+        "multimodal"
+      ],
+      "paper": "https://arxiv.org/abs/2610.18472",
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/zjwfufu/SMD"
+        },
+        {
+          "type": "project",
+          "url": "https://zjwfufu.github.io/SMD-Page/"
+        }
+      ],
+      "summary": "Matches velocities along student and residual-proxy paths; its multi-teacher setting routes four reward-specialized LoRA teachers without repulsion.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Sections 3.1-3.2, Eqs. (8)-(14), query detached velocity targets along current-student transitions or endpoint-preserving Pivot proxy paths. Section 5.2 and Appendix C.2 route four independently reward-specialized LoRA teachers (CLIPScore, GenEval, OCR, PickScore) by prompt category into one SD3.5-Medium student. This qualifying multi-teacher experiment uses imitation without repulsion; the weak reference in other SMD experiments is not counted as an independent teacher."
+      }
+    },
+    {
+      "id": "arxiv:2610.13521",
+      "title": "Beyond Domain-Routed Supervision: Cross-Teacher Guarding for Multi-Teacher On-Policy Distillation",
+      "date": "2026-10-09",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "method",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "specialist_pool"
+      ],
+      "primary_mechanism": "conflict_resolution",
+      "mechanism_tags": [
+        "adaptive_weighting",
+        "routing_selection"
+      ],
+      "signals": [
+        "sampled_token_advantage",
+        "gradients"
+      ],
+      "domains": [
+        "llm_general",
+        "llm_reasoning",
+        "scientific_healthcare"
+      ],
+      "paper": "https://arxiv.org/abs/2610.13521",
+      "artifacts": [],
+      "summary": "Uses non-routed teachers on the same student trajectories to modulate token credit and constrain conflicting gradients while retaining target-domain signal.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Verified v2 (2026-10-17). Sections 3.1-3.4 use current-student trajectories, independent routed and auxiliary specialists, and detached teacher-derived token advantages in a PPO-style surrogate. Eqs. (6)-(11) add same-trajectory gradient constraints; the local projection is not a guarantee of downstream capability preservation."
+      }
+    },
+    {
+      "id": "arxiv:2610.12574",
+      "title": "Scaling Multi-Teacher Distillation for Digital Pathology",
+      "date": "2026-10-08",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "heterogeneous_pool"
+      ],
+      "primary_mechanism": "heterogeneous_alignment",
+      "mechanism_tags": [
+        "direct_matching"
+      ],
+      "signals": [
+        "features"
+      ],
+      "domains": [
+        "vision",
+        "scientific_healthcare"
+      ],
+      "paper": "https://arxiv.org/abs/2610.12574",
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/prism-oncology/omni"
+        },
+        {
+          "type": "project",
+          "url": "https://sofiene-boutaj.github.io/omni-projectpage/"
+        }
+      ],
+      "summary": "Scales pathology encoder distillation with teacher-specific tokens, structured attention, mixture-of-experts blocks, and contrastive feature matching.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Sections 3.1-3.3, Eqs. (3)-(11), match teacher CLS and patch representations on a fixed image dataset. The OMNI students learn from up to ten foundation-model teachers. Internal MoE routing does not make the image inputs student-generated, so this remains offline multi-teacher distillation."
+      }
+    },
+    {
+      "id": "arxiv:2610.10460",
+      "title": "Composing What Each Teacher Learned: Delta Distillation for Multi-Teacher On-Policy Learning",
+      "date": "2026-10-07",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "method",
+      "training_regime": "on_policy",
+      "state_source": "current_student",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "specialist_pool",
+        "heterogeneous_pool"
+      ],
+      "primary_mechanism": "direct_matching",
+      "mechanism_tags": [
+        "routing_selection"
+      ],
+      "signals": [
+        "logits_distribution",
+        "sampled_token_advantage"
+      ],
+      "domains": [
+        "llm_general",
+        "llm_reasoning"
+      ],
+      "paper": "https://arxiv.org/abs/2610.10460",
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/HJSang/Delta-MOPD"
+        }
+      ],
+      "summary": "Composes teacher-minus-base logit shifts around the student's frozen initialization, separating target construction from teacher selection.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Verified renamed v2 (2026-10-20). Sections 2-4 and Eqs. (2)-(5) match shift-based targets on student prefixes using independent Nemotron, Polaris, and JustRL specialists. Composition and routed-domain experiments qualify as MOPD; the single-teacher acquisition experiment alone does not. Each teacher precursor and compatible tokens or a projection are required."
+      }
+    },
+    {
+      "id": "arxiv:2610.04272",
+      "title": "Rethinking Self-Distillation for Multi-Teacher Capability Merging",
+      "date": "2026-10-03",
+      "collection": "multi_teacher_on_policy",
+      "record_type": "analysis",
+      "training_regime": "hybrid",
+      "state_source": "mixed",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "specialist_pool"
+      ],
+      "primary_mechanism": "direct_matching",
+      "mechanism_tags": [
+        "routing_selection"
+      ],
+      "signals": [
+        "logits_distribution",
+        "responses_rationales",
+        "teacher_generated_data"
+      ],
+      "domains": [
+        "llm_general",
+        "llm_reasoning",
+        "llm_agents"
+      ],
+      "paper": "https://arxiv.org/abs/2610.04272",
+      "artifacts": [],
+      "summary": "Compares tuned SFT, soft-label distillation, teacher-prefix hybrid training, and MOPD under shared initialization, including accuracy and compute costs.",
+      "evidence": {
+        "student_generated_states": "yes",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Section 3.1, Eq. (4), and Section 4.1 explicitly test student rollouts scored by independently RL-trained experts. Here self-distillation means a shared base initialization, not an EMA or single-view teacher. The analysis also covers offline and hybrid baselines; its reported near-parity is limited to the tested models and teacher settings."
+      }
+    },
+    {
+      "id": "doi:10.13140/RG.2.2.18644.77441",
+      "title": "Echoes of the Oracle: A Survey of On-Policy Distillation in the Era of Large Language Models",
+      "date": "2026-05-29",
+      "collection": "review_tutorial",
+      "record_type": "survey",
+      "training_regime": "not_applicable",
+      "state_source": "not_applicable",
+      "teacher_topology": [],
+      "primary_mechanism": "not_applicable",
+      "mechanism_tags": [],
+      "signals": [],
+      "domains": [
+        "llm_general"
+      ],
+      "paper": "https://www.researchgate.net/publication/405427626_Echoes_of_the_Oracle_A_Survey_of_On-Policy_Distillation_in_the_Era_of_Large_Language_Models",
+      "artifacts": [],
+      "summary": "Surveys white-box and black-box OPD, supervision granularity, optimization styles, multi-teacher integration, and failure modes.",
+      "evidence": {
+        "student_generated_states": "not_applicable",
+        "multiple_independent_supervisors": "not_applicable",
+        "direct_distillation_objective": "not_applicable",
+        "classification_note": "Author-uploaded preprint dated May 29, 2026, on ResearchGate; no independently verified venue publication. Section 3.2 discusses multi-teacher OPD but also cites broader multi-teacher methods, so its grouping is not evidence that every cited work satisfies this catalog's strict state criterion. Method-level evidence fields are not applicable."
+      }
+    },
+    {
+      "id": "arxiv:2504.14772",
+      "title": "Knowledge Distillation and Dataset Distillation of Large Language Models: Emerging Trends, Challenges, and Future Directions",
+      "date": "2025-04-20",
+      "collection": "review_tutorial",
+      "record_type": "survey",
+      "training_regime": "not_applicable",
+      "state_source": "not_applicable",
+      "teacher_topology": [],
+      "primary_mechanism": "not_applicable",
+      "mechanism_tags": [],
+      "signals": [],
+      "domains": [
+        "llm_general",
+        "general_machine_learning"
+      ],
+      "paper": "https://arxiv.org/abs/2504.14772",
+      "artifacts": [],
+      "summary": "Reviews LLM knowledge and dataset distillation, including multi-teacher supervision, synthetic data, and their integration.",
+      "evidence": {
+        "student_generated_states": "not_applicable",
+        "multiple_independent_supervisors": "not_applicable",
+        "direct_distillation_objective": "not_applicable",
+        "classification_note": "Verified v2 (2026-01-03). The Multi-Teacher KD subsection and Sections 4-5 connect teacher aggregation with dataset distillation. This is broader background rather than a dedicated MOPD review; method-level evidence fields are not applicable."
+      }
+    },
+    {
+      "id": "arxiv:2503.12067",
+      "title": "A Comprehensive Survey on Knowledge Distillation",
+      "date": "2025-03-15",
+      "collection": "review_tutorial",
+      "record_type": "survey",
+      "training_regime": "not_applicable",
+      "state_source": "not_applicable",
+      "teacher_topology": [],
+      "primary_mechanism": "not_applicable",
+      "mechanism_tags": [],
+      "signals": [],
+      "domains": [
+        "general_machine_learning",
+        "vision",
+        "llm_general",
+        "multimodal"
+      ],
+      "paper": "https://arxiv.org/abs/2503.12067",
+      "artifacts": [
+        {
+          "type": "project",
+          "url": "https://github.com/IPL-sharif/KD_Survey"
+        }
+      ],
+      "summary": "Organizes distillation by knowledge source, training scheme, algorithm, modality, and application, with a dedicated multi-teacher section.",
+      "evidence": {
+        "student_generated_states": "not_applicable",
+        "multiple_independent_supervisors": "not_applicable",
+        "direct_distillation_objective": "not_applicable",
+        "classification_note": "Verified v2 (2025-10-11). Section 4.3 covers teacher aggregation, adaptive weighting, and knowledge amalgamation; Section 6.1 covers LLM applications. Its broad multi-teacher category includes variants outside strict MOPD. Method-level evidence fields are not applicable."
+      }
+    },
+    {
+      "id": "arxiv:2407.01885",
+      "title": "Survey on Knowledge Distillation for Large Language Models: Methods, Evaluation, and Application",
+      "date": "2024-07-02",
+      "collection": "review_tutorial",
+      "record_type": "survey",
+      "training_regime": "not_applicable",
+      "state_source": "not_applicable",
+      "teacher_topology": [],
+      "primary_mechanism": "not_applicable",
+      "mechanism_tags": [],
+      "signals": [],
+      "domains": [
+        "llm_general"
+      ],
+      "paper": "https://arxiv.org/abs/2407.01885",
+      "artifacts": [],
+      "summary": "Reviews white-box and black-box LLM distillation, robustness evaluation, and application settings.",
+      "evidence": {
+        "student_generated_states": "not_applicable",
+        "multiple_independent_supervisors": "not_applicable",
+        "direct_distillation_objective": "not_applicable",
+        "classification_note": "Sections 3.1 and 3.4 separate teacher-access settings, while Sections 3.2 and 3.5 discuss robustness evaluation. This general LLM-distillation survey predates the current MOPD wave; method-level evidence fields are not applicable."
+      }
+    },
     {
       "id": "arxiv:2610.02381",
       "title": "Latent-MOPD: Latent Multi-Teacher On-Policy Distillation",
@@ -199,7 +571,12 @@
         "llm_agents",
         "llm_general"
       ],
-      "artifacts": [],
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/AllSpark-Research/ROSS"
+        }
+      ],
       "id": "arxiv:2609.35954",
       "title": "ROSS: Relearning from Self-Generated Rollouts through Selective Supervision",
       "date": "2026-09-28",
@@ -209,7 +586,7 @@
         "student_generated_states": "no",
         "multiple_independent_supervisors": "no",
         "direct_distillation_objective": "yes",
-        "classification_note": "Section 3, Eq. (4), and Section 4.1 use historical self-rollouts and masked cross-entropy; one LLM reviewer selects spans without replacing targets. The relearning stage neither samples current-policy states nor queries an independent teacher pool, despite following MOPD in one experiment."
+        "classification_note": "Rechecked v2 (2026-10-18). Section 3, Eq. (4), and Section 4.1 use historical self-rollouts and masked cross-entropy; one LLM reviewer selects spans without replacing targets. The relearning stage neither samples current-policy states nor queries an independent teacher pool, despite following MOPD in one experiment."
       }
     },
     {
@@ -384,13 +761,18 @@
         "llm_agents"
       ],
       "paper": "https://arxiv.org/abs/2609.32493",
-      "artifacts": [],
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/HKUST-KnowComp/SoFT"
+        }
+      ],
       "summary": "Balances imitation of fixed multi-teacher demonstrations with preservation of the base model through token-wise soft targets and domain-specific gradient budgets.",
       "evidence": {
         "student_generated_states": "no",
         "multiple_independent_supervisors": "yes",
         "direct_distillation_objective": "yes",
-        "classification_note": "Section 3 constructs targets on teacher-forced prefixes from offline demonstrations and the frozen base distribution; Appendix C identifies independent teachers including DeepSeek-R1, GLM-5.1, Kimi-K2.5, and Qwen models. There are no student rollouts or required teacher logits."
+        "classification_note": "Rechecked v2 (2026-10-13). Section 3 constructs targets on teacher-forced prefixes from offline demonstrations and the frozen base distribution; Appendix C identifies independent teachers including DeepSeek-R1, GLM-5.1, Kimi-K2.5, and Qwen models. There are no student rollouts or required teacher logits."
       }
     },
     {
@@ -496,13 +878,18 @@
         "llm_reasoning"
       ],
       "paper": "https://arxiv.org/abs/2609.23697",
-      "artifacts": [],
+      "artifacts": [
+        {
+          "type": "code",
+          "url": "https://github.com/sunjie279/TrustMOPD-"
+        }
+      ],
       "summary": "Calibrates each specialist’s displacement from a shared pre-RL reference to weight teacher-specific reverse-KL losses at every student-generated prefix without domain labels.",
       "evidence": {
         "student_generated_states": "yes",
         "multiple_independent_supervisors": "yes",
         "direct_distillation_objective": "yes",
-        "classification_note": "Sections 2 and 3.1–3.3 define fresh student-generated prefixes, separately RL-trained math/code/instruction-following teachers, and token-wise weighted teacher-specific reverse-KL losses."
+        "classification_note": "Rechecked v3 (2026-10-11). Sections 2 and 3.1–3.3 define fresh student-generated prefixes, separately RL-trained math/code/instruction-following teachers, and token-wise weighted teacher-specific reverse-KL losses."
       }
     },
     {
@@ -4704,13 +5091,18 @@
         "llm_general"
       ],
       "paper": "https://arxiv.org/abs/2604.00626",
-      "artifacts": [],
-      "summary": "A comprehensive OPD taxonomy and survey covering objectives, signal sources, stabilization, systems, and applications.",
+      "artifacts": [
+        {
+          "type": "project",
+          "url": "https://github.com/nick7nlp/Awesome-LLM-On-Policy-Distillation"
+        }
+      ],
+      "summary": "Surveys OPD through student states, teacher information, and policy updates, including multi-teacher integration, self-distillation, RL, and agents.",
       "evidence": {
         "student_generated_states": "not_applicable",
         "multiple_independent_supervisors": "not_applicable",
         "direct_distillation_objective": "not_applicable",
-        "classification_note": "On-policy distillation survey record; method-level MOPD evidence criteria are not applicable."
+        "classification_note": "Verified v5 (2026-10-21), retaining the first-public date of 2026-04-01. Section 6 covers teacher eligibility, routing, target composition, capability balance, and evolving specialists. The source is marked Work in Progress; method-level MOPD evidence fields are not applicable."
       }
     }
   ]

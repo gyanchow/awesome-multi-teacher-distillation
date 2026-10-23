@@ -22,6 +22,7 @@ Multi-teacher distillation transfers knowledge from several complementary or spe
 | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | Learn the field                 | [Field Guide](resources/guide.md): three evidence tests, a method comparison, and an eight-paper route.                                        |
 | Explore a research problem      | [Reading Paths](resources/reading-order.md): routing, capability consolidation, heterogeneous models, and offline distillation.                |
+| Choose a survey                 | [Survey Reading Guide](resources/survey-guide.md): scope, verified versions, and recommended chapters.                                         |
 | Find implementations and models | [Author-Linked Artifacts](views/with-artifacts.md): code, models, datasets, and project pages; availability does not imply reproduced results. |
 
 Use the selected papers below for an overview. The full catalogs and cross-cutting views are linked in [Footnotes](#footnotes).
@@ -30,30 +31,30 @@ Use the selected papers below for an overview. The full catalogs and cross-cutti
 
 A work belongs to the strict MOPD collection when the current or near-current student generates the training states, multiple independently identifiable teachers provide supervision, and those signals directly update the student through a distillation objective. Static teacher data belongs to offline multi-teacher distillation; peers, self/EMA teachers, privileged views, sibling rollouts, and replay-based alternatives are labeled as adjacent unless they satisfy all three tests.
 
-Every record has exactly one primary collection. Record type, training regime, state source, teacher topology, combination mechanism, supervision signal, and domain are independent facets, so a system report is no longer treated as a competing method category. The snapshot contains 134 records: 63 multi-teacher on-policy works, 50 offline multi-teacher works, 13 adjacent or alternative works, 3 single-teacher foundations, and 5 reviews or tutorials. The latest incremental search and verification pass was completed on 2026-10-05; new entries were checked against primary metadata and relevant method sections.
+Every record has exactly one primary collection. Record type, training regime, state source, teacher topology, combination mechanism, supervision signal, and domain are independent facets, so a system report is no longer treated as a competing method category. The snapshot contains 145 records: 68 multi-teacher on-policy works, 51 offline multi-teacher works, 14 adjacent or alternative works, 3 single-teacher foundations, and 9 reviews or tutorials. The latest incremental search and verification pass was completed on 2026-10-23; new entries were checked against primary metadata and relevant method sections.
 
 MOPD means multi-teacher on-policy distillation in this repository. Multi-rollout OPD is written as MR-OPD. Parameter merging, inference-only ensembles, ordinary mixture-of-experts routing, multi-agent debate without student training, and reward-only reinforcement learning are outside strict MOPD.
 
 ## Multi-Teacher On-Policy Distillation
 
+- [Nash-MOPD: Optimizing Task Trade-offs in Multi-Teacher On-Policy Distillation](https://arxiv.org/abs/2610.26124) - Adapts domain prompt shares through a local minimax game using exposure-normalized reverse-KL progress.
+- [Beyond Domain-Routed Supervision: Cross-Teacher Guarding for Multi-Teacher On-Policy Distillation](https://arxiv.org/abs/2610.13521) - Uses non-routed teachers to modulate token credit and constrain conflicting gradients on the same student trajectories.
+- [Composing What Each Teacher Learned: Delta Distillation for Multi-Teacher On-Policy Learning](https://arxiv.org/abs/2610.10460) - Transfers teacher-minus-base logit shifts around the student's frozen initialization.
+- [Rethinking Self-Distillation for Multi-Teacher Capability Merging](https://arxiv.org/abs/2610.04272) - Compares tuned offline, hybrid, and on-policy baselines for multi-teacher capability recovery and compute cost.
 - [From Gradients to Capabilities: Understanding Multi-Teacher On-Policy Distillation](https://arxiv.org/abs/2610.02179) - Analyzes how objectives, optimizer momentum, and numerical choices turn teacher signals into capability gains.
 - [Latent-MOPD: Latent Multi-Teacher On-Policy Distillation](https://arxiv.org/abs/2610.02381) - Adds specialist hidden-state alignment and per-teacher crossfade schedules to token-level OPD.
-- [Slow-Fast Multi-Teacher On-Policy Distillation for Capability Preservation](https://arxiv.org/abs/2610.02324) - Uses a slow EMA reference to reduce conflicts among independently specialized visual teachers.
-- [Beyond Teacher Assignment: Domain-Normalized Multi-Teacher On-Policy Distillation](https://arxiv.org/abs/2609.35347) - Normalizes domain feedback scales while retaining simple domain-label teacher routing.
-- [No Pain, More Gain: Iterative Merging for Effective Multi-Teacher On-Policy Distillation](https://arxiv.org/abs/2609.34745) - Interleaves MOPD with validation-triggered parameter corrections from under-recovered teachers.
-- [PMOPD: Task Ordering, Cycling, and Parameter-Update Subspace Protection in Multi-Teacher On-Policy Distillation](https://arxiv.org/abs/2609.34605) - Protects task-update subspaces while cycling through ordered multi-teacher distillation blocks.
 - [MOPD-Router: Rethinking Teacher Routing in Multi-Teacher On-Policy Distillation](https://arxiv.org/abs/2609.30837) - Compares token-level routing over the teacher pool using sampled-token teaching advantages.
 - [Distill What You Trust: Reliability-Aware Multi-Teacher On-Policy Distillation](https://arxiv.org/abs/2609.23697) - Weights teacher losses using calibrated specialization relative to a shared reference model.
-- [ACLArena: Agent Continue Learning in Multi-stage Post-training](https://arxiv.org/abs/2609.23989) - Compares mixed-KL MOPD, replay, and merging for retention across sequential agent-training stages.
 - [Open-MOPD: Diagnosing and Fixing Capability Imbalance in Multi-Teacher On-Policy Distillation](https://arxiv.org/abs/2608.19098) - Provides an open recipe for diagnosing and balancing capability budgets in MOPD.
 - [MOPD: Multi-Teacher On-Policy Distillation for Capability Integration in LLM Post-Training](https://arxiv.org/abs/2606.30406) - Formalizes specialist-to-generalist consolidation with teacher supervision on student trajectories.
+- [Simplifying and Improving On-Policy Distillation for Few-Step Diffusion](https://arxiv.org/abs/2610.18472) - Extends on-policy velocity regression to few-step generation and reward-specialist consolidation.
 - [Qwen-Image-2.0-RL Technical Report](https://arxiv.org/abs/2606.27608) - Distills image-generation and editing specialists by matching velocity fields on student trajectories.
 
 ## Offline Multi-Teacher Distillation
 
+- [Scaling Multi-Teacher Distillation for Digital Pathology](https://arxiv.org/abs/2610.12574) - Uses teacher-specific tokens and contrastive feature matching to scale pathology multi-teacher distillation.
 - [Med-RADIO: Reducing All Medical Domains Into One via Multi-Teacher Distillation](https://arxiv.org/abs/2609.37682) - Aligns a medical generalist and modality-specific teachers through normalized feature matching.
 - [SoFT: Soft Targets for Generalizable LLM Fine-Tuning](https://arxiv.org/abs/2609.32493) - Uses soft targets to learn from fixed multi-teacher demonstrations while preserving base-model behavior.
-- [Decision Shifts, Lost Label Functionality, and an Inconclusive Grounding Audit in Correctness-Gated Multi-Teacher Distillation](https://arxiv.org/abs/2609.09702) - Shows how correctness-gated distillation gains can coexist with lost label recall and inconclusive grounding evidence.
 - [Multi-Teacher Knowledge Distillation via Teacher-Informed Mixture Priors](https://arxiv.org/abs/2605.27967) - Combines teacher-informed Bayesian mixture priors with sample-wise entropy weighting.
 - [Merge-of-Thought Distillation](https://arxiv.org/abs/2509.08814) - Alternates teacher-specific rationale distillation with merging of trained student branches.
 - [Find Your Optimal Teacher: Personalized Data Synthesis via Router-Guided Multi-Teacher Distillation](https://aclanthology.org/2026.acl-long.666/) - Routes prompts by both teacher response quality and student learnability for personalized data synthesis.
@@ -64,11 +65,11 @@ MOPD means multi-teacher on-policy distillation in this repository. Multi-rollou
 
 ## Adjacent and Alternative Paradigms
 
+- [A Fisher-Geometric View of Multi-Teacher On-Policy Distillation](https://arxiv.org/abs/2610.26525) - Analyzes a local Fisher-merging connection and consolidates isolated OPD branches through residual-gated parameter re-merging.
 - [ROSS: Relearning from Self-Generated Rollouts through Selective Supervision](https://arxiv.org/abs/2609.35954) - Selectively relearns saved RL and MOPD rollouts through offline masked supervision.
 - [MAS-OPD: On-Policy Distillation for Multi-agent Systems](https://arxiv.org/abs/2609.34234) - Distills interacting agents from role-conditioned views of one frozen teacher.
 - [RISE: Recursive Improvement via Self-Extrapolating Policy Distillation](https://arxiv.org/abs/2609.05295) - Extrapolates a dense self-teacher from the current and trailing checkpoints rather than using independent teachers.
 - [DOPD: Dual On-policy Distillation](https://arxiv.org/abs/2606.30626) - Routes supervision between privileged teacher and privileged student views rather than an independent teacher pool.
-- [Skill-Conditioned Gated Self-Distillation for LLM Reasoning](https://arxiv.org/abs/2605.28791) - Treats several skill-conditioned views of one live policy as a gated self-teacher pool.
 - [Multi-Rollout On-Policy Distillation via Peer Successes and Failures](https://arxiv.org/abs/2605.12652) - Builds teacher signals from sibling rollouts; “multi” refers to rollouts rather than independent teachers.
 
 ## Single-Teacher Foundations
@@ -79,10 +80,10 @@ MOPD means multi-teacher on-policy distillation in this repository. Multi-rollou
 
 ## Reviews and Tutorials
 
-- [A Survey of On-Policy Distillation for Large Language Models](https://arxiv.org/abs/2604.00626) - Reviews OPD objectives, signal sources, stabilization, systems, and applications.
-- [Knowledge Distillation for Language Models](https://aclanthology.org/2025.naacl-tutorial.4/) - Tutorial covering prediction and representation matching, reinforcement-learning-based KD, and multi-teacher methods.
-- [A Survey on Knowledge Distillation of Large Language Models](https://arxiv.org/abs/2402.13116) - Surveys knowledge elicitation and white-box and black-box distillation for language models.
-- [Knowledge Distillation: A Survey](https://arxiv.org/abs/2006.05525) - Organizes response-, feature-, and relation-based knowledge across training schemes and applications.
+- [A Survey of On-Policy Distillation for Large Language Models](https://arxiv.org/abs/2604.00626) - Reviews student-state learning and teacher supervision; the October 2026 revision includes a dedicated multi-teacher OPD chapter.
+- [Echoes of the Oracle: A Survey of On-Policy Distillation in the Era of Large Language Models](https://www.researchgate.net/publication/405427626_Echoes_of_the_Oracle_A_Survey_of_On-Policy_Distillation_in_the_Era_of_Large_Language_Models) - Author-uploaded preprint reviewing teacher access, OPD optimization, multi-teacher methods, and failure modes.
+- [A Comprehensive Survey on Knowledge Distillation](https://arxiv.org/abs/2503.12067) - Surveys KD sources, schemes, and applications, with a dedicated multi-teacher aggregation section.
+- [A Statistical Perspective on Knowledge Distillation: Foundations, Classical Methods, and Large Language Model Extensions](https://arxiv.org/abs/2609.33727) - Connects distillation to Bayesian inference, teacher uncertainty, and multi-teacher aggregation.
 
 ## Contributing
 
@@ -96,4 +97,4 @@ Cross-cutting views are available by [mechanism](views/by-mechanism.md), [teache
 
 For maintenance and reproducibility, see the [machine-readable catalog](data/papers.json), [schema](data/schema.json), [taxonomy](resources/taxonomy.md), [open research questions](resources/open-questions.md), and [search and verification protocol](resources/search-strategy.md).
 
-See the [October search record](resources/update-2026-10-05.md) for sources and classification boundaries, and the [Awesome submission audit](resources/awesome-submission.md) before proposing this list to the main index.
+See the [October 23 search record](resources/update-2026-10-23.md) for sources and classification boundaries, and the [Awesome submission audit](resources/awesome-submission.md) before proposing this list to the main index.

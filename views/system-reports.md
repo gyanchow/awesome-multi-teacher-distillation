@@ -4,7 +4,7 @@
 
 Technical and model reports in which multi-teacher distillation is a material training stage, rather than a separate primary collection.
 
-Entries link to their canonical catalog record. This is a derived view; edit `data/papers.json` instead. Catalog refreshed on 2026-10-05.
+Entries link to their canonical catalog record. This is a derived view; edit `data/papers.json` instead. Catalog refreshed on 2026-10-23.
 
 ## Reports (24)
 

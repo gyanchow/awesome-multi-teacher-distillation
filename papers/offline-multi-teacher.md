@@ -4,7 +4,7 @@
 
 Works in this collection distill multiple teachers or an ensemble using a static corpus, teacher-generated data, cached activations, or replay. They do not satisfy the repository's student-state criterion for strict MOPD.
 
-**50 records · catalog refreshed on 2026-10-05 · [Taxonomy](../resources/taxonomy.md)**
+**51 records · catalog refreshed on 2026-10-23 · [Taxonomy](../resources/taxonomy.md)**
 
 ## Adaptive Weighting
 
@@ -14,8 +14,8 @@ Works in this collection distill multiple teachers or an ensemble using a static
   - **Teacher topology:** Independent Multi-Teacher, Heterogeneous Pool
   - **Mechanism:** Adaptive Weighting · Secondary: Direct Matching
   - **Signals and domains:** Responses / Rationales, Teacher-Generated Data, Logits / Distribution · General LLMs, LLM Reasoning, LLM Agents
-  - **Classification evidence:** Section 3 constructs targets on teacher-forced prefixes from offline demonstrations and the frozen base distribution; Appendix C identifies independent teachers including DeepSeek-R1, GLM-5.1, Kimi-K2.5, and Qwen models. There are no student rollouts or required teacher logits.
-  - **Artifacts:** None verified
+  - **Classification evidence:** Rechecked v2 (2026-10-13). Section 3 constructs targets on teacher-forced prefixes from offline demonstrations and the frozen base distribution; Appendix C identifies independent teachers including DeepSeek-R1, GLM-5.1, Kimi-K2.5, and Qwen models. There are no student rollouts or required teacher logits.
+  - **Artifacts:** [Code](https://github.com/HKUST-KnowComp/SoFT)
 
 <a id="arxiv-2605-27967"></a>
 - [Multi-Teacher Knowledge Distillation via Teacher-Informed Mixture Priors](https://arxiv.org/abs/2605.27967) - 2026-05-27. Forms a teacher-informed mixture prior with sample-wise entropy weights and samples the student posterior to combine teacher expertise with uncertainty estimates.
@@ -244,6 +244,15 @@ Works in this collection distill multiple teachers or an ensemble using a static
 
 
 ## Heterogeneous Alignment
+
+<a id="arxiv-2610-12574"></a>
+- [Scaling Multi-Teacher Distillation for Digital Pathology](https://arxiv.org/abs/2610.12574) - 2026-10-08. Scales pathology encoder distillation with teacher-specific tokens, structured attention, mixture-of-experts blocks, and contrastive feature matching.
+  - **Facets:** `arxiv:2610.12574` · Method · Offline · State: Static Corpus
+  - **Teacher topology:** Independent Multi-Teacher, Heterogeneous Pool
+  - **Mechanism:** Heterogeneous Alignment · Secondary: Direct Matching
+  - **Signals and domains:** Features · Vision, Scientific and Healthcare
+  - **Classification evidence:** Sections 3.1-3.3, Eqs. (3)-(11), match teacher CLS and patch representations on a fixed image dataset. The OMNI students learn from up to ten foundation-model teachers. Internal MoE routing does not make the image inputs student-generated, so this remains offline multi-teacher distillation.
+  - **Artifacts:** [Code](https://github.com/prism-oncology/omni) · [Project](https://sofiene-boutaj.github.io/omni-projectpage/)
 
 <a id="arxiv-2609-37682"></a>
 - [Med-RADIO: Reducing All Medical Domains Into One via Multi-Teacher Distillation](https://arxiv.org/abs/2609.37682) - 2026-09-29. Combines a medical generalist and modality specialists through translator heads, modality-aligned data streams, and feature-dispersion-normalized angular distillation.

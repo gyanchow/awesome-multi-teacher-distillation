@@ -2,6 +2,8 @@
 
 These paths are intentionally separate from the primary taxonomy. A paper has one canonical collection, but readers can approach the literature by prerequisite, mechanism, or application.
 
+For survey selection and exact chapters, start with the [survey guide](survey-guide.md) ([中文](survey-guide_zh-CN.md)).
+
 ## From knowledge distillation to MOPD
 
 1. [Distilling the Knowledge in a Neural Network](https://arxiv.org/abs/1503.02531) introduces temperature-scaled soft targets and ensemble compression.
@@ -80,5 +82,14 @@ These paths are intentionally separate from the primary taxonomy. A paper has on
 3. [Merge-of-Thought](https://arxiv.org/abs/2509.08814) distills teacher-specific branches before parameter merging.
 4. [ROSS](https://arxiv.org/abs/2609.35954) adds offline relearning of historical rollouts after MOPD or RL.
 5. [MAS-OPD](https://arxiv.org/abs/2609.34234) trains multiple agents using one teacher, illustrating why multi-agent and multi-teacher are different categories.
+
+## October methods and comparison controls
+
+1. [Delta-MOPD](https://arxiv.org/abs/2610.10460) separates teacher-relative target construction from teacher selection; read the renamed v2.
+2. [Road MOPD](https://arxiv.org/abs/2610.13521) uses non-routed teachers as same-trajectory critics for token and gradient corrections.
+3. [Nash-MOPD](https://arxiv.org/abs/2610.26124) allocates domain prompts through a local minimax progress model.
+4. [Rethinking Self-Distillation](https://arxiv.org/abs/2610.04272) supplies tuned offline and hybrid controls; its shared-base experts are still independently trained teachers.
+5. [A Fisher-Geometric View](https://arxiv.org/abs/2610.26525) is an adjacent branch-and-merge alternative, with local approximation assumptions and separate joint-MOPD comparisons.
+6. [SMD](https://arxiv.org/abs/2610.18472) extends the on-policy question to diffusion velocity targets; [OMNI](https://arxiv.org/abs/2610.12574) illustrates offline multi-teacher feature transfer on pathology images.
 
 For full catalog browsing, use the generated views by [mechanism](../views/by-mechanism.md), [teacher topology](../views/by-teacher-topology.md), [supervision signal](../views/by-supervision-signal.md), [domain](../views/by-domain.md), or [date](../views/chronological.md).

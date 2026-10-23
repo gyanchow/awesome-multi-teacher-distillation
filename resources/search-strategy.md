@@ -1,6 +1,6 @@
 # Search and Verification Strategy
 
-**Latest search:** 2026-10-05 (Asia/Shanghai). This is an incremental refresh of the 2026-09-08 snapshot, not a claim of exhaustive coverage or a fresh review of every existing record. New accepted submissions reach 2026-10-01, and earlier omissions retain their first-public dates. See the [dated update record](update-2026-10-05.md) for method evidence and deferred candidates.
+**Latest search:** 2026-10-23 (Asia/Shanghai). This increment covers October discoveries, targeted revisions, and survey backfills after the 2026-10-05 snapshot. It is not exhaustive and does not imply a fresh method review of every existing record. Accepted new submissions reach 2026-10-19; the OPD survey was rechecked at v5 dated October 21. Earlier omissions retain their first-public dates. See the [dated update record](update-2026-10-23.md) for evidence, artifact checks, and limits.
 
 ## Discovery queries
 
@@ -14,6 +14,8 @@ The seed search combined exact phrases and mechanism-level variants:
 - `teacher selection routing multi-teacher distillation`
 - `answer-verified teacher`, `teacher gating verifier`, `student-centric teacher selection`
 - `soft-prompt teacher on-policy`, `self-extrapolating policy distillation`, `best-of-N teacher rollout`
+- `"multi-teacher" "2610"`, `"multi-teacher" "distillation" "October 2026"`
+- `"multi-teacher" survey`, `"on-policy distillation" survey`, exact-title searches and version-history checks
 - citation and reference chaining from foundational, survey, and system papers
 
 Searches covered arXiv, ACL Anthology, ACM/DOI landing pages, NeurIPS and PMLR proceedings, CVF Open Access, official project pages, author/organization GitHub repositories, and official model reports. General web search was used for discovery only.

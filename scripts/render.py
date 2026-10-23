@@ -44,7 +44,7 @@ COLLECTION_INTROS = {
     ),
     "adjacent_alternative": (
         "These works are useful boundary cases or alternatives: peer co-distillation, self/EMA "
-        "distillation, privileged views, sibling rollouts, and offline replay. Their evidence notes "
+        "distillation, privileged views, sibling rollouts, offline replay, and branch consolidation. Their evidence notes "
         "state exactly which strict-MOPD condition does not hold."
     ),
     "single_teacher_foundation": (

@@ -1,12 +1,14 @@
 # How to Read Multi-Teacher Distillation: From Offline KD to MOPD
 
-[中文](guide_zh-CN.md) · [GitHub repository](https://github.com/gyanchow/awesome-multi-teacher-distillation) · Literature snapshot: 2026-10-05
+[中文](guide_zh-CN.md) · [GitHub repository](https://github.com/gyanchow/awesome-multi-teacher-distillation) · Literature snapshot: 2026-10-23
 
 ![Methods and boundaries from offline multi-teacher distillation to MOPD](../assets/method-map.svg)
 
 Multi-teacher distillation transfers knowledge or specialized capabilities from several models into one student. Three questions make this literature easier to read: where do the training states come from, who supplies supervision, and how does that supervision update the student?
 
-The accompanying [Awesome Multi-Teacher Distillation](../README.md) catalog contains 134 records: 63 multi-teacher on-policy works, 50 offline multi-teacher works, 13 adjacent methods, 3 single-teacher foundations, and 5 reviews or tutorials. Records include analyses and system reports, so these counts do not represent 134 distinct algorithms. The collection is a curated map, not an exhaustive systematic review.
+The accompanying [Awesome Multi-Teacher Distillation](../README.md) catalog contains 145 records: 68 multi-teacher on-policy works, 51 offline multi-teacher works, 14 adjacent methods, 3 single-teacher foundations, and 9 reviews or tutorials. Records include analyses and system reports, so these counts do not represent 145 distinct algorithms. The collection is a curated map, not an exhaustive systematic review.
+
+For review papers and exact chapters, see the [survey reading guide](survey-guide.md).
 
 ## From fixed examples to student trajectories
 

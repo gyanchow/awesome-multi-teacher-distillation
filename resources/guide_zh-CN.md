@@ -1,12 +1,14 @@
 # 多教师蒸馏怎么读：从离线 KD 到 MOPD
 
-[English](guide.md) · [GitHub 仓库](https://github.com/gyanchow/awesome-multi-teacher-distillation) · 文献快照：2026-10-05
+[English](guide.md) · [GitHub 仓库](https://github.com/gyanchow/awesome-multi-teacher-distillation) · 文献快照：2026-10-23
 
 ![从离线多教师蒸馏到 MOPD 的方法与边界示意](../assets/method-map.svg)
 
 多教师蒸馏希望把不同模型的知识或专长迁移到一个学生中。阅读这类论文，先追踪三件事：学生在什么状态上学习，谁提供监督，监督怎样进入训练目标。教师数量、模型大小和论文标题，都不能单独回答这些问题。
 
-本文配套的 [Awesome Multi-Teacher Distillation](../README_zh-CN.md) 当前收录 134 条记录：63 条多教师在策略蒸馏、50 条离线多教师蒸馏、13 条相邻方法、3 条单教师基础工作、5 条综述或教程。记录也包含分析论文和系统报告；这些数字不等于 134 个独立算法，更不代表完整覆盖了领域。
+本文配套的 [Awesome Multi-Teacher Distillation](../README_zh-CN.md) 当前收录 145 条记录：68 条多教师在策略蒸馏、51 条离线多教师蒸馏、14 条相邻方法、3 条单教师基础工作、9 条综述或教程。记录也包含分析论文和系统报告；这些数字不等于 145 个独立算法，更不代表完整覆盖了领域。
+
+综述选读与具体章节推荐见[综述阅读导读](survey-guide_zh-CN.md)。
 
 ## 从固定训练材料到学生自己的轨迹
 
