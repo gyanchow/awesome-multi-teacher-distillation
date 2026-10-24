@@ -28,3 +28,5 @@
 OPD Survey v5 标注为 *Work in Progress*；Echoes of the Oracle 目前核实到作者的 ResearchGate 上传版本，未核实到正式发表信息。上表区分了版本更新日期和首次公开日期，引用时应记录实际阅读版本。
 
 更多信息见[完整综述目录](../papers/reviews-tutorials.md)、[方法论文阅读路线](reading-order.md)和[10 月 23 日更新记录](update-2026-10-23.md)。
+
+写作结构可另参考[12篇LLM综述结构比较](llm-survey-structures.md)、[30篇核心研究详解](core-studies.md)与[方法比较指南](compare-methods_zh-CN.md)。

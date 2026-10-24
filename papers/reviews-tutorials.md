@@ -4,7 +4,7 @@
 
 Surveys and tutorials that provide field-level context. Method-specific evidence fields are marked not applicable.
 
-**9 records · catalog refreshed on 2026-10-23 · [Taxonomy](../resources/taxonomy.md)**
+**9 records · catalog refreshed on 2026-10-24 · [Taxonomy](../resources/taxonomy.md)**
 
 ## Survey
 

@@ -4,7 +4,7 @@
 
 Works in this collection distill multiple teachers or an ensemble using a static corpus, teacher-generated data, cached activations, or replay. They do not satisfy the repository's student-state criterion for strict MOPD.
 
-**51 records · catalog refreshed on 2026-10-23 · [Taxonomy](../resources/taxonomy.md)**
+**52 records · catalog refreshed on 2026-10-24 · [Taxonomy](../resources/taxonomy.md)**
 
 ## Adaptive Weighting
 
@@ -14,7 +14,7 @@ Works in this collection distill multiple teachers or an ensemble using a static
   - **Teacher topology:** Independent Multi-Teacher, Heterogeneous Pool
   - **Mechanism:** Adaptive Weighting · Secondary: Direct Matching
   - **Signals and domains:** Responses / Rationales, Teacher-Generated Data, Logits / Distribution · General LLMs, LLM Reasoning, LLM Agents
-  - **Classification evidence:** Rechecked v2 (2026-10-13). Section 3 constructs targets on teacher-forced prefixes from offline demonstrations and the frozen base distribution; Appendix C identifies independent teachers including DeepSeek-R1, GLM-5.1, Kimi-K2.5, and Qwen models. There are no student rollouts or required teacher logits.
+  - **Classification evidence:** Rechecked v2 (2026-10-13). Section 3 constructs targets on teacher-forced prefixes from offline demonstrations and the frozen base distribution; Appendix C identifies independent teachers including DeepSeek-R1, GLM-5.1, Kimi-K2.5, and Qwen models. There are no student rollouts or required teacher logits. Checked v2 on 2026-10-24, Sections 3-6 and Appendix B.2.1: fixed teacher demonstrations and a frozen Base define cached KL-projected soft targets. The domain budget controls initial demonstrated-token logit-gradient mass, not general parameter-gradient norms. Four evaluation attempts are not independent training seeds.
   - **Artifacts:** [Code](https://github.com/HKUST-KnowComp/SoFT)
 
 <a id="arxiv-2605-27967"></a>
@@ -342,6 +342,15 @@ Works in this collection distill multiple teachers or an ensemble using a static
   - **Mechanism:** Heterogeneous Alignment · Secondary: Direct Matching
   - **Signals and domains:** Logits / Distribution · NLP
   - **Classification evidence:** Locale-specialized monolingual teachers provide fixed-data targets for one multilingual spelling-correction student.
+  - **Artifacts:** None verified
+
+<a id="arxiv-2106-02834"></a>
+- [MergeDistill: Merging Language Models using Pre-trained Distillation](https://aclanthology.org/2021.findings-acl.254/) - 2021-06-05. Maps cached masked-token predictions from monolingual and multilingual teachers into a union vocabulary to train one multilingual language model.
+  - **Facets:** `arxiv:2106.02834` · Method · Offline · State: Static Corpus
+  - **Teacher topology:** Independent Multi-Teacher, Heterogeneous Pool
+  - **Mechanism:** Heterogeneous Alignment · Secondary: Direct Matching, Routing and Selection
+  - **Signals and domains:** Logits / Distribution · NLP
+  - **Classification evidence:** Official Findings ACL-IJCNLP 2021 PDF, Section 3.1 and Sections 4.2-4.4: separate monolingual teachers, or mBERT and MuRIL, score masked Wikipedia examples offline. Teacher top-k soft targets and ordinary masked-language-model labels are mapped into a union student vocabulary. Multiple copies or minimum-teacher-loss selection handle overlapping teachers; this is task-agnostic distillation, not teacher-parameter interpolation or student-rollout training. Table 5 separates vocabulary and teacher-prediction effects. First-public date is arXiv v1, 2021-06-05.
   - **Artifacts:** None verified
 
 <a id="arxiv-2106-01023"></a>

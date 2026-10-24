@@ -28,3 +28,5 @@ Apply the repository's three evidence tests to each cited method: who generated 
 The OPD survey v5 is marked *Work in Progress*. For Echoes of the Oracle, the verified source is the author's ResearchGate upload; venue publication was not established. Revision dates above are distinct from first-public dates. Survey coverage and terminology should be checked against the original methods before being used as classification evidence.
 
 See the [complete review catalog](../papers/reviews-tutorials.md), [method reading paths](reading-order.md), and [October 23 update record](update-2026-10-23.md).
+
+For writing and organizing a survey, see the [12 additional LLM survey structures](llm-survey-structures.md), [30 detailed study cards](core-studies.md), and [comparison guide](compare-methods.md).

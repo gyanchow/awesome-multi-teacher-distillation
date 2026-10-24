@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0",
-  "last_verified": "2026-10-23",
+  "last_verified": "2026-10-24",
   "papers": [
     {
       "id": "arxiv:2610.26525",
@@ -32,7 +32,7 @@
         "student_generated_states": "partial",
         "multiple_independent_supervisors": "yes",
         "direct_distillation_objective": "partial",
-        "classification_note": "Sections 2 and 3.3 and Appendix C.7: RGBM first merges parameters, then trains isolated per-domain OPD branches and re-merges admitted updates; the consolidated model receives no joint multi-teacher gradient. Section 4.4 separately analyzes genuine joint MOPD baselines. The adjacent classification describes RGBM, not those baselines; the equivalence is local and second-order."
+        "classification_note": "Rechecked v1 on 2026-10-24, Sections 3.1-3.3 and Appendix C.7. RGBM first scores unlabeled specialist-generated calibration completions and solves a minimax subspace parameter merge. Energy-normalized residuals then gate isolated per-domain OPD branches; selected branch updates are shrunk and remerged. The consolidated model receives no joint multi-teacher gradient. No gradient training applies to the initial merge, not the entire pipeline. The Fisher relationship is local and second-order; the adjacent classification describes RGBM rather than separately evaluated joint-MOPD baselines."
       }
     },
     {
@@ -144,7 +144,7 @@
         "student_generated_states": "yes",
         "multiple_independent_supervisors": "yes",
         "direct_distillation_objective": "yes",
-        "classification_note": "Verified v2 (2026-10-17). Sections 3.1-3.4 use current-student trajectories, independent routed and auxiliary specialists, and detached teacher-derived token advantages in a PPO-style surrogate. Eqs. (6)-(11) add same-trajectory gradient constraints; the local projection is not a guarantee of downstream capability preservation."
+        "classification_note": "Rechecked v2 on 2026-10-24, Sections 3.2-3.3, Eqs. (4)-(9). Independent routed and auxiliary specialists score the same target-domain student trajectories. Detached reference-relative agreement modulates token advantages, while tensorwise partial projection constrains target gradients using auxiliary gradients. A norm-retention floor can leave residual local conflict; neither the projection nor same-trajectory auxiliary-loss agreement guarantees downstream capability preservation."
       }
     },
     {
@@ -262,7 +262,7 @@
         "student_generated_states": "yes",
         "multiple_independent_supervisors": "yes",
         "direct_distillation_objective": "yes",
-        "classification_note": "Section 3.1, Eq. (4), and Section 4.1 explicitly test student rollouts scored by independently RL-trained experts. Here self-distillation means a shared base initialization, not an EMA or single-view teacher. The analysis also covers offline and hybrid baselines; its reported near-parity is limited to the tested models and teacher settings."
+        "classification_note": "Rechecked v1 on 2026-10-24, Sections 3.1, 4.1, 5.2 and Appendix G.2-G.3. Independently RL-trained experts share a base initialization; self-distillation here does not mean an EMA teacher. The study compares tuned offline, teacher-history hybrid and live student-trajectory recipes. Qwen3-8B MOPD/SFT ratios of 14.8x and 23.1x are configured full-budget training GPU-hours for the two tested expert compositions, not time-to-equal-performance or end-to-end ratios. Online teacher scoring is included; teacher-corpus generation, evaluation and other tuning runs are excluded. Reported near-parity is limited to the tested models and settings."
       }
     },
     {
@@ -412,7 +412,7 @@
         "student_generated_states": "yes",
         "multiple_independent_supervisors": "yes",
         "direct_distillation_objective": "yes",
-        "classification_note": "Section 3 and Section 4.1 use student-generated responses, three frozen math/code/logic specialists, a top-16 fixed-advantage token objective, and hidden-state alignment in both same-lineage and differing-width settings."
+        "classification_note": "Section 3 and Section 4.1 use student-generated responses, three frozen math/code/logic specialists, a top-16 fixed-advantage token objective, and hidden-state alignment in both same-lineage and differing-width settings. Checked v1 on 2026-10-24, Tables 1-2 and Appendices A/F: results use the final checkpoint after 62 updates. Norm is headroom weighted; projector architecture and initialization both change in the cross-family comparison. The domain-pure batch stability ablation concerns representation-only controls."
       }
     },
     {
@@ -443,7 +443,7 @@
         "student_generated_states": "yes",
         "multiple_independent_supervisors": "yes",
         "direct_distillation_objective": "yes",
-        "classification_note": "Sections 2.1–2.4 and 3.1 use current-student responses, four visual-domain expert models, and projected plus original Jensen–Shannon distillation losses; the EMA reference is additional to the independent teachers."
+        "classification_note": "Sections 2.1–2.4 and 3.1 use current-student responses, four visual-domain expert models, and projected plus original Jensen–Shannon distillation losses; the EMA reference is additional to the independent teachers. Checked v1 on 2026-10-24, Tables 1-2: slow-fast distillation reduces general-capability loss relative to MOPD, but mean general performance remains below Base at all three student scales. The no-projection variant also changes the objective to an EMA constraint."
       }
     },
     {
@@ -628,7 +628,7 @@
         "student_generated_states": "yes",
         "multiple_independent_supervisors": "yes",
         "direct_distillation_objective": "yes",
-        "classification_note": "Section 2 and Algorithm 1 use fresh student answers, three separately RL-trained math/code/instruction-following specialists, and domain-normalized advantages in the clipped OPD objective."
+        "classification_note": "Section 2 and Algorithm 1 use fresh student answers, three separately RL-trained math/code/instruction-following specialists, and domain-normalized advantages in the clipped OPD objective. Checked v1 on 2026-10-24, Tables 1-3 and Appendix C: fixed approximate domain weights are competitive with online normalization at 9B/4B. SeqKD-SFT scores higher under its own recipe with 84 updates and a 16k-token teacher-answer cap; this is not a compute-matched OPD comparison."
       }
     },
     {
@@ -772,7 +772,7 @@
         "student_generated_states": "no",
         "multiple_independent_supervisors": "yes",
         "direct_distillation_objective": "yes",
-        "classification_note": "Rechecked v2 (2026-10-13). Section 3 constructs targets on teacher-forced prefixes from offline demonstrations and the frozen base distribution; Appendix C identifies independent teachers including DeepSeek-R1, GLM-5.1, Kimi-K2.5, and Qwen models. There are no student rollouts or required teacher logits."
+        "classification_note": "Rechecked v2 (2026-10-13). Section 3 constructs targets on teacher-forced prefixes from offline demonstrations and the frozen base distribution; Appendix C identifies independent teachers including DeepSeek-R1, GLM-5.1, Kimi-K2.5, and Qwen models. There are no student rollouts or required teacher logits. Checked v2 on 2026-10-24, Sections 3-6 and Appendix B.2.1: fixed teacher demonstrations and a frozen Base define cached KL-projected soft targets. The domain budget controls initial demonstrated-token logit-gradient mass, not general parameter-gradient norms. Four evaluation attempts are not independent training seeds."
       }
     },
     {
@@ -810,7 +810,7 @@
         "student_generated_states": "yes",
         "multiple_independent_supervisors": "yes",
         "direct_distillation_objective": "yes",
-        "classification_note": "Sections 3.1–3.3 evaluate independent expert teachers on rollout-student prefixes and combine their sampled-token log-ratio advantages in a clipped student policy objective."
+        "classification_note": "Sections 3.1–3.3 evaluate independent expert teachers on rollout-student prefixes and combine their sampled-token log-ratio advantages in a clipped student policy objective. Checked v2 on 2026-10-24, Tables 1-5 and Appendix D: ExpertAlign is a token-level full-pool routing design. Three training seeds cover the same-size labeled setting, while bootstrap intervals cover all four scale/data settings. Total GPU-hour overhead and per-token overhead use different denominators."
       }
     },
     {
@@ -889,7 +889,7 @@
         "student_generated_states": "yes",
         "multiple_independent_supervisors": "yes",
         "direct_distillation_objective": "yes",
-        "classification_note": "Rechecked v3 (2026-10-11). Sections 2 and 3.1–3.3 define fresh student-generated prefixes, separately RL-trained math/code/instruction-following teachers, and token-wise weighted teacher-specific reverse-KL losses."
+        "classification_note": "Rechecked v3 on 2026-10-24, Sections 3.1-3.3. Separately RL-trained specialists score student-generated prefixes relative to a shared pre-RL reference. Each teacher calibration mean is estimated once on initial-student rollouts and then frozen; state-dependent displacement produces detached weights on teacher-specific reverse-KL losses. Displacement is a reliability proxy rather than a correctness test."
       }
     },
     {
@@ -1145,21 +1145,18 @@
       "id": "arxiv:2609.02548",
       "title": "Learn from Whoever Is Right: Answer-Verified Multi-Teacher Distillation for Multi-Domain LLMs",
       "date": "2026-09-02",
-      "collection": "multi_teacher_on_policy",
+      "collection": "adjacent_alternative",
       "record_type": "method",
-      "training_regime": "on_policy",
+      "training_regime": "self_distillation",
       "state_source": "current_student",
       "teacher_topology": [
         "specialist_pool",
         "independent_multi_teacher",
-        "debate_collective",
         "self_ema",
         "privileged_views"
       ],
       "primary_mechanism": "routing_selection",
       "mechanism_tags": [
-        "conflict_resolution",
-        "collective_deliberation",
         "direct_matching"
       ],
       "signals": [
@@ -1178,12 +1175,12 @@
           "url": "https://github.com/hexixiang/MT-SDPO"
         }
       ],
-      "summary": "Selects every frozen domain teacher whose private answer passes a verifier, then consolidates verified feedback and student self-anchors through a privileged EMA teacher.",
+      "summary": "Uses answer-eligible external teachers for sanitized feedback and correct student peers for anchors, then distills one privileged EMA self-teacher distribution into the student.",
       "evidence": {
         "student_generated_states": "yes",
         "multiple_independent_supervisors": "yes",
-        "direct_distillation_objective": "yes",
-        "classification_note": "Current-student rollout groups are reviewed by independently queried frozen science-domain teachers; verified feedback is consolidated through a privileged EMA teacher and transferred with token-level JSD."
+        "direct_distillation_objective": "partial",
+        "classification_note": "Rechecked v1 on 2026-10-24, Sections 4.1-4.4 and Appendix B.1-B.3. Independent frozen external teachers provide feedback on current-student rollouts, but the direct masked, importance-weighted JSD target comes from one privileged EMA self-teacher. Multiple independent supervisors is yes for upstream feedback; direct multi-teacher distillation is partial because external experts do not directly supply the token-distribution targets. Offline answer verification establishes eligibility, while lexical sanitization does not verify the semantic correctness of feedback. This feedback-mediated self-distillation stage is adjacent to strict MOPD."
       }
     },
     {
@@ -1479,7 +1476,7 @@
       "collection": "multi_teacher_on_policy",
       "record_type": "method",
       "training_regime": "on_policy",
-      "state_source": "current_student",
+      "state_source": "near_current_student",
       "teacher_topology": [
         "specialist_pool",
         "independent_multi_teacher",
@@ -1499,12 +1496,12 @@
       ],
       "paper": "https://arxiv.org/abs/2607.18293",
       "artifacts": [],
-      "summary": "Builds lightweight task-specific soft-prompt teachers on one frozen backbone, then routes current-student rollouts among them for parallel reverse-KL capability integration.",
+      "summary": "Independently learns task-specific soft-prompt teachers on one frozen backbone, then routes periodically refreshed student rollouts to their reverse-KL supervision.",
       "evidence": {
         "student_generated_states": "yes",
         "multiple_independent_supervisors": "yes",
         "direct_distillation_objective": "yes",
-        "classification_note": "Four independently trained and frozen soft prompts define task-specific teacher policies; each current-student rollout is routed to one and receives token-level reverse-KL supervision."
+        "classification_note": "Rechecked v1 on 2026-10-24, Sections 4.1-4.3 and 5.1. Four independently trained and frozen soft prompts define distinct learned teacher policies on a shared frozen backbone. Task-routed student prefixes receive token-level reverse-KL supervision. The implementation refreshes its rollout buffer every 64 steps, so stored states need not follow the current policy at each optimizer step."
       }
     },
     {
@@ -1800,7 +1797,7 @@
     },
     {
       "id": "arxiv:2608.26735",
-      "title": "Preserving General Capabilities during Domain Specialization with Uncertainty-Calibrated MOPD",
+      "title": "Recovering General Capabilities via Uncertainty-Calibrated Multi-Teacher On-Policy Distillation",
       "date": "2026-08-27",
       "collection": "multi_teacher_on_policy",
       "record_type": "method",
@@ -1824,22 +1821,22 @@
       ],
       "paper": "https://arxiv.org/abs/2608.26735",
       "artifacts": [],
-      "summary": "Uses dual-temperature sampling, positive-advantage-density filtering, and entropy-calibrated token filtering to preserve general capabilities during specialization.",
+      "summary": "Combines dual-temperature trajectory screening and entropy-centered token endorsement to recover capabilities after specialization.",
       "evidence": {
         "student_generated_states": "yes",
         "multiple_independent_supervisors": "yes",
         "direct_distillation_objective": "yes",
-        "classification_note": "Domain and general teachers supervise student samples through uncertainty-calibrated trajectory and token filtering."
+        "classification_note": "Domain and general teachers supervise student samples through uncertainty-calibrated trajectory and token filtering. Checked v2 on 2026-10-24, Sections 3-4 and Appendix B. The current method name is UCMOPD; UP-MOPD is a historical alias. General-task means improve over the tested MOPD baseline but remain below Base. Matched rollout counts do not imply equal generated-token or GPU cost."
       }
     },
     {
       "id": "arxiv:2608.24987",
-      "title": "D$^3$-MOPD: Adaptive Dynamic Domain ScheDuling for Efficient Multi-Teacher Distillation",
+      "title": "D3-MOPD: Dynamic Domain ScheDuling for Efficient Multi-Teacher Distillation",
       "date": "2026-08-25",
       "collection": "multi_teacher_on_policy",
       "record_type": "method",
       "training_regime": "on_policy",
-      "state_source": "current_student",
+      "state_source": "near_current_student",
       "teacher_topology": [
         "specialist_pool",
         "independent_multi_teacher"
@@ -1857,12 +1854,12 @@
       ],
       "paper": "https://arxiv.org/abs/2608.24987",
       "artifacts": [],
-      "summary": "Adapts domain sampling ratios from the already-computed reverse-KL trajectories to reduce wasted rollout steps across differently converging domains.",
+      "summary": "Schedules domains using online estimates of token cost and student optimization progress.",
       "evidence": {
         "student_generated_states": "yes",
         "multiple_independent_supervisors": "yes",
         "direct_distillation_objective": "yes",
-        "classification_note": "Four domain teachers provide routed reverse-KL supervision while an adaptive scheduler reallocates rollout and update budget."
+        "classification_note": "Four domain teachers provide routed reverse-KL supervision while an adaptive scheduler reallocates rollout and update budget. Checked v2 on 2026-10-24, Table 2 versus Appendix D Table 6: 0.97 normalized recovery uses independent per-benchmark peaks across 16 checkpoints; the single best-average checkpoint yields 0.73. The roughly 3x speed figure is rollout steps to a specified threshold, not end-to-end wall-clock speed."
       }
     },
     {
@@ -1872,7 +1869,7 @@
       "collection": "multi_teacher_on_policy",
       "record_type": "method",
       "training_regime": "on_policy",
-      "state_source": "current_student",
+      "state_source": "near_current_student",
       "teacher_topology": [
         "specialist_pool",
         "independent_multi_teacher"
@@ -1905,7 +1902,7 @@
         "student_generated_states": "yes",
         "multiple_independent_supervisors": "yes",
         "direct_distillation_objective": "yes",
-        "classification_note": "Math, code, and instruction teachers supervise current SmolLM3 tokens; token-share and gap-aware allocation address capability imbalance."
+        "classification_note": "Rechecked v1 on 2026-10-24, Sections 2.1, 3.3 and 4.1-4.3. Independent math, code and instruction specialists score student rollout prefixes. Teacher-student log-ratio signals are aggregated over the student top-k support; token-share balancing and gap-following weights redistribute training contribution. Reward refresh recomputes the current-student probability term during inner updates on a reused rollout batch; it does not resample trajectories or make rollout-time prefixes fresh again."
       }
     },
     {
@@ -5103,6 +5100,39 @@
         "multiple_independent_supervisors": "not_applicable",
         "direct_distillation_objective": "not_applicable",
         "classification_note": "Verified v5 (2026-10-21), retaining the first-public date of 2026-04-01. Section 6 covers teacher eligibility, routing, target composition, capability balance, and evolving specialists. The source is marked Work in Progress; method-level MOPD evidence fields are not applicable."
+      }
+    },
+    {
+      "id": "arxiv:2106.02834",
+      "title": "MergeDistill: Merging Language Models using Pre-trained Distillation",
+      "date": "2021-06-05",
+      "collection": "offline_multi_teacher",
+      "record_type": "method",
+      "training_regime": "offline",
+      "state_source": "static_corpus",
+      "teacher_topology": [
+        "independent_multi_teacher",
+        "heterogeneous_pool"
+      ],
+      "primary_mechanism": "heterogeneous_alignment",
+      "mechanism_tags": [
+        "direct_matching",
+        "routing_selection"
+      ],
+      "signals": [
+        "logits_distribution"
+      ],
+      "domains": [
+        "nlp"
+      ],
+      "paper": "https://aclanthology.org/2021.findings-acl.254/",
+      "artifacts": [],
+      "summary": "Maps cached masked-token predictions from monolingual and multilingual teachers into a union vocabulary to train one multilingual language model.",
+      "evidence": {
+        "student_generated_states": "no",
+        "multiple_independent_supervisors": "yes",
+        "direct_distillation_objective": "yes",
+        "classification_note": "Official Findings ACL-IJCNLP 2021 PDF, Section 3.1 and Sections 4.2-4.4: separate monolingual teachers, or mBERT and MuRIL, score masked Wikipedia examples offline. Teacher top-k soft targets and ordinary masked-language-model labels are mapped into a union student vocabulary. Multiple copies or minimum-teacher-loss selection handle overlapping teachers; this is task-agnostic distillation, not teacher-parameter interpolation or student-rollout training. Table 5 separates vocabulary and teacher-prediction effects. First-public date is arXiv v1, 2021-06-05."
       }
     }
   ]

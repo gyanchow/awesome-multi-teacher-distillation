@@ -41,6 +41,12 @@ Record type and mechanism are separate from the collection. In particular, `syst
 
 ## Pull requests
 
+The bounded mechanism audit is maintained in `data/mechanism-audit.json`, with each `paper_id` linked to an existing catalog record. Distinguish learned teacher components from contextual views, state recollection from rescoring, and direct student targets from upstream feedback. Preserve uncertainty about source versions and refresh intervals.
+
+After an audit edit, run `python3 scripts/render_audit.py` and `python3 scripts/render_audit.py --check`. The CSV and comparison page are generated outputs. Collection changes still require updating `data/papers.json` and the catalog checks above.
+
+Broader LLM survey-structure examples are writing resources, not automatic additions to the distillation catalog. Each example needs a primary source, inspected version/venue, actual section structure, and verification of any claimed author-linked resource.
+
 Keep each pull request focused. Point to the exact paper section that establishes the state source, teacher topology, and student-training objective. Explain every boundary decision and every official artifact link. A maintainer may move an entry to `papers/pending.md` when evidence is incomplete.
 
 Automated discovery and metadata tools can help find candidates, but an accepting maintainer must verify the primary source and take responsibility for the final classification and wording.

@@ -2,6 +2,14 @@
 
 All notable curation changes are recorded here.
 
+## 2026-10-24
+
+- Added the verified MergeDistill NLP antecedent (Findings ACL-IJCNLP 2021); moved MT-SDPO to adjacent feedback-mediated self-distillation. The catalog contains `67 + 52 + 15 + 3 + 9 = 146` records.
+- Added detailed primary-source analysis of 30 core studies: 12 offline/NLP works, 14 MOPD methods or analyses, and 4 adjacent cases. Published experimental conditions, qualified findings, limitations, and cross-paper connections alongside mechanism JSON/CSV and a generated comparison table.
+- Corrected current D3-MOPD and UCMOPD titles and clarified checkpoint aggregation, fixed versus adaptive weights, token versus runtime costs, and remaining capability loss. Preserved existing first-public dates.
+- Added bilingual comparison guides, an evaluation record template, and 12 additional LLM survey-structure examples. These writing references do not inflate the distillation catalog.
+- Added validation and freshness checks for the evidence exports. This update does not publish a manuscript or claim independent experimental reproduction.
+
 ## 2026-10-23
 
 - Added 11 records: 5 multi-teacher on-policy works, 1 offline work, 1 adjacent analysis, and 4 surveys. Six are newer than the prior cutoff; five are backfills. The catalog now contains `68 + 51 + 14 + 3 + 9 = 145` records, including 8 surveys and 1 tutorial.

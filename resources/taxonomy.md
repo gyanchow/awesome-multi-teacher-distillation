@@ -6,13 +6,13 @@ The catalog uses one **mutually exclusive primary collection** plus several **or
 
 | Collection | Inclusion rule | Current count |
 |---|---|---:|
-| `multi_teacher_on_policy` | Current or near-current student states receive direct distillation supervision from multiple independently identifiable teachers. | 68 |
-| `offline_multi_teacher` | Multiple teachers or an ensemble supervise the student through static data, teacher generations, cached targets, or replay. | 51 |
-| `adjacent_alternative` | Closely related online, peer, self/EMA, privileged-view, sibling-rollout, replay, or branch-consolidation method that fails at least one strict-MOPD test. | 14 |
+| `multi_teacher_on_policy` | Current or near-current student states receive direct distillation supervision from multiple independently identifiable teachers. | 67 |
+| `offline_multi_teacher` | Multiple teachers or an ensemble supervise the student through static data, teacher generations, cached targets, or replay. | 52 |
+| `adjacent_alternative` | Closely related online, peer, self/EMA, privileged-view, sibling-rollout, replay, or branch-consolidation method that fails at least one strict-MOPD test. | 15 |
 | `single_teacher_foundation` | A foundational generative or on-policy distillation method with one teacher. | 3 |
 | `review_tutorial` | A field-level survey or tutorial rather than a method record. | 9 |
 
-Counts reflect the 145-record catalog refreshed on 2026-10-23.
+Counts reflect the 146-record catalog refreshed on 2026-10-24.
 
 The primary collection answers **where a reader should find the paper**. It does not encode every property of the work.
 
@@ -23,6 +23,8 @@ Each record stores three separate evidence fields:
 1. `student_generated_states`: whether the trained-on state or trajectory comes from the current or near-current student;
 2. `multiple_independent_supervisors`: whether at least two independently identifiable teachers, expert checkpoints, or teacher policies supervise the student; and
 3. `direct_distillation_objective`: whether those signals directly update the student through a divergence, sampled-token advantage, feature or field target, or an equivalent objective.
+
+The three tests must describe the same transfer stage. Multiple upstream feedback providers plus one direct EMA distribution teacher do not establish direct multi-teacher supervision merely because separate pipeline stages satisfy separate tests. Independently learned soft prompts can define distinct policies on one shared backbone; role contexts alone do not.
 
 The allowed answers are `yes`, `no`, `partial`, `unclear`, and `not_applicable`. These values describe the three facts independently; they are not a single confidence score. A free-text `classification_note` records the paper-level rationale.
 

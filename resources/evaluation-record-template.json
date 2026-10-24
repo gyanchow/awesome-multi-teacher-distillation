@@ -1,0 +1,67 @@
+{
+  "record_type": "blank evaluation template; not measured results",
+  "unknown_value_convention": "null means not recorded, never zero",
+  "study_id": null,
+  "paper_version": null,
+  "source_locator": null,
+  "student": {
+    "model": null,
+    "initialization": null,
+    "trainable_parameters": null
+  },
+  "teachers": [
+    {
+      "model": null,
+      "lineage": null,
+      "access": "unknown",
+      "role": "unknown: direct_target or upstream_feedback",
+      "selection_cost": null
+    }
+  ],
+  "training": {
+    "state_origin": null,
+    "rollout_refresh_interval_steps": null,
+    "replayed_tokens": null,
+    "new_tokens": null,
+    "loss_mask": null,
+    "teacher_queries": null,
+    "objective": null,
+    "routing": null,
+    "domain_prompt_shares": null,
+    "domain_supervised_token_shares": null
+  },
+  "controls": {
+    "baseline": null,
+    "matched_compute": null,
+    "matched_supervision": null,
+    "independent_tuning_budget": null
+  },
+  "outcomes": [
+    {
+      "domain": null,
+      "metric": null,
+      "direction": null,
+      "initial_student": null,
+      "best_teacher": null,
+      "final_student": null,
+      "retention_test": null,
+      "uncertainty_method": null,
+      "uncertainty": null
+    }
+  ],
+  "cost": {
+    "hardware": null,
+    "teacher_generation_gpu_hours": null,
+    "student_collection_gpu_hours": null,
+    "scoring_gpu_hours": null,
+    "updates_gpu_hours": null,
+    "tuning_gpu_hours": null,
+    "wall_clock_hours": null,
+    "peak_memory_gb": null,
+    "api_cost_currency": null,
+    "api_cost": null,
+    "excluded_costs": null,
+    "comparison_denominator": null
+  },
+  "limitations": null
+}

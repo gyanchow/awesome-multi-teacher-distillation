@@ -4,8 +4,8 @@ title: "Awesome Multi-Teacher Distillation"
 type: dataset
 authors:
   - name: "Awesome Multi-Teacher Distillation contributors"
-version: 0.1.0
-date-released: 2026-08-31
+version: "2026.10.24"
+date-released: 2026-10-24
 license: CC0-1.0
 keywords:
   - multi-teacher on-policy distillation
@@ -13,3 +13,5 @@ keywords:
   - knowledge distillation
   - capability integration
   - large language models
+repository-code: "https://github.com/gyanchow/awesome-multi-teacher-distillation"
+url: "https://github.com/gyanchow/awesome-multi-teacher-distillation"

@@ -1,5 +1,7 @@
 # Outreach kit
 
+> Historical outreach snapshot from October 5. Counts and account/channel checks below refer to that date. Use the [current catalog](../README.md) and [latest research-resource update](update-2026-10-24.md) when preparing a new post; no external distribution was performed by that update.
+
 Status: **Repository materials published; external distribution pending**. Date: 2026-10-05. The guides, illustrations, and this kit are on `main` in commit `1e59fdd`. Social posts, author invitations, collection notes, and the upstream proposal remain unsent drafts; no external acceptance or author endorsement is claimed.
 
 | Channel / artifact | Status |

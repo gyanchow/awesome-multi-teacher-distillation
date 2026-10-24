@@ -4,7 +4,7 @@
 
 The complete catalog ordered by first public date, with collection and record-type facets.
 
-Entries link to their canonical catalog record. This is a derived view; edit `data/papers.json` instead. Catalog refreshed on 2026-10-23.
+Entries link to their canonical catalog record. This is a derived view; edit `data/papers.json` instead. Catalog refreshed on 2026-10-24.
 
 ## 2026 (97)
 
@@ -38,14 +38,14 @@ Entries link to their canonical catalog record. This is a derived view; edit `da
 - [Rethinking On-Policy Distillation of Large Language Models II: One Training Example](../papers/multi-teacher-on-policy.md#arxiv-2609-04172) - 2026-09-03; Multi-Teacher On-Policy Distillation; Analysis.
 - [Verify Before You Distill: Prompt-Level Teacher Gating for On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2609-02998) - 2026-09-02; Multi-Teacher On-Policy Distillation; Method.
 - [LoFi RADIO: A Distilled In-Domain Backbone Applied for Artifact-Severity Grading of Ultra-Low-Field Neonatal Brain MR](../papers/offline-multi-teacher.md#arxiv-2609-02676) - 2026-09-02; Offline Multi-Teacher Distillation; Method.
-- [Learn from Whoever Is Right: Answer-Verified Multi-Teacher Distillation for Multi-Domain LLMs](../papers/multi-teacher-on-policy.md#arxiv-2609-02548) - 2026-09-02; Multi-Teacher On-Policy Distillation; Method.
+- [Learn from Whoever Is Right: Answer-Verified Multi-Teacher Distillation for Multi-Domain LLMs](../papers/adjacent-alternatives.md#arxiv-2609-02548) - 2026-09-02; Adjacent and Alternative Paradigms; Method.
 - [CA-OPD: Confidence-Aware On-Policy Distillation for Structured Visual Prediction](../papers/multi-teacher-on-policy.md#arxiv-2609-02401) - 2026-09-02; Multi-Teacher On-Policy Distillation; Method.
 - [MERGED: Multimodal Entity Resolution via Generated Expert Reasoning Distillation](../papers/offline-multi-teacher.md#arxiv-2609-01913) - 2026-09-01; Offline Multi-Teacher Distillation; Method.
 - [Instella-MoE Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2609-00791) - 2026-09-01; Multi-Teacher On-Policy Distillation; System Report.
 - [CRAD: Class-wise Reliability-Aware Distillation for Decentralized Heterogeneous Federated Learning](../papers/adjacent-alternatives.md#arxiv-2609-00446) - 2026-08-31; Adjacent and Alternative Paradigms; Method.
-- [Preserving General Capabilities during Domain Specialization with Uncertainty-Calibrated MOPD](../papers/multi-teacher-on-policy.md#arxiv-2608-26735) - 2026-08-27; Multi-Teacher On-Policy Distillation; Method.
+- [Recovering General Capabilities via Uncertainty-Calibrated Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2608-26735) - 2026-08-27; Multi-Teacher On-Policy Distillation; Method.
 - [Consolidating RLVR Capabilities Across Domains: A Deep Dive into Fusion Paradigms](../papers/multi-teacher-on-policy.md#arxiv-2608-27409) - 2026-08-27; Multi-Teacher On-Policy Distillation; Analysis.
-- [D$^3$-MOPD: Adaptive Dynamic Domain ScheDuling for Efficient Multi-Teacher Distillation](../papers/multi-teacher-on-policy.md#arxiv-2608-24987) - 2026-08-25; Multi-Teacher On-Policy Distillation; Method.
+- [D3-MOPD: Dynamic Domain ScheDuling for Efficient Multi-Teacher Distillation](../papers/multi-teacher-on-policy.md#arxiv-2608-24987) - 2026-08-25; Multi-Teacher On-Policy Distillation; Method.
 - [Exploring the Performance Frontier of Compact Unified Image Generation Models](../papers/multi-teacher-on-policy.md#arxiv-2608-20334) - 2026-08-20; Multi-Teacher On-Policy Distillation; System Report.
 - [Open-MOPD: Diagnosing and Fixing Capability Imbalance in Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2608-19098) - 2026-08-19; Multi-Teacher On-Policy Distillation; Method.
 - [Mint-Agent: Introducing Finance-Native Agentic Foundation Models](../papers/multi-teacher-on-policy.md#arxiv-2608-16386) - 2026-08-17; Multi-Teacher On-Policy Distillation; System Report.
@@ -144,10 +144,11 @@ Entries link to their canonical catalog record. This is a derived view; edit `da
 
 - [PILE: Pairwise Iterative Logits Ensemble for Multi-Teacher Labeled Distillation](../papers/offline-multi-teacher.md#acl-2022-emnlp-industry-60) - 2022-12-01; Offline Multi-Teacher Distillation; Method.
 
-## 2021 (4)
+## 2021 (5)
 
 - [Confidence-Aware Multi-Teacher Knowledge Distillation](../papers/offline-multi-teacher.md#arxiv-2201-00007) - 2021-12-31; Offline Multi-Teacher Distillation; Method.
 - [Multiple Teacher Distillation for Robust and Greener Models](../papers/offline-multi-teacher.md#acl-2021-ranlp-1-68) - 2021-09-01; Offline Multi-Teacher Distillation; Method.
+- [MergeDistill: Merging Language Models using Pre-trained Distillation](../papers/offline-multi-teacher.md#arxiv-2106-02834) - 2021-06-05; Offline Multi-Teacher Distillation; Method.
 - [One Teacher is Enough? Pre-trained Language Model Distillation from Multiple Teachers](../papers/offline-multi-teacher.md#arxiv-2106-01023) - 2021-06-02; Offline Multi-Teacher Distillation; Method.
 - [Reinforced Multi-Teacher Selection for Knowledge Distillation](../papers/offline-multi-teacher.md#aaai-2021-reinforced-teacher-selection) - 2021-05-18; Offline Multi-Teacher Distillation; Method.
 

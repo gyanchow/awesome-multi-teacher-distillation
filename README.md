@@ -18,12 +18,16 @@ Multi-teacher distillation transfers knowledge from several complementary or spe
 
 ![A map comparing on-policy, offline, and adjacent distillation methods](assets/method-map.svg)
 
-| Goal                            | Starting point                                                                                                                                 |
-| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Learn the field                 | [Field Guide](resources/guide.md): three evidence tests, a method comparison, and an eight-paper route.                                        |
-| Explore a research problem      | [Reading Paths](resources/reading-order.md): routing, capability consolidation, heterogeneous models, and offline distillation.                |
-| Choose a survey                 | [Survey Reading Guide](resources/survey-guide.md): scope, verified versions, and recommended chapters.                                         |
-| Find implementations and models | [Author-Linked Artifacts](views/with-artifacts.md): code, models, datasets, and project pages; availability does not imply reproduced results. |
+| Goal                                    | Starting point                                                                                                                                 |
+| --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Learn the field                         | [Field Guide](resources/guide.md): three evidence tests, a method comparison, and an eight-paper route.                                        |
+| Explore a research problem              | [Reading Paths](resources/reading-order.md): routing, capability consolidation, heterogeneous models, and offline distillation.                |
+| Choose a survey                         | [Survey Reading Guide](resources/survey-guide.md): scope, verified versions, and recommended chapters.                                         |
+| Find implementations and models         | [Author-Linked Artifacts](views/with-artifacts.md): code, models, datasets, and project pages; availability does not imply reproduced results. |
+| Design a fair comparison                | [Decision Guide](resources/compare-methods.md): choose by access, state collection, integration stage, and evaluation claim.                   |
+| Analyze 30 core studies                 | [Detailed Study Cards](resources/core-studies.md): methods, settings, reported findings, limits, and cross-paper synthesis.                    |
+| Reuse source-linked evidence            | [Mechanism Comparison](views/mechanism-comparison.md), [JSON](data/mechanism-audit.json), and [CSV](data/mechanism-audit.csv).                 |
+| Study how LLM surveys organize evidence | [Survey Structures](resources/llm-survey-structures.md): 12 additional examples with verified sections and resources.                          |
 
 Use the selected papers below for an overview. The full catalogs and cross-cutting views are linked in [Footnotes](#footnotes).
 
@@ -31,7 +35,7 @@ Use the selected papers below for an overview. The full catalogs and cross-cutti
 
 A work belongs to the strict MOPD collection when the current or near-current student generates the training states, multiple independently identifiable teachers provide supervision, and those signals directly update the student through a distillation objective. Static teacher data belongs to offline multi-teacher distillation; peers, self/EMA teachers, privileged views, sibling rollouts, and replay-based alternatives are labeled as adjacent unless they satisfy all three tests.
 
-Every record has exactly one primary collection. Record type, training regime, state source, teacher topology, combination mechanism, supervision signal, and domain are independent facets, so a system report is no longer treated as a competing method category. The snapshot contains 145 records: 68 multi-teacher on-policy works, 51 offline multi-teacher works, 14 adjacent or alternative works, 3 single-teacher foundations, and 9 reviews or tutorials. The latest incremental search and verification pass was completed on 2026-10-23; new entries were checked against primary metadata and relevant method sections.
+Every record has exactly one primary collection. Record type, training regime, state source, teacher topology, combination mechanism, supervision signal, and domain are independent facets, so a system report is no longer treated as a competing method category. The snapshot contains 146 records: 67 multi-teacher on-policy works, 52 offline multi-teacher works, 15 adjacent or alternative works, 3 single-teacher foundations, and 9 reviews or tutorials. The latest broad incremental search was completed on 2026-10-23. A targeted mechanism correction and resource update on 2026-10-24 is documented in the [update record](resources/update-2026-10-24.md); this does not mean every record was re-read that day.
 
 MOPD means multi-teacher on-policy distillation in this repository. Multi-rollout OPD is written as MR-OPD. Parameter merging, inference-only ensembles, ordinary mixture-of-experts routing, multi-agent debate without student training, and reward-only reinforcement learning are outside strict MOPD.
 

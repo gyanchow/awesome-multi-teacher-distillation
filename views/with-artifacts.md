@@ -4,7 +4,7 @@
 
 Papers for which an author- or organization-linked code, project, model, or data artifact was verified.
 
-Entries link to their canonical catalog record. This is a derived view; edit `data/papers.json` instead. Catalog refreshed on 2026-10-23.
+Entries link to their canonical catalog record. This is a derived view; edit `data/papers.json` instead. Catalog refreshed on 2026-10-24.
 
 ## Entries (58)
 
@@ -21,7 +21,7 @@ Entries link to their canonical catalog record. This is a derived view; edit `da
 - [One to More, More to One: Category-Aware Iterative Expert Training for Software Engineering Agents](../papers/multi-teacher-on-policy.md#arxiv-2609-23377) - Code, Model, Data; Multi-Teacher On-Policy Distillation.
 - [Distill What You Trust: Reliability-Aware Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2609-23697) - Code; Multi-Teacher On-Policy Distillation.
 - [Rethinking On-Policy Distillation of Large Language Models II: One Training Example](../papers/multi-teacher-on-policy.md#arxiv-2609-04172) - Code; Multi-Teacher On-Policy Distillation.
-- [Learn from Whoever Is Right: Answer-Verified Multi-Teacher Distillation for Multi-Domain LLMs](../papers/multi-teacher-on-policy.md#arxiv-2609-02548) - Code; Multi-Teacher On-Policy Distillation.
+- [Learn from Whoever Is Right: Answer-Verified Multi-Teacher Distillation for Multi-Domain LLMs](../papers/adjacent-alternatives.md#arxiv-2609-02548) - Code; Adjacent and Alternative Paradigms.
 - [Instella-MoE Technical Report](../papers/multi-teacher-on-policy.md#arxiv-2609-00791) - Code, Model; Multi-Teacher On-Policy Distillation.
 - [Consolidating RLVR Capabilities Across Domains: A Deep Dive into Fusion Paradigms](../papers/multi-teacher-on-policy.md#arxiv-2608-27409) - Code; Multi-Teacher On-Policy Distillation.
 - [Open-MOPD: Diagnosing and Fixing Capability Imbalance in Multi-Teacher On-Policy Distillation](../papers/multi-teacher-on-policy.md#arxiv-2608-19098) - Code, Project; Multi-Teacher On-Policy Distillation.

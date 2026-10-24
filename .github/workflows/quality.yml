@@ -21,6 +21,7 @@ jobs:
         run: |
           python3 scripts/validate.py
           python3 scripts/render.py --check
+          python3 scripts/render_audit.py --check
 
   awesome:
     runs-on: ubuntu-latest

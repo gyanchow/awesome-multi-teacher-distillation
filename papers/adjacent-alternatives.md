@@ -4,7 +4,7 @@
 
 These works are useful boundary cases or alternatives: peer co-distillation, self/EMA distillation, privileged views, sibling rollouts, offline replay, and branch consolidation. Their evidence notes state exactly which strict-MOPD condition does not hold.
 
-**14 records · catalog refreshed on 2026-10-23 · [Taxonomy](../resources/taxonomy.md)**
+**15 records · catalog refreshed on 2026-10-24 · [Taxonomy](../resources/taxonomy.md)**
 
 ## Hybrid
 
@@ -14,7 +14,7 @@ These works are useful boundary cases or alternatives: peer co-distillation, sel
   - **Teacher topology:** Independent Multi-Teacher, Specialist Pool
   - **Mechanism:** Progressive and Sequential Transfer · Secondary: Conflict Resolution
   - **Signals and domains:** Logits / Distribution · General LLMs, LLM Reasoning
-  - **Classification evidence:** Sections 2 and 3.3 and Appendix C.7: RGBM first merges parameters, then trains isolated per-domain OPD branches and re-merges admitted updates; the consolidated model receives no joint multi-teacher gradient. Section 4.4 separately analyzes genuine joint MOPD baselines. The adjacent classification describes RGBM, not those baselines; the equivalence is local and second-order.
+  - **Classification evidence:** Rechecked v1 on 2026-10-24, Sections 3.1-3.3 and Appendix C.7. RGBM first scores unlabeled specialist-generated calibration completions and solves a minimax subspace parameter merge. Energy-normalized residuals then gate isolated per-domain OPD branches; selected branch updates are shrunk and remerged. The consolidated model receives no joint multi-teacher gradient. No gradient training applies to the initial merge, not the entire pipeline. The Fisher relationship is local and second-order; the adjacent classification describes RGBM rather than separately evaluated joint-MOPD baselines.
   - **Artifacts:** None verified
 
 
@@ -118,6 +118,15 @@ These works are useful boundary cases or alternatives: peer co-distillation, sel
   - **Signals and domains:** Logits / Distribution, Feedback / Reward · LLM Reasoning, LLM Agents
   - **Classification evidence:** Current-student rollouts receive a direct target extrapolated from two checkpoints in the same policy lineage; there is no independent external teacher pool.
   - **Artifacts:** None verified
+
+<a id="arxiv-2609-02548"></a>
+- [Learn from Whoever Is Right: Answer-Verified Multi-Teacher Distillation for Multi-Domain LLMs](https://arxiv.org/abs/2609.02548) - 2026-09-02. Uses answer-eligible external teachers for sanitized feedback and correct student peers for anchors, then distills one privileged EMA self-teacher distribution into the student.
+  - **Facets:** `arxiv:2609.02548` · Method · Self-Distillation · State: Current Student
+  - **Teacher topology:** Specialist Pool, Independent Multi-Teacher, Self / EMA, Privileged Views
+  - **Mechanism:** Routing and Selection · Secondary: Direct Matching
+  - **Signals and domains:** Responses / Rationales, Logits / Distribution, Feedback / Reward · LLM Reasoning, Scientific and Healthcare
+  - **Classification evidence:** Rechecked v1 on 2026-10-24, Sections 4.1-4.4 and Appendix B.1-B.3. Independent frozen external teachers provide feedback on current-student rollouts, but the direct masked, importance-weighted JSD target comes from one privileged EMA self-teacher. Multiple independent supervisors is yes for upstream feedback; direct multi-teacher distillation is partial because external experts do not directly supply the token-distribution targets. Offline answer verification establishes eligibility, while lexical sanitization does not verify the semantic correctness of feedback. This feedback-mediated self-distillation stage is adjacent to strict MOPD.
+  - **Artifacts:** [Code](https://github.com/hexixiang/MT-SDPO)
 
 <a id="arxiv-2605-28791"></a>
 - [Skill-Conditioned Gated Self-Distillation for LLM Reasoning](https://arxiv.org/abs/2605.28791) - 2026-05-27. Instantiates several skill-conditioned views of a live self-teacher, validates each view against verifier outcomes, and weights a bounded polarity-aware sampled-token loss.
